@@ -263,7 +263,7 @@ tailwind.config = {
       <!-- Right: Contact form -->
       <div class="bg-surface-container-low rounded-2xl p-8">
         <h2 class="font-headline text-2xl text-on-surface mb-6">Надіслати повідомлення</h2>
-        <form id="contact-form" novalidate>
+        <form id="contact-form" action="https://formspree.io/f/mkopoplg" method="POST" novalidate>
           <div class="space-y-5">
             <div>
               <label for="name">Ваше ім&#39;я *</label>
@@ -305,6 +305,7 @@ tailwind.config = {
           <h3 class="font-headline text-xl text-on-surface mb-3">Повідомлення надіслано!</h3>
           <p class="text-sm text-outline leading-relaxed max-w-xs mx-auto">Дякую за звернення. Я відповім протягом 2 робочих днів.</p>
         </div>
+        <p id="contact-error" class="hidden mt-4 text-sm text-[#b3261e] text-center"></p>
       </div>
 
     </div>
@@ -403,10 +404,35 @@ tailwind.config = {
   </div>
 </footer>
 <script>
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
     e.preventDefault();
-    document.getElementById('contact-form').classList.add('hidden');
-    document.getElementById('contact-success').classList.remove('hidden');
+
+    const form = e.currentTarget;
+    const error = document.getElementById('contact-error');
+
+    error.classList.add('hidden');
+    error.textContent = '';
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
+      document.getElementById('contact-form').classList.add('hidden');
+      document.getElementById('contact-success').classList.remove('hidden');
+      form.reset();
+    } catch (err) {
+      error.textContent = 'There was a problem sending your message. Please try again.';
+      error.classList.remove('hidden');
+    }
   });
 </script>
 
