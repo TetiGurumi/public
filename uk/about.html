@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Про мене — TetiGurumi</title>
+<meta name="description" content="Познайомтеся з Тетяною — майстринею TetiGurumi. В&#39;язані іграшки, амігурумі, декор та подарунки ручної роботи з любов&#39;ю."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-lowest": "#ffffff",
+        "on-tertiary-fixed-variant": "#673b34",
+        "secondary-fixed-dim": "#b9cdab",
+        "primary-container": "#956c44",
+        "surface-container-high": "#ebe8e3",
+        "tertiary-fixed": "#ffdad4",
+        "surface-container": "#f0ede9",
+        "secondary-container": "#d2e6c3",
+        "outline": "#82756a",
+        "on-primary": "#ffffff",
+        "on-secondary-fixed-variant": "#3b4b32",
+        "surface-container-highest": "#e5e2dd",
+        "on-surface-variant": "#50453b",
+        "secondary": "#526348",
+        "surface": "#fcf9f4",
+        "on-secondary": "#ffffff",
+        "on-surface": "#1c1c19",
+        "secondary-fixed": "#d5e9c6",
+        "on-secondary-fixed": "#101f0a",
+        "outline-variant": "#d4c4b7",
+        "background": "#fcf9f4",
+        "surface-container-low": "#f6f3ee",
+        "tertiary": "#7f5048",
+        "primary": "#79542e",
+        "on-secondary-container": "#56684c",
+      },
+      fontFamily: {
+        "headline": ["Noto Serif", "Georgia", "serif"],
+        "body": ["Manrope", "sans-serif"],
+        "label": ["Manrope", "sans-serif"]
+      },
+      borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+    },
+  },
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  body { background-color: #fcf9f4; color: #1c1c19; font-family: 'Manrope', sans-serif; }
+  h1, h2, h3, h4, .font-serif { font-family: 'Noto Serif', serif; }
+  a { color: inherit; }
+  
+</style>
+<script>
+/* Locale detection & language routing */
+(function () {
+  var path = window.location.pathname;
+  /* If already in a language subdir, remember it and stop */
+  if (/^\/pl\//.test(path)) { localStorage.setItem('tg_lang', 'pl'); return; }
+  if (/^\/uk\//.test(path)) { localStorage.setItem('tg_lang', 'uk'); return; }
+  /* On root (English) pages */
+  var stored = localStorage.getItem('tg_lang');
+  var page = path.replace(/^\//, '') || 'index.html';
+  if (stored === 'pl') { window.location.replace('/pl/' + page); return; }
+  if (stored === 'uk') { window.location.replace('/uk/' + page); return; }
+  /* Auto-detect if no preference stored */
+  if (stored === null) {
+    var bl = (navigator.language || '').slice(0, 2).toLowerCase();
+    if (bl === 'pl') { localStorage.setItem('tg_lang', 'pl'); window.location.replace('/pl/' + page); return; }
+    if (bl === 'uk') { localStorage.setItem('tg_lang', 'uk'); window.location.replace('/uk/' + page); return; }
+    localStorage.setItem('tg_lang', 'en');
+  }
+})();
+</script></head>
+<body class="flex flex-col min-h-screen">
+
+<nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20">
+  <div class="flex justify-between items-center w-full px-6 md:px-10 py-5 max-w-screen-xl mx-auto">
+    <a href="../index.html" class="text-2xl font-headline tracking-tight text-on-surface-variant">TetiGurumi</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="../index.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Головна</a>
+      <a href="../shop.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Магазин</a>
+      <a href="../custom-orders.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Замовлення</a>
+      <a href="../gallery.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Галерея</a>
+      <a href="../about.html" class="text-sm transition-colors duration-200 text-primary font-semibold border-b-2 border-primary pb-0.5">Про мене</a>
+      <a href="../contact.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Контакт</a>
+    </div>
+    <div class="hidden md:flex items-center gap-4">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-1 text-xs font-semibold">
+        <a href="/about.html" onclick="localStorage.setItem('tg_lang','en');return true;"
+           class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
+        <span class="text-outline-variant/60">|</span>
+        <a href="/pl/about.html" onclick="localStorage.setItem('tg_lang','pl');return true;"
+           class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
+        <span class="text-outline-variant/60">|</span>
+        <a href="/uk/about.html" onclick="localStorage.setItem('tg_lang','uk');return true;"
+           class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">UA</a>
+      </div>
+      <a href="../custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
+        Замовити
+      </a>
+    </div>
+    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+</nav>
+
+<!-- Mobile menu drawer -->
+<div id="nav-drawer" class="fixed inset-0 z-[100] pointer-events-none">
+  <!-- Backdrop -->
+  <div id="nav-backdrop" class="absolute inset-0 bg-on-surface/20 opacity-0 transition-opacity duration-300"></div>
+  <!-- Panel -->
+  <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
+    <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
+      <span class="font-headline text-lg text-on-surface-variant">TetiGurumi</span>
+      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
+      <a href="../index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Головна
+      </a>
+      <a href="../shop.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Магазин
+      </a>
+      <a href="../custom-orders.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Замовлення
+      </a>
+      <a href="../gallery.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Галерея
+      </a>
+      <a href="../about.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors bg-surface-container text-primary font-semibold">
+        Про мене
+      </a>
+      <a href="../contact.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Контакт
+      </a>
+    </nav>
+    <div class="px-4 pb-4 border-t border-outline-variant/20 pt-4 flex flex-col gap-4">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-2 px-3">
+        <div class="flex items-center gap-1 text-xs font-semibold">
+          <a href="/about.html" onclick="localStorage.setItem('tg_lang','en');return true;"
+             class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
+          <span class="text-outline-variant/60">|</span>
+          <a href="/pl/about.html" onclick="localStorage.setItem('tg_lang','pl');return true;"
+             class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
+          <span class="text-outline-variant/60">|</span>
+          <a href="/uk/about.html" onclick="localStorage.setItem('tg_lang','uk');return true;"
+             class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">UA</a>
+        </div>
+      </div>
+      <a href="../custom-orders.html" class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity">
+        Замовити
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var drawer   = document.getElementById('nav-drawer');
+  var panel    = document.getElementById('nav-panel');
+  var backdrop = document.getElementById('nav-backdrop');
+
+  function openMenu() {
+    drawer.classList.remove('pointer-events-none');
+    backdrop.classList.remove('opacity-0');
+    panel.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    backdrop.classList.add('opacity-0');
+    panel.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+    setTimeout(function () { drawer.classList.add('pointer-events-none'); }, 300);
+  }
+
+  document.getElementById('nav-open').addEventListener('click', openMenu);
+  document.getElementById('nav-close').addEventListener('click', closeMenu);
+  backdrop.addEventListener('click', closeMenu);
+})();
+</script>
+<!-- HERO — Split layout -->
+<section class="bg-surface-container-low py-20 md:py-28">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div class="flex justify-center md:justify-end">
+        <div class="aspect-[3/4] w-full max-w-sm rounded-2xl overflow-hidden md:ml-8">
+          <img src="../images/instagram/CzvkXDPMwYw.jpg" alt="Tetiana, the maker behind TetiGurumi" class="w-full h-full object-cover"/>
+        </div>
+      </div>
+      <div class="flex flex-col justify-center">
+        <p class="text-xs font-semibold uppercase tracking-widest text-outline mb-4">Про майстриню</p>
+        <h1 class="font-headline text-4xl md:text-5xl text-on-surface mb-6 leading-tight">Зроблено вручну. Зроблено з любов'ю.</h1>
+        <div class="space-y-4 text-base text-on-surface-variant leading-relaxed mb-8">
+          <p>Привіт, я Тетяна — людина за кожним стібком у TetiGurumi.</p>
+          <p>Я роблю в&#39;язані вручну іграшки, декор та подарунки: фігурки амігурумі, сезонні прикраси, кошики, сумки та вироби на індивідуальне замовлення. Я почала в&#39;язати з особистої потреби — щоб створювати речі, які є продуманими та теплими у світі, сповненому масової продукції. З часом люди почали просити мене робити речі для них, і так виникло TetiGurumi.</p>
+          <p>Кожен виріб, який я роблю, отримує таку ж увагу, яку я б приділила чомусь для власного дому. Матеріали підбираються ретельно, обробка займає час, і ніщо не виходить з моїх рук, поки не буде готове.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="../shop.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">До магазину →</a>
+          <a href="../custom-orders.html" class="inline-flex items-center gap-2 border border-outline-variant/60 text-on-surface-variant text-sm font-semibold px-6 py-3 rounded-xl hover:border-primary hover:text-primary transition-colors">Індивідуальне замовлення →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I MAKE -->
+<section class="bg-surface py-20 md:py-28">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+    <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-10">Що я роблю</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">toys</span>
+        <h3 class="font-headline text-lg text-on-surface">Фігурки амігурумі</h3>
+        <p class="text-sm text-outline leading-relaxed">В&#39;язані персонажі та тварини, зроблені на довговічність.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+        <h3 class="font-headline text-lg text-on-surface">Сезонні прикраси</h3>
+        <p class="text-sm text-outline leading-relaxed">Різдвяні, великодні та святкові декорації з характером.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">shopping_bag</span>
+        <h3 class="font-headline text-lg text-on-surface">Сумки та аксесуари</h3>
+        <p class="text-sm text-outline leading-relaxed">Практично та красиво — кошики, сумки та аксесуари.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">crib</span>
+        <h3 class="font-headline text-lg text-on-surface">Подарунки для немовлят</h3>
+        <p class="text-sm text-outline leading-relaxed">М&#39;які, безпечні та особливі подарунки для новонароджених.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">edit</span>
+        <h3 class="font-headline text-lg text-on-surface">Індивідуальні замовлення</h3>
+        <p class="text-sm text-outline leading-relaxed">Ваша ідея, зроблена з турботою за вашими побажаннями.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AT THE MARKETS -->
+<section class="bg-surface-container-low py-20 md:py-28">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div>
+        <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-5">На ярмарках</h2>
+        <p class="text-base text-on-surface-variant leading-relaxed mb-6">Я люблю зустрічатися з покупцями особисто. Мене можна знайти на місцевих ярмарках ремесел та різдвяних ярмарках — там панує особлива атмосфера.</p>
+        <div class="flex items-start gap-3 mb-8 p-4 bg-surface-container rounded-xl">
+          <span class="text-xl">📍</span>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Краків, Польща · Постійний учасник різдвяного ярмарку</p>
+        </div>
+        <a href="../gallery.html" class="inline-flex items-center gap-2 border border-outline-variant/60 text-on-surface-variant text-sm font-semibold px-6 py-3 rounded-xl hover:border-primary hover:text-primary transition-colors">Переглянути галерею →</a>
+      </div>
+      <div class="aspect-video rounded-xl overflow-hidden">
+        <img src="../images/instagram/DSLXBTqDBBt.jpg" alt="TetiGurumi at Kraków Christmas market" class="w-full h-full object-cover"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section class="bg-surface py-20 md:py-28">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+    <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-10">Матеріали, які я використовую</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-surface-container-low rounded-xl p-8">
+        <h3 class="font-headline text-xl text-on-surface mb-3">Бавовняна пряжа</h3>
+        <p class="text-sm text-outline leading-relaxed">М&#39;яка, дихаюча, приємна для шкіри. Використовується для більшості іграшок та виробів для немовлят.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-8">
+        <h3 class="font-headline text-xl text-on-surface mb-3">Гіпоалергенний наповнювач</h3>
+        <p class="text-sm text-outline leading-relaxed">Безпечний поліестерний наповнювач у всіх м&#39;яких іграшках.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-8">
+        <h3 class="font-headline text-xl text-on-surface mb-3">Захисні очі</h3>
+        <p class="text-sm text-outline leading-relaxed">Затверджені для іграшок, 6–12 мм, залежно від розміру виробу.</p>
+      </div>
+    </div>
+    <p class="text-sm text-outline italic">Якщо у вас є вимоги до матеріалів або алергія, обов&#39;язково вкажіть це при замовленні.</p>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="bg-surface-container-low py-20 md:py-28">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10 text-center">
+    <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-4">Готові замовити щось особливе?</h2>
+    <p class="text-base text-on-surface-variant mb-8 max-w-xl mx-auto">Перегляньте магазин або оформіть індивідуальне замовлення.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="../shop.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity">До магазину</a>
+      <a href="../custom-orders.html" class="inline-flex items-center gap-2 border border-outline-variant/60 text-on-surface-variant text-sm font-semibold px-8 py-4 rounded-xl hover:border-primary hover:text-primary transition-colors">Оформити замовлення</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-surface-container-low mt-auto">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <p class="font-headline text-2xl text-on-surface-variant mb-3">TetiGurumi</p>
+        <p class="text-sm text-outline leading-relaxed max-w-[26ch] mb-6">Handmade crochet toys, decor and gifts. Made by Tetiana.</p>
+        <div class="flex gap-5">
+          <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="text-sm font-semibold text-[#7b8f70] hover:underline underline-offset-2">Instagram</a>
+          <a href="#" class="text-sm font-semibold text-[#7b8f70] hover:underline underline-offset-2">Facebook</a>
+        </div>
+      </div>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Магазин</p>
+        <ul class="space-y-3">
+          <li><a href="../shop.html#toys" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Іграшки гачком</a></li>
+          <li><a href="../shop.html#bags" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сумки та аксесуари</a></li>
+          <li><a href="../shop.html#seasonal" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сезонні вироби</a></li>
+          <li><a href="../shop.html#decor" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Декор та кошики</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Замовлення</p>
+        <ul class="space-y-3">
+          <li><a href="../custom-orders.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Індивідуальні замовлення</a></li>
+          <li><a href="../faq.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">FAQ</a></li>
+          <li><a href="../gallery.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Галерея</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Інформація</p>
+        <ul class="space-y-3">
+          <li><a href="../about.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Про Тетяну</a></li>
+          <li><a href="../contact.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Контакт</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pt-6 border-t border-outline-variant/30 flex justify-between items-center flex-wrap gap-4">
+      <p class="text-xs text-outline">© TetiGurumi. All rights reserved.</p>
+      <p class="text-xs text-outline">Handmade in Poland 🇵🇱</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

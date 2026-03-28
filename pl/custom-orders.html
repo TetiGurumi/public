@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zamówienia indywidualne — TetiGurumi</title>
+<meta name="description" content="Zamów ręcznie robioną szydełkową zabawkę, dekorację lub prezent. Wybierz postać, kolory, rozmiar i personalizację. Wysyłka do UE."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-lowest": "#ffffff",
+        "on-tertiary-fixed-variant": "#673b34",
+        "secondary-fixed-dim": "#b9cdab",
+        "primary-container": "#956c44",
+        "surface-container-high": "#ebe8e3",
+        "tertiary-fixed": "#ffdad4",
+        "surface-container": "#f0ede9",
+        "secondary-container": "#d2e6c3",
+        "outline": "#82756a",
+        "on-primary": "#ffffff",
+        "on-secondary-fixed-variant": "#3b4b32",
+        "surface-container-highest": "#e5e2dd",
+        "on-surface-variant": "#50453b",
+        "secondary": "#526348",
+        "surface": "#fcf9f4",
+        "on-secondary": "#ffffff",
+        "on-surface": "#1c1c19",
+        "secondary-fixed": "#d5e9c6",
+        "on-secondary-fixed": "#101f0a",
+        "outline-variant": "#d4c4b7",
+        "background": "#fcf9f4",
+        "surface-container-low": "#f6f3ee",
+        "tertiary": "#7f5048",
+        "primary": "#79542e",
+        "on-secondary-container": "#56684c",
+      },
+      fontFamily: {
+        "headline": ["Noto Serif", "Georgia", "serif"],
+        "body": ["Manrope", "sans-serif"],
+        "label": ["Manrope", "sans-serif"]
+      },
+      borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+    },
+  },
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  body { background-color: #fcf9f4; color: #1c1c19; font-family: 'Manrope', sans-serif; }
+  h1, h2, h3, h4, .font-serif { font-family: 'Noto Serif', serif; }
+  a { color: inherit; }
+    input, textarea, select {
+    background-color: #fcf9f4;
+    border: 1px solid rgba(212, 196, 183, 0.4);
+    border-radius: 0.5rem;
+    color: #1c1c19;
+    font-family: 'Manrope', sans-serif;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #79542e;
+    box-shadow: 0 0 0 2px rgba(121, 84, 46, 0.12);
+  }
+  label { color: #6e625a; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+  .step-connector { flex: 1; border-top: 2px dashed rgba(212, 196, 183, 0.6); margin-top: 1.25rem; }
+  .upload-zone { border: 1.5px dashed rgba(212, 196, 183, 0.6); border-radius: 0.75rem; transition: border-color 0.2s, background-color 0.2s; cursor: pointer; }
+  .upload-zone:hover { border-color: #79542e; background-color: rgba(121, 84, 46, 0.04); }
+  .faq-answer { display: none; }
+  .faq-item.open .faq-answer { display: block; }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+  .faq-chevron { transition: transform 0.2s ease; }
+
+</style>
+<script>
+/* Locale detection & language routing */
+(function () {
+  var path = window.location.pathname;
+  /* If already in a language subdir, remember it and stop */
+  if (/^\/pl\//.test(path)) { localStorage.setItem('tg_lang', 'pl'); return; }
+  if (/^\/uk\//.test(path)) { localStorage.setItem('tg_lang', 'uk'); return; }
+  /* On root (English) pages */
+  var stored = localStorage.getItem('tg_lang');
+  var page = path.replace(/^\//, '') || 'index.html';
+  if (stored === 'pl') { window.location.replace('/pl/' + page); return; }
+  if (stored === 'uk') { window.location.replace('/uk/' + page); return; }
+  /* Auto-detect if no preference stored */
+  if (stored === null) {
+    var bl = (navigator.language || '').slice(0, 2).toLowerCase();
+    if (bl === 'pl') { localStorage.setItem('tg_lang', 'pl'); window.location.replace('/pl/' + page); return; }
+    if (bl === 'uk') { localStorage.setItem('tg_lang', 'uk'); window.location.replace('/uk/' + page); return; }
+    localStorage.setItem('tg_lang', 'en');
+  }
+})();
+</script></head>
+<body class="min-h-screen flex flex-col">
+
+<nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20">
+  <div class="flex justify-between items-center w-full px-6 md:px-10 py-5 max-w-screen-xl mx-auto">
+    <a href="../index.html" class="text-2xl font-headline tracking-tight text-on-surface-variant">TetiGurumi</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="../index.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Główna</a>
+      <a href="../shop.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Sklep</a>
+      <a href="../custom-orders.html" class="text-sm transition-colors duration-200 text-primary font-semibold border-b-2 border-primary pb-0.5">Zamówienia</a>
+      <a href="../gallery.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Galeria</a>
+      <a href="../about.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">O mnie</a>
+      <a href="../contact.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Kontakt</a>
+    </div>
+    <div class="hidden md:flex items-center gap-4">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-1 text-xs font-semibold">
+        <a href="/custom-orders.html" onclick="localStorage.setItem('tg_lang','en');return true;"
+           class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
+        <span class="text-outline-variant/60">|</span>
+        <a href="/pl/custom-orders.html" onclick="localStorage.setItem('tg_lang','pl');return true;"
+           class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">PL</a>
+        <span class="text-outline-variant/60">|</span>
+        <a href="/uk/custom-orders.html" onclick="localStorage.setItem('tg_lang','uk');return true;"
+           class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">UA</a>
+      </div>
+      <a href="../custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
+        Zamów
+      </a>
+    </div>
+    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+</nav>
+
+<!-- Mobile menu drawer -->
+<div id="nav-drawer" class="fixed inset-0 z-[100] pointer-events-none">
+  <!-- Backdrop -->
+  <div id="nav-backdrop" class="absolute inset-0 bg-on-surface/20 opacity-0 transition-opacity duration-300"></div>
+  <!-- Panel -->
+  <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
+    <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
+      <span class="font-headline text-lg text-on-surface-variant">TetiGurumi</span>
+      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
+      <a href="../index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Główna
+      </a>
+      <a href="../shop.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Sklep
+      </a>
+      <a href="../custom-orders.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors bg-surface-container text-primary font-semibold">
+        Zamówienia
+      </a>
+      <a href="../gallery.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Galeria
+      </a>
+      <a href="../about.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        O mnie
+      </a>
+      <a href="../contact.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Kontakt
+      </a>
+    </nav>
+    <div class="px-4 pb-4 border-t border-outline-variant/20 pt-4 flex flex-col gap-4">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-2 px-3">
+        <div class="flex items-center gap-1 text-xs font-semibold">
+          <a href="/custom-orders.html" onclick="localStorage.setItem('tg_lang','en');return true;"
+             class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
+          <span class="text-outline-variant/60">|</span>
+          <a href="/pl/custom-orders.html" onclick="localStorage.setItem('tg_lang','pl');return true;"
+             class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">PL</a>
+          <span class="text-outline-variant/60">|</span>
+          <a href="/uk/custom-orders.html" onclick="localStorage.setItem('tg_lang','uk');return true;"
+             class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">UA</a>
+        </div>
+      </div>
+      <a href="../custom-orders.html" class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity">
+        Zamów
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var drawer   = document.getElementById('nav-drawer');
+  var panel    = document.getElementById('nav-panel');
+  var backdrop = document.getElementById('nav-backdrop');
+
+  function openMenu() {
+    drawer.classList.remove('pointer-events-none');
+    backdrop.classList.remove('opacity-0');
+    panel.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    backdrop.classList.add('opacity-0');
+    panel.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+    setTimeout(function () { drawer.classList.add('pointer-events-none'); }, 300);
+  }
+
+  document.getElementById('nav-open').addEventListener('click', openMenu);
+  document.getElementById('nav-close').addEventListener('click', closeMenu);
+  backdrop.addEventListener('click', closeMenu);
+})();
+</script>
+<!-- HERO -->
+<section class="py-20 md:py-28">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Zrobione specjalnie dla Ciebie</p>
+        <h1 class="font-headline text-4xl md:text-5xl leading-tight text-on-surface mb-6">Zamów coś<br/><em>stworzonego dla Ciebie.</em></h1>
+        <p class="text-base text-on-surface-variant leading-relaxed max-w-prose mb-10">Każda praca, którą robię, zaczyna się od pomysłu — Twojego lub mojego. Wypełnij formularz, a odpiszę z wyceną i terminem realizacji w ciągu 2 dni roboczych.</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-3">
+          <div class="flex items-center gap-1.5 text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-[#526348] text-[18px]" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 20;">check_circle</span>
+            Odpowiedź w 2 dni robocze
+          </div>
+          <div class="flex items-center gap-1.5 text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-[#526348] text-[18px]" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 20;">check_circle</span>
+            Bezpłatna konsultacja
+          </div>
+          <div class="flex items-center gap-1.5 text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-[#526348] text-[18px]" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 20;">check_circle</span>
+            Wysyłka do UE
+          </div>
+        </div>
+      </div>
+      <div class="aspect-[4/5] rounded-2xl overflow-hidden">
+        <img src="../images/instagram/DUkhM-7jKXl.jpg" alt="Handmade crochet doll being created" class="w-full h-full object-cover" loading="eager"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS STEPS -->
+<section class="bg-surface-container-low py-20 md:py-28">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+    <p class="text-xs font-bold uppercase tracking-widest text-outline mb-3 text-center">Jak to działa</p>
+    <h2 class="font-headline text-3xl md:text-4xl text-on-surface text-center mb-14">Od pomysłu do Twoich rąk</h2>
+    <!-- Desktop -->
+    <div class="hidden md:flex items-start gap-0">
+      <div class="flex flex-col items-center text-center flex-shrink-0 w-40">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm mb-4">1</div>
+        <h3 class="font-headline text-base text-on-surface mb-2">Wyślij zapytanie</h3>
+        <p class="text-xs text-outline leading-relaxed">Wypełnij formularz z jak największą ilością szczegółów.</p>
+      </div>
+<div class="step-connector mt-5 mx-2"></div>      <div class="flex flex-col items-center text-center flex-shrink-0 w-40">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm mb-4">2</div>
+        <h3 class="font-headline text-base text-on-surface mb-2">Otrzymaj potwierdzenie i wycenę</h3>
+        <p class="text-xs text-outline leading-relaxed">Przejrzę zapytanie i odpiszę z ceną, terminem i ewentualnymi pytaniami.</p>
+      </div>
+<div class="step-connector mt-5 mx-2"></div>      <div class="flex flex-col items-center text-center flex-shrink-0 w-40">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm mb-4">3</div>
+        <h3 class="font-headline text-base text-on-surface mb-2">Zatwierdź szczegóły</h3>
+        <p class="text-xs text-outline leading-relaxed">Uzgodnimy projekt, kolory, personalizację i zaliczkę.</p>
+      </div>
+<div class="step-connector mt-5 mx-2"></div>      <div class="flex flex-col items-center text-center flex-shrink-0 w-40">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm mb-4">4</div>
+        <h3 class="font-headline text-base text-on-surface mb-2">Rozpoczęcie produkcji</h3>
+        <p class="text-xs text-outline leading-relaxed">Zacznę szydełkować — mogę przesyłać zdjęcia postępów, jeśli chcesz.</p>
+      </div>
+<div class="step-connector mt-5 mx-2"></div>      <div class="flex flex-col items-center text-center flex-shrink-0 w-40">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm mb-4">5</div>
+        <h3 class="font-headline text-base text-on-surface mb-2">Wysyłka lub odbiór</h3>
+        <p class="text-xs text-outline leading-relaxed">Gotowa praca jest starannie zapakowana i wysłana do Ciebie.</p>
+      </div>
+    </div>
+    <!-- Mobile -->
+    <div class="flex flex-col gap-8 md:hidden">
+      <div class="flex gap-5 items-start">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">1</div>
+        <div>
+          <h3 class="font-headline text-base text-on-surface mb-1">Wyślij zapytanie</h3>
+          <p class="text-sm text-outline leading-relaxed">Wypełnij formularz z jak największą ilością szczegółów.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">2</div>
+        <div>
+          <h3 class="font-headline text-base text-on-surface mb-1">Otrzymaj potwierdzenie i wycenę</h3>
+          <p class="text-sm text-outline leading-relaxed">Przejrzę zapytanie i odpiszę z ceną, terminem i ewentualnymi pytaniami.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">3</div>
+        <div>
+          <h3 class="font-headline text-base text-on-surface mb-1">Zatwierdź szczegóły</h3>
+          <p class="text-sm text-outline leading-relaxed">Uzgodnimy projekt, kolory, personalizację i zaliczkę.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">4</div>
+        <div>
+          <h3 class="font-headline text-base text-on-surface mb-1">Rozpoczęcie produkcji</h3>
+          <p class="text-sm text-outline leading-relaxed">Zacznę szydełkować — mogę przesyłać zdjęcia postępów, jeśli chcesz.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">5</div>
+        <div>
+          <h3 class="font-headline text-base text-on-surface mb-1">Wysyłka lub odbiór</h3>
+          <p class="text-sm text-outline leading-relaxed">Gotowa praca jest starannie zapakowana i wysłana do Ciebie.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT CAN BE CUSTOMIZED -->
+<section class="py-20 md:py-28">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+    <p class="text-xs font-bold uppercase tracking-widest text-outline mb-3 text-center">Co możesz wybrać</p>
+    <h2 class="font-headline text-3xl md:text-4xl text-on-surface text-center mb-14">Wszystko zależy od Ciebie</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary text-[28px]">character</span>
+        <h3 class="font-headline text-lg text-on-surface">Postać i motyw</h3>
+        <p class="text-sm text-outline leading-relaxed">Dowolne zwierzę, zabawka lub postać, jaką masz w głowie.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary text-[28px]">palette</span>
+        <h3 class="font-headline text-lg text-on-surface">Kolory</h3>
+        <p class="text-sm text-outline leading-relaxed">Wybierz spośród szerokiej gamy kolorów włóczki.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary text-[28px]">straighten</span>
+        <h3 class="font-headline text-lg text-on-surface">Rozmiar</h3>
+        <p class="text-sm text-outline leading-relaxed">Od małej miniaturki do dużej maskotki.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary text-[28px]">sell</span>
+        <h3 class="font-headline text-lg text-on-surface">Etykietka z imieniem</h3>
+        <p class="text-sm text-outline leading-relaxed">Dodaj haft z imieniem lub spersonalizowaną etykietkę na prezent.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary text-[28px]">event</span>
+        <h3 class="font-headline text-lg text-on-surface">Termin realizacji</h3>
+        <p class="text-sm text-outline leading-relaxed">Powiedz mi o dacie, a postaram się dostosować.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary text-[28px]">redeem</span>
+        <h3 class="font-headline text-lg text-on-surface">Opakowanie</h3>
+        <p class="text-sm text-outline leading-relaxed">Od prostego opakowania do gotowego na prezent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="py-20 md:py-28 bg-surface-container-low" id="form-section">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-surface rounded-2xl p-8 md:p-12 shadow-sm" style="box-shadow: 0 1px 4px rgba(50,30,10,0.06);">
+        <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-3">Opowiedz mi o swoim pomyśle</h2>
+        <p class="text-base text-on-surface-variant leading-relaxed mb-10">Nie wiesz dokładnie, co chcesz? Opisz mi uczucie — ja coś zaproponuję.</p>
+        <form id="order-form" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+            <div class="flex flex-col gap-2">
+              <label for="name">Twoje imię <span class="text-tertiary normal-case tracking-normal font-semibold text-xs">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="e.g. Anna" class="w-full px-4 py-3 text-sm"/>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="email">Twój e-mail <span class="text-tertiary normal-case tracking-normal font-semibold text-xs">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="e.g. anna@example.com" class="w-full px-4 py-3 text-sm"/>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 mb-6">
+            <label for="description">Co chciałabyś/chciałbyś zamówić? <span class="text-tertiary normal-case tracking-normal font-semibold text-xs">*</span></label>
+            <textarea id="description" name="description" required rows="4" placeholder="np. Mały króliczek w pudrowym różu na prezent na baby shower, ok. 20 cm, z miękką kokardką." class="w-full px-4 py-3 text-sm resize-y"></textarea>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+            <div class="flex flex-col gap-2">
+              <label for="type">Typ <span class="text-tertiary normal-case tracking-normal font-semibold text-xs">*</span></label>
+              <select id="type" name="type" required class="w-full px-4 py-3 text-sm">
+                <option value="" disabled selected>Wybierz typ…</option>
+                <option value="toy">Zabawka / amigurumi</option>
+                <option value="decoration">Dekoracja</option>
+                <option value="bag">Torba lub akcesorium</option>
+                <option value="seasonal">Przedmiot sezonowy</option>
+                <option value="other">Inne</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="colors">Kolory</label>
+              <input type="text" id="colors" name="colors" placeholder="np. pudrowy róż, krem, szałwiowa zieleń" class="w-full px-4 py-3 text-sm"/>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+            <div class="flex flex-col gap-2">
+              <label for="size">Przybliżony rozmiar</label>
+              <input type="text" id="size" name="size" placeholder="np. wielkość dłoni, ok. 25 cm" class="w-full px-4 py-3 text-sm"/>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="deadline">Termin</label>
+              <input type="date" id="deadline" name="deadline" class="w-full px-4 py-3 text-sm"/>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+            <div class="flex flex-col gap-2">
+              <label for="budget">Przedział cenowy</label>
+              <select id="budget" name="budget" class="w-full px-4 py-3 text-sm">
+                <option value="" disabled selected>Wybierz zakres…</option>
+                <option value="under100">Poniżej 100 PLN</option>
+                <option value="100-200">100–200 PLN</option>
+                <option value="200-350">200–350 PLN</option>
+                <option value="350plus">350+ PLN</option>
+                <option value="open">Otwarty / zależy od projektu</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="country">Kraj dostawy</label>
+              <select id="country" name="country" class="w-full px-4 py-3 text-sm">
+                <option value="" disabled selected>Wybierz kraj…</option>
+                <option value="PL">Polska</option>
+                <option value="DE">Niemcy</option>
+                <option value="FR">Francja</option>
+                <option value="NL">Holandia</option>
+                <option value="AT">Austria</option>
+                <option value="CZ">Czechy</option>
+                <option value="EU">Inne UE</option>
+                <option value="non-EU">Poza UE</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 mb-6">
+            <label for="personalization">Szczegóły personalizacji</label>
+            <textarea id="personalization" name="personalization" rows="2" placeholder="np. haft z imieniem &#39;Zosia&#39;, dodaj małe serce, etykietka z dedykacją" class="w-full px-4 py-3 text-sm resize-y"></textarea>
+          </div>
+          <div class="flex flex-col gap-2 mb-6">
+            <label for="extra">Coś jeszcze?</label>
+            <textarea id="extra" name="extra" rows="3" placeholder="Prezent na wyjątkową okazję? Wolisz ekologiczne opakowanie? Jakieś alergie na materiały?" class="w-full px-4 py-3 text-sm resize-y"></textarea>
+          </div>
+          <div class="flex flex-col gap-2 mb-6">
+            <label for="reference">Referencja stylistyczna (opcjonalnie)</label>
+            <label for="reference" class="upload-zone flex flex-col items-center justify-center gap-3 px-6 py-10 text-center normal-case tracking-normal text-on-surface-variant cursor-pointer">
+              <span class="material-symbols-outlined text-[36px] text-outline">upload_file</span>
+              <span class="text-sm font-medium text-on-surface-variant">Prześlij zdjęcie referencyjne</span>
+              <span class="text-xs text-outline">JPEG, PNG, WEBP — max 10 MB</span>
+              <input type="file" id="reference" name="reference" accept="image/*" class="sr-only" style="display:none; border:none; background:transparent;"/>
+            </label>
+            <p id="file-name" class="text-xs text-outline mt-1 hidden"></p>
+          </div>
+          <div class="flex items-start gap-3 mb-8">
+            <input type="checkbox" id="consent" name="consent" required class="mt-0.5 w-4 h-4 flex-shrink-0 accent-primary" style="border-radius: 0.25rem;"/>
+            <label for="consent" class="normal-case tracking-normal text-sm text-on-surface-variant font-normal" style="font-size: 0.875rem; font-weight: 400; color: #50453b; letter-spacing: 0; text-transform: none;">
+              Zgadzam się na kontakt e-mailowy w sprawie mojego zapytania o zamówienie. <span class="text-tertiary font-semibold">*</span>
+            </label>
+          </div>
+          <button type="submit" class="w-full bg-primary text-on-primary py-4 rounded-xl font-semibold text-base hover:opacity-90 transition-opacity">Wyślij zapytanie →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS STATE -->
+<section class="py-20 md:py-28 hidden" id="success-msg">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mx-auto mb-8">
+        <span class="material-symbols-outlined text-[32px] text-secondary" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 32;">check_circle</span>
+      </div>
+      <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-4">Dziękuję!</h2>
+      <p class="text-lg text-on-surface-variant leading-relaxed mb-10">Odezwę się w ciągu 2 dni roboczych.</p>
+      <p class="font-headline text-xl italic text-on-surface-variant">— Tetiana</p>
+    </div>
+  </div>
+</section>
+
+<!-- INSPIRATION ROW -->
+<section class="py-20 md:py-24">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-10">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-2">Nie jesteś pewna/pewien?</p>
+        <h2 class="font-headline text-2xl md:text-3xl text-on-surface">Potrzebujesz inspiracji?</h2>
+      </div>
+      <a href="../gallery.html" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4 whitespace-nowrap">
+        Przejrzyj galerię <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+    </div>
+    <div class="grid grid-cols-3 gap-4 md:gap-6">
+      <a href="../gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
+        <img src="../images/instagram/DUkhM-7jKXl.jpg" alt="Handmade Doll" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"/>
+      </a>
+      <a href="../gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
+        <img src="../images/instagram/DUN66hvjFaA.jpg" alt="Capybaras amigurumi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"/>
+      </a>
+      <a href="../gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
+        <img src="../images/instagram/DSx-GmtDAMG.jpg" alt="Festive crochet decorations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"/>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ TEASER -->
+<section class="bg-surface-container-low py-20 md:py-24">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-xs font-bold uppercase tracking-widest text-outline mb-3 text-center">Szybkie odpowiedzi</p>
+      <h2 class="font-headline text-3xl md:text-4xl text-on-surface text-center mb-12">Najczęstsze pytania</h2>
+      <div class="flex flex-col divide-y divide-outline-variant/30">
+        <div class="faq-item py-5" role="region">
+          <button class="faq-toggle w-full flex items-center justify-between gap-4 text-left" aria-expanded="false">
+            <span class="font-headline text-lg text-on-surface">Czy prace są ręcznie robione przez Ciebie?</span>
+            <span class="material-symbols-outlined faq-chevron text-outline flex-shrink-0">expand_more</span>
+          </button>
+          <div class="faq-answer pt-4 pr-8">
+            <p class="text-sm text-on-surface-variant leading-relaxed">Tak — każda praca jest wykonana przeze mnie, Tetianę. Szydełkuję każdy element ręcznie, od pierwszego oczka po ostatni detal. Nic nie jest produkowane masowo. Zamawiając u TetiGurumi, otrzymujesz coś zrobionego z prawdziwym zaangażowaniem.</p>
+          </div>
+        </div>
+        <div class="faq-item py-5" role="region">
+          <button class="faq-toggle w-full flex items-center justify-between gap-4 text-left" aria-expanded="false">
+            <span class="font-headline text-lg text-on-surface">Jak długo trwa realizacja?</span>
+            <span class="material-symbols-outlined faq-chevron text-outline flex-shrink-0">expand_more</span>
+          </button>
+          <div class="faq-answer pt-4 pr-8">
+            <p class="text-sm text-on-surface-variant leading-relaxed">Gotowe prace dostępne od ręki wysyłam w ciągu 1–3 dni roboczych. Prace na zamówienie wymagają zazwyczaj 7 do 21 dni, zależnie od złożoności projektu i aktualnej kolejki. Zawsze potwierdzam termin przed finalizacją zamówienia. Jeśli masz konkretny termin (urodziny, baby shower, Boże Narodzenie), napisz mi — postaram się dostosować.</p>
+          </div>
+        </div>
+        <div class="faq-item py-5" role="region">
+          <button class="faq-toggle w-full flex items-center justify-between gap-4 text-left" aria-expanded="false">
+            <span class="font-headline text-lg text-on-surface">Czy wysyłasz za granicę?</span>
+            <span class="material-symbols-outlined faq-chevron text-outline flex-shrink-0">expand_more</span>
+          </button>
+          <div class="faq-answer pt-4 pr-8">
+            <p class="text-sm text-on-surface-variant leading-relaxed">Tak, wysyłam do Polski i większości krajów UE. Poza UE na indywidualne zapytanie.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="../faq.html" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4">
+          Zobacz wszystkie FAQ <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-surface-container-low mt-auto">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <p class="font-headline text-2xl text-on-surface-variant mb-3">TetiGurumi</p>
+        <p class="text-sm text-outline leading-relaxed max-w-[26ch] mb-6">Handmade crochet toys, decor and gifts. Made by Tetiana.</p>
+        <div class="flex gap-5">
+          <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="text-sm font-semibold text-[#7b8f70] hover:underline underline-offset-2">Instagram</a>
+          <a href="#" class="text-sm font-semibold text-[#7b8f70] hover:underline underline-offset-2">Facebook</a>
+        </div>
+      </div>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Sklep</p>
+        <ul class="space-y-3">
+          <li><a href="../shop.html#toys" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Zabawki szydełkowe</a></li>
+          <li><a href="../shop.html#bags" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Torby i akcesoria</a></li>
+          <li><a href="../shop.html#seasonal" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Sezonowe</a></li>
+          <li><a href="../shop.html#decor" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Dekoracje i koszyki</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Zamówienia</p>
+        <ul class="space-y-3">
+          <li><a href="../custom-orders.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Zamówienia indywidualne</a></li>
+          <li><a href="../faq.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">FAQ</a></li>
+          <li><a href="../gallery.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Galeria</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Informacje</p>
+        <ul class="space-y-3">
+          <li><a href="../about.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">O Tetianie</a></li>
+          <li><a href="../contact.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pt-6 border-t border-outline-variant/30 flex justify-between items-center flex-wrap gap-4">
+      <p class="text-xs text-outline">© TetiGurumi. All rights reserved.</p>
+      <p class="text-xs text-outline">Handmade in Poland 🇵🇱</p>
+    </div>
+  </div>
+</footer>
+<script>
+document.getElementById('order-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('form-section').classList.add('hidden');
+  document.getElementById('success-msg').classList.remove('hidden');
+  window.scrollTo({ top: document.getElementById('success-msg').offsetTop - 100, behavior: 'smooth' });
+});
+
+document.getElementById('reference').addEventListener('change', function() {
+  const el = document.getElementById('file-name');
+  if (this.files && this.files[0]) {
+    el.textContent = '✓ ' + this.files[0].name;
+    el.classList.remove('hidden');
+  }
+});
+
+document.querySelectorAll('.faq-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+    btn.setAttribute('aria-expanded', !isOpen);
+  });
+});
+</script>
+
+</body>
+</html>
