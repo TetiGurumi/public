@@ -5,55 +5,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>FAQ — TetiGurumi В&#39;язані вироби ручної роботи</title>
 <meta name="description" content="Відповіді на часті запитання про вироби TetiGurumi: замовлення, терміни, матеріали, доставка та догляд."/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        "surface-container-lowest": "#ffffff",
-        "on-tertiary-fixed-variant": "#673b34",
-        "secondary-fixed-dim": "#b9cdab",
-        "primary-container": "#956c44",
-        "surface-container-high": "#ebe8e3",
-        "tertiary-fixed": "#ffdad4",
-        "surface-container": "#f0ede9",
-        "secondary-container": "#d2e6c3",
-        "outline": "#82756a",
-        "on-primary": "#ffffff",
-        "on-secondary-fixed-variant": "#3b4b32",
-        "surface-container-highest": "#e5e2dd",
-        "on-surface-variant": "#50453b",
-        "secondary": "#526348",
-        "surface": "#fcf9f4",
-        "on-secondary": "#ffffff",
-        "on-surface": "#1c1c19",
-        "secondary-fixed": "#d5e9c6",
-        "on-secondary-fixed": "#101f0a",
-        "outline-variant": "#d4c4b7",
-        "background": "#fcf9f4",
-        "surface-container-low": "#f6f3ee",
-        "tertiary": "#7f5048",
-        "primary": "#79542e",
-        "on-secondary-container": "#56684c",
-      },
-      fontFamily: {
-        "headline": ["Noto Serif", "Georgia", "serif"],
-        "body": ["Manrope", "sans-serif"],
-        "label": ["Manrope", "sans-serif"]
-      },
-      borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-    },
-  },
-}
-</script>
+<link rel="stylesheet" href="../assets/site.e4d7cb5389.css"/>
 <style>
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  body { background-color: #fcf9f4; color: #1c1c19; font-family: 'Manrope', sans-serif; }
-  h1, h2, h3, h4, .font-serif { font-family: 'Noto Serif', serif; }
-  a { color: inherit; }
     /* Accordion */
   details summary { list-style: none; }
   details summary::-webkit-details-marker { display: none; }
@@ -112,7 +65,7 @@ tailwind.config = {
         Замовити
       </a>
     </div>
-    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><span class="material-symbols-outlined">menu</span></button>
+    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
   </div>
 </nav>
 
@@ -124,7 +77,7 @@ tailwind.config = {
   <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
     <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
       <span class="font-headline text-lg text-on-surface-variant">TetiGurumi</span>
-      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><span class="material-symbols-outlined">close</span></button>
+      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
     </div>
     <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
       <a href="../index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
@@ -197,7 +150,7 @@ tailwind.config = {
   <div class="max-w-screen-xl mx-auto px-6 md:px-10">
     <nav class="flex items-center gap-2 text-xs text-outline mb-8">
       <a href="../index.html" class="hover:text-primary transition-colors">Головна</a>
-      <span class="material-symbols-outlined text-sm" style="font-size:14px;">chevron_right</span>
+      <svg class="icon w-3.5 h-3.5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
       <span class="text-on-surface-variant font-medium">FAQ</span>
     </nav>
     <h1 class="font-headline text-4xl md:text-5xl text-on-surface mb-5">Часті запитання</h1>
@@ -229,7 +182,7 @@ tailwind.config = {
         <details class="group border-b border-outline-variant/30 py-1">
           <summary class="flex justify-between items-center py-5 cursor-pointer list-none font-semibold text-on-surface-variant text-base select-none">
             Чи вироби зроблені вручну особисто вами?
-            <span class="material-symbols-outlined text-outline chevron flex-shrink-0 ml-4">expand_more</span>
+            <span class="text-outline chevron flex-shrink-0 ml-4"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </summary>
           <div class="answer-body text-sm leading-relaxed text-outline pb-6 max-w-2xl">
             Так — кожен виріб зроблений мною, Тетяною. Я в'яжу кожен виріб вручну, від першого стібка до останньої деталі. Ніщо не виробляється масово. Замовляючи у TetiGurumi, ви отримуєте щось, вкладене з реальним часом і турботою.
@@ -238,7 +191,7 @@ tailwind.config = {
         <details class="group border-b border-outline-variant/30 py-1">
           <summary class="flex justify-between items-center py-5 cursor-pointer list-none font-semibold text-on-surface-variant text-base select-none">
             Чи можна замовити щось індивідуально?
-            <span class="material-symbols-outlined text-outline chevron flex-shrink-0 ml-4">expand_more</span>
+            <span class="text-outline chevron flex-shrink-0 ml-4"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </summary>
           <div class="answer-body text-sm leading-relaxed text-outline pb-6 max-w-2xl">
             Звичайно. Індивідуальні замовлення — одне з моїх улюблених занять. Ви можете обрати персонажа, кольори, розмір і навіть додати вишивку імені або персоналізований ярлик. Скористайтеся <a href="../custom-orders.html" class="text-[#7b8f70] underline underline-offset-2 hover:text-primary transition-colors">формою замовлення</a>, щоб надіслати вашу ідею — я відповім з ціною та термінами протягом 2 робочих днів.
@@ -250,7 +203,7 @@ tailwind.config = {
         <details class="group border-b border-outline-variant/30 py-1">
           <summary class="flex justify-between items-center py-5 cursor-pointer list-none font-semibold text-on-surface-variant text-base select-none">
             Скільки часу займає виробництво?
-            <span class="material-symbols-outlined text-outline chevron flex-shrink-0 ml-4">expand_more</span>
+            <span class="text-outline chevron flex-shrink-0 ml-4"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </summary>
           <div class="answer-body text-sm leading-relaxed text-outline pb-6 max-w-2xl">
             Для готових виробів я відправляю протягом 1–3 робочих днів. Для виробів під замовлення виробництво зазвичай займає 7–21 день залежно від складності та моєї поточної черги. Я завжди підтверджую терміни перед підтвердженням замовлення. Якщо у вас є конкретний дедлайн (день народження, baby shower, Різдво), напишіть мені — постараюся встигнути.
@@ -259,7 +212,7 @@ tailwind.config = {
         <details class="group border-b border-outline-variant/30 py-1">
           <summary class="flex justify-between items-center py-5 cursor-pointer list-none font-semibold text-on-surface-variant text-base select-none">
             Чи можу я передумати після надсилання запиту?
-            <span class="material-symbols-outlined text-outline chevron flex-shrink-0 ml-4">expand_more</span>
+            <span class="text-outline chevron flex-shrink-0 ml-4"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </summary>
           <div class="answer-body text-sm leading-relaxed text-outline pb-6 max-w-2xl">
             Так — на етапі погодження (крок 3 нашого процесу) ми можемо скоригувати все до початку виробництва. Після початку виробництва зміни можуть бути неможливі, але я завжди відкрито повідомляю, якщо щось виникає.
@@ -271,7 +224,7 @@ tailwind.config = {
         <details class="group border-b border-outline-variant/30 py-1">
           <summary class="flex justify-between items-center py-5 cursor-pointer list-none font-semibold text-on-surface-variant text-base select-none">
             Ви відправляєте за кордон?
-            <span class="material-symbols-outlined text-outline chevron flex-shrink-0 ml-4">expand_more</span>
+            <span class="text-outline chevron flex-shrink-0 ml-4"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </summary>
           <div class="answer-body text-sm leading-relaxed text-outline pb-6 max-w-2xl">
             Так. Відправляю по Польщі та більшості країн ЄС. Міжнародна доставка поза ЄС — за запитом. Просто вкажіть вашу країну у формі замовлення або в контактному повідомленні, і я перевірю наявність та вартість.
@@ -283,7 +236,7 @@ tailwind.config = {
         <details class="group border-b border-outline-variant/30 py-1">
           <summary class="flex justify-between items-center py-5 cursor-pointer list-none font-semibold text-on-surface-variant text-base select-none">
             Чи безпечні іграшки для дітей?
-            <span class="material-symbols-outlined text-outline chevron flex-shrink-0 ml-4">expand_more</span>
+            <span class="text-outline chevron flex-shrink-0 ml-4"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </summary>
           <div class="answer-body text-sm leading-relaxed text-outline pb-6 max-w-2xl">
             Я використовую <strong class="text-on-surface-variant font-semibold">захисні очі</strong>, затверджені для іграшок, та <strong class="text-on-surface-variant font-semibold">гіпоалергенний поліестерний наповнювач</strong>. Однак вироби з маленькими прикріпленими деталями (очі, ґудзики, декоративні елементи) <strong class="text-on-surface-variant font-semibold">не підходять для дітей до 3 років</strong>. Якщо замовляєте для дуже маленької дитини, напишіть мені — часто можу адаптувати дизайн.
@@ -292,7 +245,7 @@ tailwind.config = {
         <details class="group border-b border-outline-variant/30 py-1">
           <summary class="flex justify-between items-center py-5 cursor-pointer list-none font-semibold text-on-surface-variant text-base select-none">
             Чи можна змінити кольори?
-            <span class="material-symbols-outlined text-outline chevron flex-shrink-0 ml-4">expand_more</span>
+            <span class="text-outline chevron flex-shrink-0 ml-4"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </summary>
           <div class="answer-body text-sm leading-relaxed text-outline pb-6 max-w-2xl">
             Так, для виробів під замовлення. Вкажіть бажану палітру у формі або в примітках до замовлення. Я працюю з широким асортиментом кольорів бавовняної та акрилової пряжі і зроблю все можливе, щоб відповідати вашому баченню. Для готових виробів кольори такі, як на фото.
@@ -304,7 +257,7 @@ tailwind.config = {
         <details class="group border-b border-outline-variant/30 py-1">
           <summary class="flex justify-between items-center py-5 cursor-pointer list-none font-semibold text-on-surface-variant text-base select-none">
             Чи є подарункове пакування?
-            <span class="material-symbols-outlined text-outline chevron flex-shrink-0 ml-4">expand_more</span>
+            <span class="text-outline chevron flex-shrink-0 ml-4"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </summary>
           <div class="answer-body text-sm leading-relaxed text-outline pb-6 max-w-2xl">
             Так. Багато моїх виробів вже <strong class="text-on-surface-variant font-semibold">готові до подарування</strong> — упаковані в папір тішю з стрічкою та ярликом. Для замовних виробів можна попросити більш детальну святкову презентацію, включаючи рукописну листівку (запитайте в примітках).
@@ -313,7 +266,7 @@ tailwind.config = {
         <details class="group border-b border-outline-variant/30 py-1">
           <summary class="flex justify-between items-center py-5 cursor-pointer list-none font-semibold text-on-surface-variant text-base select-none">
             Чи можете відтворити щось за фотографією?
-            <span class="material-symbols-outlined text-outline chevron flex-shrink-0 ml-4">expand_more</span>
+            <span class="text-outline chevron flex-shrink-0 ml-4"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </summary>
           <div class="answer-body text-sm leading-relaxed text-outline pb-6 max-w-2xl">
             Часто так — особливо якщо це персонаж, тварина або стиль, з яким я вже працюю. Надішліть фото-референс через форму замовлення, і я скажу, чи це можливо, наскільки точно можу відтворити і яка буде ціна. Я вказую авторів оригінальних схем, коли працюю за готовою схемою.
@@ -325,7 +278,7 @@ tailwind.config = {
         <details class="group border-b border-outline-variant/30 py-1">
           <summary class="flex justify-between items-center py-5 cursor-pointer list-none font-semibold text-on-surface-variant text-base select-none">
             Як доглядати за виробом?
-            <span class="material-symbols-outlined text-outline chevron flex-shrink-0 ml-4">expand_more</span>
+            <span class="text-outline chevron flex-shrink-0 ml-4"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </summary>
           <div class="answer-body text-sm leading-relaxed text-outline pb-6 max-w-2xl">
             <p class="mb-3"><strong class="text-on-surface-variant font-semibold">Іграшки та декор:</strong> Ручне прання в холодній або теплій воді (макс. 30°C) з ніжним засобом. Надайте форму після прання і сушіть горизонтально — не крутити і не сушити в машині.</p><p class="mb-3"><strong class="text-on-surface-variant font-semibold">Сумки:</strong> Плямовивід або ручне прання обережно. Уникайте замочування, якщо сумка має внутрішню структуру.</p><p>Уникайте машинного прання, викручування та прасування. Більшість виробів зберігають форму при дбайливому догляді.</p>

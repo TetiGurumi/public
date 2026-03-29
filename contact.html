@@ -5,55 +5,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contact — TetiGurumi</title>
 <meta name="description" content="Get in touch with TetiGurumi. Email, Instagram, Facebook, or use the contact form."/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        "surface-container-lowest": "#ffffff",
-        "on-tertiary-fixed-variant": "#673b34",
-        "secondary-fixed-dim": "#b9cdab",
-        "primary-container": "#956c44",
-        "surface-container-high": "#ebe8e3",
-        "tertiary-fixed": "#ffdad4",
-        "surface-container": "#f0ede9",
-        "secondary-container": "#d2e6c3",
-        "outline": "#82756a",
-        "on-primary": "#ffffff",
-        "on-secondary-fixed-variant": "#3b4b32",
-        "surface-container-highest": "#e5e2dd",
-        "on-surface-variant": "#50453b",
-        "secondary": "#526348",
-        "surface": "#fcf9f4",
-        "on-secondary": "#ffffff",
-        "on-surface": "#1c1c19",
-        "secondary-fixed": "#d5e9c6",
-        "on-secondary-fixed": "#101f0a",
-        "outline-variant": "#d4c4b7",
-        "background": "#fcf9f4",
-        "surface-container-low": "#f6f3ee",
-        "tertiary": "#7f5048",
-        "primary": "#79542e",
-        "on-secondary-container": "#56684c",
-      },
-      fontFamily: {
-        "headline": ["Noto Serif", "Georgia", "serif"],
-        "body": ["Manrope", "sans-serif"],
-        "label": ["Manrope", "sans-serif"]
-      },
-      borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-    },
-  },
-}
-</script>
+<link rel="stylesheet" href="assets/site.e4d7cb5389.css"/>
 <style>
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  body { background-color: #fcf9f4; color: #1c1c19; font-family: 'Manrope', sans-serif; }
-  h1, h2, h3, h4, .font-serif { font-family: 'Noto Serif', serif; }
-  a { color: inherit; }
     input, textarea, select {
     background-color: #fcf9f4;
     border: 1px solid rgba(212, 196, 183, 0.4);
@@ -130,7 +83,7 @@ tailwind.config = {
         Order custom
       </a>
     </div>
-    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><span class="material-symbols-outlined">menu</span></button>
+    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
   </div>
 </nav>
 
@@ -142,7 +95,7 @@ tailwind.config = {
   <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
     <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
       <span class="font-headline text-lg text-on-surface-variant">TetiGurumi</span>
-      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><span class="material-symbols-outlined">close</span></button>
+      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
     </div>
     <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
       <a href="index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
@@ -226,28 +179,31 @@ tailwind.config = {
       <!-- Left: Contact info -->
       <div class="flex flex-col gap-6">
         <div class="bg-surface-container rounded-xl p-6 flex items-start gap-4">
-          <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5">alternate_email</span>
+          <span class="text-primary flex-shrink-0 mt-0.5"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 17.5h.8a2.7 2.7 0 0 0 0-5.4H17A5.5 5.5 0 1 0 12 17.5c1.6 0 3.1-.7 4.1-1.8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
+  <path d="M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm0 0v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           <div>
             <p class="text-xs font-bold uppercase tracking-widest text-outline mb-1">Email</p>
             <a href="mailto:tetiana@tetigurumi.com" class="text-[#7b8f70] underline underline-offset-2 hover:text-primary transition-colors text-sm font-medium">tetiana@tetigurumi.com</a>
           </div>
         </div>
         <div class="bg-surface-container rounded-xl p-6 flex items-start gap-4">
-          <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5">photo_camera</span>
+          <span class="text-primary flex-shrink-0 mt-0.5"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 8.5 8 6h8l1.5 2.5H19a2 2 0 0 1 2 2v6.5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6.5a2 2 0 0 1 2-2h1.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
+  <circle cx="12" cy="13" r="3.5" stroke="currentColor" stroke-width="1.75"/></svg></span>
           <div>
             <p class="text-xs font-bold uppercase tracking-widest text-outline mb-1">Instagram</p>
             <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="text-[#7b8f70] underline underline-offset-2 hover:text-primary transition-colors text-sm font-medium">@tetigurumi</a>
           </div>
         </div>
         <div class="bg-surface-container rounded-xl p-6 flex items-start gap-4">
-          <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5">thumb_up</span>
+          <span class="text-primary flex-shrink-0 mt-0.5"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 11V6.8c0-.6.2-1.2.6-1.6l1.4-1.7c.4-.5 1-.8 1.6-.8h.4v4.6l2.4.2c1 .1 1.8 1 1.7 2l-.7 5.2c-.1.9-.8 1.6-1.7 1.6H9m0-5H6.5A1.5 1.5 0 0 0 5 12.8v4.7A1.5 1.5 0 0 0 6.5 19H9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           <div>
             <p class="text-xs font-bold uppercase tracking-widest text-outline mb-1">Facebook</p>
             <a href="https://www.facebook.com/hashtag/tetigurumi" class="text-[#7b8f70] underline underline-offset-2 hover:text-primary transition-colors text-sm font-medium">TetiGurumi on Facebook</a>
           </div>
         </div>
         <div class="bg-surface-container rounded-xl p-6 flex items-start gap-4">
-          <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5">location_on</span>
+          <span class="text-primary flex-shrink-0 mt-0.5"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 20s6-5.6 6-10a6 6 0 1 0-12 0c0 4.4 6 10 6 10Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
+  <circle cx="12" cy="10" r="2.2" stroke="currentColor" stroke-width="1.75"/></svg></span>
           <div>
             <p class="text-xs font-bold uppercase tracking-widest text-outline mb-1">Location</p>
             <p class="text-sm text-on-surface-variant font-medium">Kraków, Poland</p>
@@ -300,7 +256,8 @@ tailwind.config = {
         </form>
         <div id="contact-success" class="hidden text-center py-10">
           <div class="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mx-auto mb-5">
-            <span class="material-symbols-outlined text-secondary text-3xl">check</span>
+            <span class="text-secondary"><svg class="icon w-8 h-8" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/>
+  <path d="m8.5 12.5 2.5 2.5 4.5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </div>
           <h3 class="font-headline text-xl text-on-surface mb-3">Message sent!</h3>
           <p class="text-sm text-outline leading-relaxed max-w-xs mx-auto">Thank you for reaching out. I&#39;ll get back to you within 2 business days.</p>
@@ -321,22 +278,100 @@ tailwind.config = {
     </div>
     <div class="grid grid-cols-3 md:grid-cols-6 gap-2">
       <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block hover:opacity-80 transition-opacity">
-        <img src="images/instagram/DUkhM-7jKXl.jpg" alt="Handmade Doll" class="w-full h-full object-cover"/>
+        <picture class="block w-full h-full">
+  <source srcset="assets/images/DUkhM-7jKXl-320w.be76f518ae.webp 320w, assets/images/DUkhM-7jKXl-480w.17274e3e04.webp 480w, assets/images/DUkhM-7jKXl-640w.ef0b81fe5a.webp 640w, assets/images/DUkhM-7jKXl-960w.7cdaaa496c.webp 960w, assets/images/DUkhM-7jKXl-1080w.7dfed87ad1.webp 1080w" sizes="(min-width: 768px) 16vw, 31vw" type="image/webp"/>
+  <img
+    src="assets/images/DUkhM-7jKXl-1080w.7c287c6d5b.jpg"
+    srcset="assets/images/DUkhM-7jKXl-320w.2851e5050f.jpg 320w, assets/images/DUkhM-7jKXl-480w.75b7677488.jpg 480w, assets/images/DUkhM-7jKXl-640w.269f70162d.jpg 640w, assets/images/DUkhM-7jKXl-960w.55544db4f8.jpg 960w, assets/images/DUkhM-7jKXl-1080w.7c287c6d5b.jpg 1080w"
+    sizes="(min-width: 768px) 16vw, 31vw"
+    alt="Handmade Doll"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
       </a>
       <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block hover:opacity-80 transition-opacity">
-        <img src="images/instagram/DUN66hvjFaA.jpg" alt="Capybaras amigurumi" class="w-full h-full object-cover"/>
+        <picture class="block w-full h-full">
+  <source srcset="assets/images/DUN66hvjFaA-320w.c404549ec9.webp 320w, assets/images/DUN66hvjFaA-480w.10daa793af.webp 480w, assets/images/DUN66hvjFaA-640w.9daf151228.webp 640w, assets/images/DUN66hvjFaA-960w.3d413a1c19.webp 960w, assets/images/DUN66hvjFaA-1080w.fec1a3b132.webp 1080w" sizes="(min-width: 768px) 16vw, 31vw" type="image/webp"/>
+  <img
+    src="assets/images/DUN66hvjFaA-1080w.8153ee831b.jpg"
+    srcset="assets/images/DUN66hvjFaA-320w.7c7d092b75.jpg 320w, assets/images/DUN66hvjFaA-480w.de2d14617e.jpg 480w, assets/images/DUN66hvjFaA-640w.882a7f6d76.jpg 640w, assets/images/DUN66hvjFaA-960w.7c4dacb7b9.jpg 960w, assets/images/DUN66hvjFaA-1080w.8153ee831b.jpg 1080w"
+    sizes="(min-width: 768px) 16vw, 31vw"
+    alt="Capybaras amigurumi"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
       </a>
       <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block hover:opacity-80 transition-opacity">
-        <img src="images/instagram/DSx-GmtDAMG.jpg" alt="Festive crochet decorations" class="w-full h-full object-cover"/>
+        <picture class="block w-full h-full">
+  <source srcset="assets/images/DSx-GmtDAMG-320w.7f5be3d225.webp 320w, assets/images/DSx-GmtDAMG-480w.0492b9a0b0.webp 480w, assets/images/DSx-GmtDAMG-640w.60e2fd9e79.webp 640w, assets/images/DSx-GmtDAMG-960w.af89e2ecd1.webp 960w, assets/images/DSx-GmtDAMG-1080w.75fd502450.webp 1080w" sizes="(min-width: 768px) 16vw, 31vw" type="image/webp"/>
+  <img
+    src="assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg"
+    srcset="assets/images/DSx-GmtDAMG-320w.fecbe2954c.jpg 320w, assets/images/DSx-GmtDAMG-480w.57e99cc2ce.jpg 480w, assets/images/DSx-GmtDAMG-640w.ca5660c9f8.jpg 640w, assets/images/DSx-GmtDAMG-960w.5e46332ef0.jpg 960w, assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg 1080w"
+    sizes="(min-width: 768px) 16vw, 31vw"
+    alt="Festive crochet decorations"
+    width="1080"
+    height="1440"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
       </a>
       <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block hover:opacity-80 transition-opacity">
-        <img src="images/instagram/DSkvLbBjLHd.jpg" alt="Christmas cat amigurumi" class="w-full h-full object-cover"/>
+        <picture class="block w-full h-full">
+  <source srcset="assets/images/DSkvLbBjLHd-320w.cf9805a641.webp 320w, assets/images/DSkvLbBjLHd-480w.400d490c4f.webp 480w, assets/images/DSkvLbBjLHd-640w.21138b539a.webp 640w, assets/images/DSkvLbBjLHd-960w.aa579a69ac.webp 960w, assets/images/DSkvLbBjLHd-1080w.9bf3158f77.webp 1080w" sizes="(min-width: 768px) 16vw, 31vw" type="image/webp"/>
+  <img
+    src="assets/images/DSkvLbBjLHd-1080w.684d550881.jpg"
+    srcset="assets/images/DSkvLbBjLHd-320w.e602d486aa.jpg 320w, assets/images/DSkvLbBjLHd-480w.03d61184ee.jpg 480w, assets/images/DSkvLbBjLHd-640w.e3a9645c13.jpg 640w, assets/images/DSkvLbBjLHd-960w.3e757b0076.jpg 960w, assets/images/DSkvLbBjLHd-1080w.684d550881.jpg 1080w"
+    sizes="(min-width: 768px) 16vw, 31vw"
+    alt="Christmas cat amigurumi"
+    width="1080"
+    height="810"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
       </a>
       <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block hover:opacity-80 transition-opacity">
-        <img src="images/instagram/DSdeBZiDB70.jpg" alt="Capybara weekend amigurumi" class="w-full h-full object-cover"/>
+        <picture class="block w-full h-full">
+  <source srcset="assets/images/DSdeBZiDB70-320w.61620744f7.webp 320w, assets/images/DSdeBZiDB70-480w.5090808ef4.webp 480w, assets/images/DSdeBZiDB70-640w.874ee8636d.webp 640w, assets/images/DSdeBZiDB70-960w.4b0fcc36c2.webp 960w, assets/images/DSdeBZiDB70-1080w.d96d6089ad.webp 1080w" sizes="(min-width: 768px) 16vw, 31vw" type="image/webp"/>
+  <img
+    src="assets/images/DSdeBZiDB70-1080w.fc86ad17c9.jpg"
+    srcset="assets/images/DSdeBZiDB70-320w.4a98976d85.jpg 320w, assets/images/DSdeBZiDB70-480w.05c0955bf9.jpg 480w, assets/images/DSdeBZiDB70-640w.5a275d5b4f.jpg 640w, assets/images/DSdeBZiDB70-960w.e108fe50f8.jpg 960w, assets/images/DSdeBZiDB70-1080w.fc86ad17c9.jpg 1080w"
+    sizes="(min-width: 768px) 16vw, 31vw"
+    alt="Capybara weekend amigurumi"
+    width="1080"
+    height="810"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
       </a>
       <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block hover:opacity-80 transition-opacity">
-        <img src="images/instagram/DSLXBTqDBBt.jpg" alt="TetiGurumi at Kraków Christmas market" class="w-full h-full object-cover"/>
+        <picture class="block w-full h-full">
+  <source srcset="assets/images/DSLXBTqDBBt-320w.6db5af3791.webp 320w, assets/images/DSLXBTqDBBt-480w.29cf3d55ff.webp 480w, assets/images/DSLXBTqDBBt-640w.dbba6cab86.webp 640w, assets/images/DSLXBTqDBBt-960w.60b6b01aed.webp 960w, assets/images/DSLXBTqDBBt-1080w.de6436728e.webp 1080w" sizes="(min-width: 768px) 16vw, 31vw" type="image/webp"/>
+  <img
+    src="assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg"
+    srcset="assets/images/DSLXBTqDBBt-320w.f7d6e2bce1.jpg 320w, assets/images/DSLXBTqDBBt-480w.02863430ec.jpg 480w, assets/images/DSLXBTqDBBt-640w.84716ac0c2.jpg 640w, assets/images/DSLXBTqDBBt-960w.2c67e98633.jpg 960w, assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg 1080w"
+    sizes="(min-width: 768px) 16vw, 31vw"
+    alt="TetiGurumi at Kraków Christmas market"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
       </a>
     </div>
   </div>

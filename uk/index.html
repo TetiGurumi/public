@@ -5,55 +5,11 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>TetiGurumi — В&#39;язані іграшки та подарунки ручної роботи</title>
 <meta name="description" content="Унікальні в&#39;язані іграшки, амігурумі, декор та подарунки від Тетяни. Доставка до ЄС. Індивідуальні замовлення відкриті."/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        "surface-container-lowest": "#ffffff",
-        "on-tertiary-fixed-variant": "#673b34",
-        "secondary-fixed-dim": "#b9cdab",
-        "primary-container": "#956c44",
-        "surface-container-high": "#ebe8e3",
-        "tertiary-fixed": "#ffdad4",
-        "surface-container": "#f0ede9",
-        "secondary-container": "#d2e6c3",
-        "outline": "#82756a",
-        "on-primary": "#ffffff",
-        "on-secondary-fixed-variant": "#3b4b32",
-        "surface-container-highest": "#e5e2dd",
-        "on-surface-variant": "#50453b",
-        "secondary": "#526348",
-        "surface": "#fcf9f4",
-        "on-secondary": "#ffffff",
-        "on-surface": "#1c1c19",
-        "secondary-fixed": "#d5e9c6",
-        "on-secondary-fixed": "#101f0a",
-        "outline-variant": "#d4c4b7",
-        "background": "#fcf9f4",
-        "surface-container-low": "#f6f3ee",
-        "tertiary": "#7f5048",
-        "primary": "#79542e",
-        "on-secondary-container": "#56684c",
-      },
-      fontFamily: {
-        "headline": ["Noto Serif", "Georgia", "serif"],
-        "body": ["Manrope", "sans-serif"],
-        "label": ["Manrope", "sans-serif"]
-      },
-      borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-    },
-  },
-}
-</script>
+<link rel="preload" href="../assets/fonts/manrope-latin.a30ddcd349.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="../assets/fonts/noto-serif-latin.4628145623.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="../assets/fonts/noto-serif-italic-latin.a1a6ebee6d.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="../assets/site.e4d7cb5389.css"/>
 <style>
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  body { background-color: #fcf9f4; color: #1c1c19; font-family: 'Manrope', sans-serif; }
-  h1, h2, h3, h4, .font-serif { font-family: 'Noto Serif', serif; }
-  a { color: inherit; }
     .btn-primary {
     background: radial-gradient(ellipse at 60% 40%, #956c44, #79542e);
     color: #ffffff;
@@ -121,7 +77,7 @@ tailwind.config = {
         Замовити
       </a>
     </div>
-    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><span class="material-symbols-outlined">menu</span></button>
+    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
   </div>
 </nav>
 
@@ -133,7 +89,7 @@ tailwind.config = {
   <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
     <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
       <span class="font-headline text-lg text-on-surface-variant">TetiGurumi</span>
-      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><span class="material-symbols-outlined">close</span></button>
+      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
     </div>
     <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
       <a href="../index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors bg-surface-container text-primary font-semibold">
@@ -217,7 +173,7 @@ tailwind.config = {
       <div class="flex flex-wrap gap-4">
         <a href="../shop.html" class="btn-primary inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 transition-opacity">
           До магазину
-          <span class="material-symbols-outlined text-base" style="font-size:18px;">arrow_forward</span>
+          <svg class="icon w-[18px] h-[18px]" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
         </a>
         <a href="../custom-orders.html" class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container text-sm font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">
           Замовити щось особливе
@@ -236,12 +192,22 @@ tailwind.config = {
     <div class="flex-1 flex items-center justify-center md:justify-end relative">
       <div class="relative w-full max-w-sm md:max-w-md lg:max-w-lg">
         <div class="rounded-xl overflow-hidden ambient-shadow" style="transform: rotate(1.2deg);">
-          <img
-            src="../images/instagram/DSLXBTqDBBt.jpg"
-            alt="Latest handmade creation by Tetiana"
-            class="w-full h-auto object-cover"
-            style="max-height: 70vh; object-fit: cover;"
-          />
+          <picture class="block">
+  <source srcset="../assets/images/DSLXBTqDBBt-320w.6db5af3791.webp 320w, ../assets/images/DSLXBTqDBBt-480w.29cf3d55ff.webp 480w, ../assets/images/DSLXBTqDBBt-640w.dbba6cab86.webp 640w, ../assets/images/DSLXBTqDBBt-960w.60b6b01aed.webp 960w, ../assets/images/DSLXBTqDBBt-1080w.de6436728e.webp 1080w" sizes="(min-width: 1024px) 34rem, (min-width: 768px) 42vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg"
+    srcset="../assets/images/DSLXBTqDBBt-320w.f7d6e2bce1.jpg 320w, ../assets/images/DSLXBTqDBBt-480w.02863430ec.jpg 480w, ../assets/images/DSLXBTqDBBt-640w.84716ac0c2.jpg 640w, ../assets/images/DSLXBTqDBBt-960w.2c67e98633.jpg 960w, ../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg 1080w"
+    sizes="(min-width: 1024px) 34rem, (min-width: 768px) 42vw, calc(100vw - 3rem)"
+    alt="Latest handmade creation by Tetiana"
+    width="1080"
+    height="1439"
+    class="w-full h-auto object-cover"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+    style="max-height: 70vh; object-fit: cover;"
+  />
+</picture>
         </div>
         <div class="absolute -inset-6 -z-10 rounded-xl" style="background: radial-gradient(ellipse at center, #d5e9c6 0%, transparent 70%); opacity: 0.5;"></div>
       </div>
@@ -258,7 +224,20 @@ tailwind.config = {
     </div>
     <div class="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[260px] md:auto-rows-[200px]">
       <a href="../shop.html#toys" class="category-card md:col-span-4 md:row-span-2">
-        <img src="../images/instagram/DQ1jqQIjEvn.jpg" alt="Crochet toy amigurumi — lion"/>
+        <picture class="block w-full h-full">
+  <source srcset="../assets/images/DQ1jqQIjEvn-320w.7c5741c273.webp 320w, ../assets/images/DQ1jqQIjEvn-480w.df809dd6d9.webp 480w, ../assets/images/DQ1jqQIjEvn-640w.1a2b1c99de.webp 640w, ../assets/images/DQ1jqQIjEvn-960w.39c537a5d2.webp 960w, ../assets/images/DQ1jqQIjEvn-1080w.b48915ce9c.webp 1080w" sizes="(min-width: 768px) 31vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DQ1jqQIjEvn-1080w.99cbe42728.jpg"
+    srcset="../assets/images/DQ1jqQIjEvn-320w.f944da61d4.jpg 320w, ../assets/images/DQ1jqQIjEvn-480w.e21abd32d4.jpg 480w, ../assets/images/DQ1jqQIjEvn-640w.08f8b012ce.jpg 640w, ../assets/images/DQ1jqQIjEvn-960w.b15c228a5d.jpg 960w, ../assets/images/DQ1jqQIjEvn-1080w.99cbe42728.jpg 1080w"
+    sizes="(min-width: 768px) 31vw, calc(100vw - 3rem)"
+    alt="Crochet toy amigurumi — lion"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         <div class="overlay"></div>
         <div class="card-content">
           <h3 class="font-headline text-xl text-white mb-1">Іграшки гачком</h3>
@@ -266,7 +245,20 @@ tailwind.config = {
         </div>
       </a>
       <a href="../shop.html#bags" class="category-card md:col-span-5">
-        <img src="../images/instagram/DSLXBTqDBBt.jpg" alt="Bags and accessories at Kraków market"/>
+        <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSLXBTqDBBt-320w.6db5af3791.webp 320w, ../assets/images/DSLXBTqDBBt-480w.29cf3d55ff.webp 480w, ../assets/images/DSLXBTqDBBt-640w.dbba6cab86.webp 640w, ../assets/images/DSLXBTqDBBt-960w.60b6b01aed.webp 960w, ../assets/images/DSLXBTqDBBt-1080w.de6436728e.webp 1080w" sizes="(min-width: 768px) 39vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg"
+    srcset="../assets/images/DSLXBTqDBBt-320w.f7d6e2bce1.jpg 320w, ../assets/images/DSLXBTqDBBt-480w.02863430ec.jpg 480w, ../assets/images/DSLXBTqDBBt-640w.84716ac0c2.jpg 640w, ../assets/images/DSLXBTqDBBt-960w.2c67e98633.jpg 960w, ../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg 1080w"
+    sizes="(min-width: 768px) 39vw, calc(100vw - 3rem)"
+    alt="Bags and accessories at Kraków market"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         <div class="overlay"></div>
         <div class="card-content">
           <h3 class="font-headline text-xl text-white mb-1">Сумки та аксесуари</h3>
@@ -274,7 +266,20 @@ tailwind.config = {
         </div>
       </a>
       <a href="../custom-orders.html" class="category-card md:col-span-3">
-        <img src="../images/instagram/DUN66hvjFaA.jpg" alt="Capybaras custom gift amigurumi"/>
+        <picture class="block w-full h-full">
+  <source srcset="../assets/images/DUN66hvjFaA-320w.c404549ec9.webp 320w, ../assets/images/DUN66hvjFaA-480w.10daa793af.webp 480w, ../assets/images/DUN66hvjFaA-640w.9daf151228.webp 640w, ../assets/images/DUN66hvjFaA-960w.3d413a1c19.webp 960w, ../assets/images/DUN66hvjFaA-1080w.fec1a3b132.webp 1080w" sizes="(min-width: 768px) 24vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DUN66hvjFaA-1080w.8153ee831b.jpg"
+    srcset="../assets/images/DUN66hvjFaA-320w.7c7d092b75.jpg 320w, ../assets/images/DUN66hvjFaA-480w.de2d14617e.jpg 480w, ../assets/images/DUN66hvjFaA-640w.882a7f6d76.jpg 640w, ../assets/images/DUN66hvjFaA-960w.7c4dacb7b9.jpg 960w, ../assets/images/DUN66hvjFaA-1080w.8153ee831b.jpg 1080w"
+    sizes="(min-width: 768px) 24vw, calc(100vw - 3rem)"
+    alt="Capybaras custom gift amigurumi"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         <div class="overlay"></div>
         <div class="card-content">
           <h3 class="font-headline text-xl text-white mb-1">Подарунки та замовлення</h3>
@@ -282,7 +287,20 @@ tailwind.config = {
         </div>
       </a>
       <a href="../shop.html#seasonal" class="category-card md:col-span-5">
-        <img src="../images/instagram/DSx-GmtDAMG.jpg" alt="Christmas crochet decorations"/>
+        <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSx-GmtDAMG-320w.7f5be3d225.webp 320w, ../assets/images/DSx-GmtDAMG-480w.0492b9a0b0.webp 480w, ../assets/images/DSx-GmtDAMG-640w.60e2fd9e79.webp 640w, ../assets/images/DSx-GmtDAMG-960w.af89e2ecd1.webp 960w, ../assets/images/DSx-GmtDAMG-1080w.75fd502450.webp 1080w" sizes="(min-width: 768px) 39vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg"
+    srcset="../assets/images/DSx-GmtDAMG-320w.fecbe2954c.jpg 320w, ../assets/images/DSx-GmtDAMG-480w.57e99cc2ce.jpg 480w, ../assets/images/DSx-GmtDAMG-640w.ca5660c9f8.jpg 640w, ../assets/images/DSx-GmtDAMG-960w.5e46332ef0.jpg 960w, ../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg 1080w"
+    sizes="(min-width: 768px) 39vw, calc(100vw - 3rem)"
+    alt="Christmas crochet decorations"
+    width="1080"
+    height="1440"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         <div class="overlay"></div>
         <div class="card-content">
           <h3 class="font-headline text-xl text-white mb-1">Сезонні вироби</h3>
@@ -290,7 +308,20 @@ tailwind.config = {
         </div>
       </a>
       <a href="../shop.html#decor" class="category-card md:col-span-3">
-        <img src="../images/instagram/DSdeBZiDB70.jpg" alt="Crochet decor and baskets"/>
+        <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSdeBZiDB70-320w.61620744f7.webp 320w, ../assets/images/DSdeBZiDB70-480w.5090808ef4.webp 480w, ../assets/images/DSdeBZiDB70-640w.874ee8636d.webp 640w, ../assets/images/DSdeBZiDB70-960w.4b0fcc36c2.webp 960w, ../assets/images/DSdeBZiDB70-1080w.d96d6089ad.webp 1080w" sizes="(min-width: 768px) 24vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSdeBZiDB70-1080w.fc86ad17c9.jpg"
+    srcset="../assets/images/DSdeBZiDB70-320w.4a98976d85.jpg 320w, ../assets/images/DSdeBZiDB70-480w.05c0955bf9.jpg 480w, ../assets/images/DSdeBZiDB70-640w.5a275d5b4f.jpg 640w, ../assets/images/DSdeBZiDB70-960w.e108fe50f8.jpg 960w, ../assets/images/DSdeBZiDB70-1080w.fc86ad17c9.jpg 1080w"
+    sizes="(min-width: 768px) 24vw, calc(100vw - 3rem)"
+    alt="Crochet decor and baskets"
+    width="1080"
+    height="810"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         <div class="overlay"></div>
         <div class="card-content">
           <h3 class="font-headline text-xl text-white mb-1">Декор та кошики</h3>
@@ -314,13 +345,26 @@ tailwind.config = {
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <a href="../custom-orders.html" class="group bg-surface-container-low rounded-xl overflow-hidden card-hover block">
         <div class="aspect-square overflow-hidden rounded-xl">
-          <img src="../images/instagram/DUkhM-7jKXl.jpg" alt="Handmade Doll" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DUkhM-7jKXl-320w.be76f518ae.webp 320w, ../assets/images/DUkhM-7jKXl-480w.17274e3e04.webp 480w, ../assets/images/DUkhM-7jKXl-640w.ef0b81fe5a.webp 640w, ../assets/images/DUkhM-7jKXl-960w.7cdaaa496c.webp 960w, ../assets/images/DUkhM-7jKXl-1080w.7dfed87ad1.webp 1080w" sizes="(min-width: 1024px) 22vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DUkhM-7jKXl-1080w.7c287c6d5b.jpg"
+    srcset="../assets/images/DUkhM-7jKXl-320w.2851e5050f.jpg 320w, ../assets/images/DUkhM-7jKXl-480w.75b7677488.jpg 480w, ../assets/images/DUkhM-7jKXl-640w.269f70162d.jpg 640w, ../assets/images/DUkhM-7jKXl-960w.55544db4f8.jpg 960w, ../assets/images/DUkhM-7jKXl-1080w.7c287c6d5b.jpg 1080w"
+    sizes="(min-width: 1024px) 22vw, (min-width: 640px) 44vw, calc(100vw - 3rem)"
+    alt="Handmade Doll"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </div>
         <div class="pt-4 px-1 pb-2 relative">
           <div class="flex items-start justify-between gap-2 mb-2">
             <span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Під замовлення</span>
             <button class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:border-outline transition-colors flex-shrink-0" aria-label="Add to enquiry">
-              <span class="material-symbols-outlined" style="font-size:16px;">add_shopping_cart</span>
+              <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 5h2l1.8 8.2a1 1 0 0 0 1 .8h7.9a1 1 0 0 0 1-.8L18.6 8H7.2M10 18a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 18Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 18ZM12 4v4M10 6h4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </button>
           </div>
           <h3 class="font-headline text-base text-on-surface mt-1 leading-snug">Handmade Doll</h3>
@@ -329,13 +373,26 @@ tailwind.config = {
       </a>
       <a href="../custom-orders.html" class="group bg-surface-container-low rounded-xl overflow-hidden card-hover block">
         <div class="aspect-square overflow-hidden rounded-xl">
-          <img src="../images/instagram/DQ1jqQIjEvn.jpg" alt="Lion Amigurumi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DQ1jqQIjEvn-320w.7c5741c273.webp 320w, ../assets/images/DQ1jqQIjEvn-480w.df809dd6d9.webp 480w, ../assets/images/DQ1jqQIjEvn-640w.1a2b1c99de.webp 640w, ../assets/images/DQ1jqQIjEvn-960w.39c537a5d2.webp 960w, ../assets/images/DQ1jqQIjEvn-1080w.b48915ce9c.webp 1080w" sizes="(min-width: 1024px) 22vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DQ1jqQIjEvn-1080w.99cbe42728.jpg"
+    srcset="../assets/images/DQ1jqQIjEvn-320w.f944da61d4.jpg 320w, ../assets/images/DQ1jqQIjEvn-480w.e21abd32d4.jpg 480w, ../assets/images/DQ1jqQIjEvn-640w.08f8b012ce.jpg 640w, ../assets/images/DQ1jqQIjEvn-960w.b15c228a5d.jpg 960w, ../assets/images/DQ1jqQIjEvn-1080w.99cbe42728.jpg 1080w"
+    sizes="(min-width: 1024px) 22vw, (min-width: 640px) 44vw, calc(100vw - 3rem)"
+    alt="Lion Amigurumi"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </div>
         <div class="pt-4 px-1 pb-2 relative">
           <div class="flex items-start justify-between gap-2 mb-2">
             <span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Під замовлення</span>
             <button class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:border-outline transition-colors flex-shrink-0" aria-label="Add to enquiry">
-              <span class="material-symbols-outlined" style="font-size:16px;">add_shopping_cart</span>
+              <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 5h2l1.8 8.2a1 1 0 0 0 1 .8h7.9a1 1 0 0 0 1-.8L18.6 8H7.2M10 18a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 18Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 18ZM12 4v4M10 6h4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </button>
           </div>
           <h3 class="font-headline text-base text-on-surface mt-1 leading-snug">Lion Amigurumi</h3>
@@ -344,13 +401,26 @@ tailwind.config = {
       </a>
       <a href="../custom-orders.html" class="group bg-surface-container-low rounded-xl overflow-hidden card-hover block">
         <div class="aspect-square overflow-hidden rounded-xl">
-          <img src="../images/instagram/DUN66hvjFaA.jpg" alt="Amigurumi collection — capybara friends" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DUN66hvjFaA-320w.c404549ec9.webp 320w, ../assets/images/DUN66hvjFaA-480w.10daa793af.webp 480w, ../assets/images/DUN66hvjFaA-640w.9daf151228.webp 640w, ../assets/images/DUN66hvjFaA-960w.3d413a1c19.webp 960w, ../assets/images/DUN66hvjFaA-1080w.fec1a3b132.webp 1080w" sizes="(min-width: 1024px) 22vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DUN66hvjFaA-1080w.8153ee831b.jpg"
+    srcset="../assets/images/DUN66hvjFaA-320w.7c7d092b75.jpg 320w, ../assets/images/DUN66hvjFaA-480w.de2d14617e.jpg 480w, ../assets/images/DUN66hvjFaA-640w.882a7f6d76.jpg 640w, ../assets/images/DUN66hvjFaA-960w.7c4dacb7b9.jpg 960w, ../assets/images/DUN66hvjFaA-1080w.8153ee831b.jpg 1080w"
+    sizes="(min-width: 1024px) 22vw, (min-width: 640px) 44vw, calc(100vw - 3rem)"
+    alt="Amigurumi collection — capybara friends"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </div>
         <div class="pt-4 px-1 pb-2 relative">
           <div class="flex items-start justify-between gap-2 mb-2">
             <span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Під замовлення</span>
             <button class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:border-outline transition-colors flex-shrink-0" aria-label="Add to enquiry">
-              <span class="material-symbols-outlined" style="font-size:16px;">add_shopping_cart</span>
+              <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 5h2l1.8 8.2a1 1 0 0 0 1 .8h7.9a1 1 0 0 0 1-.8L18.6 8H7.2M10 18a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 18Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 18ZM12 4v4M10 6h4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </button>
           </div>
           <h3 class="font-headline text-base text-on-surface mt-1 leading-snug">Amigurumi Collection</h3>
@@ -359,13 +429,26 @@ tailwind.config = {
       </a>
       <a href="../custom-orders.html" class="group bg-surface-container-low rounded-xl overflow-hidden card-hover block">
         <div class="aspect-square overflow-hidden rounded-xl">
-          <img src="../images/instagram/DSkvLbBjLHd.jpg" alt="Christmas Cat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSkvLbBjLHd-320w.cf9805a641.webp 320w, ../assets/images/DSkvLbBjLHd-480w.400d490c4f.webp 480w, ../assets/images/DSkvLbBjLHd-640w.21138b539a.webp 640w, ../assets/images/DSkvLbBjLHd-960w.aa579a69ac.webp 960w, ../assets/images/DSkvLbBjLHd-1080w.9bf3158f77.webp 1080w" sizes="(min-width: 1024px) 22vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSkvLbBjLHd-1080w.684d550881.jpg"
+    srcset="../assets/images/DSkvLbBjLHd-320w.e602d486aa.jpg 320w, ../assets/images/DSkvLbBjLHd-480w.03d61184ee.jpg 480w, ../assets/images/DSkvLbBjLHd-640w.e3a9645c13.jpg 640w, ../assets/images/DSkvLbBjLHd-960w.3e757b0076.jpg 960w, ../assets/images/DSkvLbBjLHd-1080w.684d550881.jpg 1080w"
+    sizes="(min-width: 1024px) 22vw, (min-width: 640px) 44vw, calc(100vw - 3rem)"
+    alt="Christmas Cat"
+    width="1080"
+    height="810"
+    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </div>
         <div class="pt-4 px-1 pb-2 relative">
           <div class="flex items-start justify-between gap-2 mb-2">
             <span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Під замовлення</span>
             <button class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:border-outline transition-colors flex-shrink-0" aria-label="Add to enquiry">
-              <span class="material-symbols-outlined" style="font-size:16px;">add_shopping_cart</span>
+              <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 5h2l1.8 8.2a1 1 0 0 0 1 .8h7.9a1 1 0 0 0 1-.8L18.6 8H7.2M10 18a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 18Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 18ZM12 4v4M10 6h4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </button>
           </div>
           <h3 class="font-headline text-base text-on-surface mt-1 leading-snug">Christmas Cat</h3>
@@ -382,7 +465,21 @@ tailwind.config = {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
       <div class="relative order-2 md:order-1">
         <div class="rounded-xl overflow-hidden ambient-shadow">
-          <img src="../images/instagram/DSLXBTqDBBt.jpg" alt="Tetiana at the Christmas market in Kraków" class="w-full h-full object-cover" style="aspect-ratio: 4/5; object-fit: cover;"/>
+          <picture class="block">
+  <source srcset="../assets/images/DSLXBTqDBBt-320w.6db5af3791.webp 320w, ../assets/images/DSLXBTqDBBt-480w.29cf3d55ff.webp 480w, ../assets/images/DSLXBTqDBBt-640w.dbba6cab86.webp 640w, ../assets/images/DSLXBTqDBBt-960w.60b6b01aed.webp 960w, ../assets/images/DSLXBTqDBBt-1080w.de6436728e.webp 1080w" sizes="(min-width: 768px) 40vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg"
+    srcset="../assets/images/DSLXBTqDBBt-320w.f7d6e2bce1.jpg 320w, ../assets/images/DSLXBTqDBBt-480w.02863430ec.jpg 480w, ../assets/images/DSLXBTqDBBt-640w.84716ac0c2.jpg 640w, ../assets/images/DSLXBTqDBBt-960w.2c67e98633.jpg 960w, ../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg 1080w"
+    sizes="(min-width: 768px) 40vw, calc(100vw - 3rem)"
+    alt="Tetiana at the Christmas market in Kraków"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+    style="aspect-ratio: 4/5; object-fit: cover;"
+  />
+</picture>
         </div>
         <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full -z-10" style="background: radial-gradient(circle, #ffdad4 0%, transparent 70%);"></div>
       </div>
@@ -440,7 +537,20 @@ tailwind.config = {
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
       <div class="bg-surface-container-low p-2 rounded-xl card-hover">
         <div class="aspect-[4/3] rounded-lg overflow-hidden mb-4">
-          <img src="../images/instagram/DSLXBTqDBBt.jpg" alt="Christmas Market Set" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSLXBTqDBBt-320w.6db5af3791.webp 320w, ../assets/images/DSLXBTqDBBt-480w.29cf3d55ff.webp 480w, ../assets/images/DSLXBTqDBBt-640w.dbba6cab86.webp 640w, ../assets/images/DSLXBTqDBBt-960w.60b6b01aed.webp 960w, ../assets/images/DSLXBTqDBBt-1080w.de6436728e.webp 1080w" sizes="(min-width: 640px) 30vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg"
+    srcset="../assets/images/DSLXBTqDBBt-320w.f7d6e2bce1.jpg 320w, ../assets/images/DSLXBTqDBBt-480w.02863430ec.jpg 480w, ../assets/images/DSLXBTqDBBt-640w.84716ac0c2.jpg 640w, ../assets/images/DSLXBTqDBBt-960w.2c67e98633.jpg 960w, ../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg 1080w"
+    sizes="(min-width: 640px) 30vw, calc(100vw - 3rem)"
+    alt="Christmas Market Set"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </div>
         <div class="px-2 pb-3">
           <h3 class="font-headline text-base text-on-surface mb-1">Christmas Market Set</h3>
@@ -449,7 +559,20 @@ tailwind.config = {
       </div>
       <div class="bg-surface-container-low p-2 rounded-xl card-hover mt-0 sm:mt-8">
         <div class="aspect-[4/3] rounded-lg overflow-hidden mb-4">
-          <img src="../images/instagram/DSx-GmtDAMG.jpg" alt="Festive Decorations" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSx-GmtDAMG-320w.7f5be3d225.webp 320w, ../assets/images/DSx-GmtDAMG-480w.0492b9a0b0.webp 480w, ../assets/images/DSx-GmtDAMG-640w.60e2fd9e79.webp 640w, ../assets/images/DSx-GmtDAMG-960w.af89e2ecd1.webp 960w, ../assets/images/DSx-GmtDAMG-1080w.75fd502450.webp 1080w" sizes="(min-width: 640px) 30vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg"
+    srcset="../assets/images/DSx-GmtDAMG-320w.fecbe2954c.jpg 320w, ../assets/images/DSx-GmtDAMG-480w.57e99cc2ce.jpg 480w, ../assets/images/DSx-GmtDAMG-640w.ca5660c9f8.jpg 640w, ../assets/images/DSx-GmtDAMG-960w.5e46332ef0.jpg 960w, ../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg 1080w"
+    sizes="(min-width: 640px) 30vw, calc(100vw - 3rem)"
+    alt="Festive Decorations"
+    width="1080"
+    height="1440"
+    class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </div>
         <div class="px-2 pb-3">
           <h3 class="font-headline text-base text-on-surface mb-1">Festive Decorations</h3>
@@ -458,7 +581,20 @@ tailwind.config = {
       </div>
       <div class="bg-surface-container-low p-2 rounded-xl card-hover">
         <div class="aspect-[4/3] rounded-lg overflow-hidden mb-4">
-          <img src="../images/instagram/DSkvLbBjLHd.jpg" alt="Christmas Cat" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSkvLbBjLHd-320w.cf9805a641.webp 320w, ../assets/images/DSkvLbBjLHd-480w.400d490c4f.webp 480w, ../assets/images/DSkvLbBjLHd-640w.21138b539a.webp 640w, ../assets/images/DSkvLbBjLHd-960w.aa579a69ac.webp 960w, ../assets/images/DSkvLbBjLHd-1080w.9bf3158f77.webp 1080w" sizes="(min-width: 640px) 30vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSkvLbBjLHd-1080w.684d550881.jpg"
+    srcset="../assets/images/DSkvLbBjLHd-320w.e602d486aa.jpg 320w, ../assets/images/DSkvLbBjLHd-480w.03d61184ee.jpg 480w, ../assets/images/DSkvLbBjLHd-640w.e3a9645c13.jpg 640w, ../assets/images/DSkvLbBjLHd-960w.3e757b0076.jpg 960w, ../assets/images/DSkvLbBjLHd-1080w.684d550881.jpg 1080w"
+    sizes="(min-width: 640px) 30vw, calc(100vw - 3rem)"
+    alt="Christmas Cat"
+    width="1080"
+    height="810"
+    class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </div>
         <div class="px-2 pb-3">
           <h3 class="font-headline text-base text-on-surface mb-1">Christmas Cat</h3>
@@ -475,7 +611,21 @@ tailwind.config = {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
       <div class="relative">
         <div class="rounded-xl overflow-hidden ambient-shadow max-w-sm mx-auto md:mx-0">
-          <img src="../images/instagram/CzvkXDPMwYw.jpg" alt="Tetiana, the maker behind TetiGurumi" class="w-full object-cover" style="aspect-ratio: 3/4; object-fit: cover;"/>
+          <picture class="block">
+  <source srcset="../assets/images/CzvkXDPMwYw-320w.94431f60a2.webp 320w, ../assets/images/CzvkXDPMwYw-480w.98d125315c.webp 480w, ../assets/images/CzvkXDPMwYw-640w.180939cd82.webp 640w, ../assets/images/CzvkXDPMwYw-960w.33f9c26d51.webp 960w" sizes="(min-width: 768px) 30vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/CzvkXDPMwYw-960w.ad36667bd6.jpg"
+    srcset="../assets/images/CzvkXDPMwYw-320w.e5247cecb3.jpg 320w, ../assets/images/CzvkXDPMwYw-480w.254ff29698.jpg 480w, ../assets/images/CzvkXDPMwYw-640w.bbc414c5da.jpg 640w, ../assets/images/CzvkXDPMwYw-960w.ad36667bd6.jpg 960w"
+    sizes="(min-width: 768px) 30vw, calc(100vw - 3rem)"
+    alt="Tetiana, the maker behind TetiGurumi"
+    width="960"
+    height="960"
+    class="w-full object-cover"
+    loading="lazy"
+    decoding="async"
+    style="aspect-ratio: 3/4; object-fit: cover;"
+  />
+</picture>
         </div>
         <div class="absolute -top-5 -left-5 w-24 h-24 rounded-full -z-10" style="background: radial-gradient(circle, #d5e9c6 0%, transparent 70%);"></div>
       </div>
@@ -504,28 +654,132 @@ tailwind.config = {
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2">
         <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block">
-          <img src="../images/instagram/DUkhM-7jKXl.jpg" alt="Handmade Doll" class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DUkhM-7jKXl-320w.be76f518ae.webp 320w, ../assets/images/DUkhM-7jKXl-480w.17274e3e04.webp 480w, ../assets/images/DUkhM-7jKXl-640w.ef0b81fe5a.webp 640w, ../assets/images/DUkhM-7jKXl-960w.7cdaaa496c.webp 960w, ../assets/images/DUkhM-7jKXl-1080w.7dfed87ad1.webp 1080w" sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw" type="image/webp"/>
+  <img
+    src="../assets/images/DUkhM-7jKXl-1080w.7c287c6d5b.jpg"
+    srcset="../assets/images/DUkhM-7jKXl-320w.2851e5050f.jpg 320w, ../assets/images/DUkhM-7jKXl-480w.75b7677488.jpg 480w, ../assets/images/DUkhM-7jKXl-640w.269f70162d.jpg 640w, ../assets/images/DUkhM-7jKXl-960w.55544db4f8.jpg 960w, ../assets/images/DUkhM-7jKXl-1080w.7c287c6d5b.jpg 1080w"
+    sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw"
+    alt="Handmade Doll"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </a>
         <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block">
-          <img src="../images/instagram/DUN66hvjFaA.jpg" alt="Capybaras amigurumi" class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DUN66hvjFaA-320w.c404549ec9.webp 320w, ../assets/images/DUN66hvjFaA-480w.10daa793af.webp 480w, ../assets/images/DUN66hvjFaA-640w.9daf151228.webp 640w, ../assets/images/DUN66hvjFaA-960w.3d413a1c19.webp 960w, ../assets/images/DUN66hvjFaA-1080w.fec1a3b132.webp 1080w" sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw" type="image/webp"/>
+  <img
+    src="../assets/images/DUN66hvjFaA-1080w.8153ee831b.jpg"
+    srcset="../assets/images/DUN66hvjFaA-320w.7c7d092b75.jpg 320w, ../assets/images/DUN66hvjFaA-480w.de2d14617e.jpg 480w, ../assets/images/DUN66hvjFaA-640w.882a7f6d76.jpg 640w, ../assets/images/DUN66hvjFaA-960w.7c4dacb7b9.jpg 960w, ../assets/images/DUN66hvjFaA-1080w.8153ee831b.jpg 1080w"
+    sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw"
+    alt="Capybaras amigurumi"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </a>
         <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block">
-          <img src="../images/instagram/DSx-GmtDAMG.jpg" alt="Festive crochet decorations" class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSx-GmtDAMG-320w.7f5be3d225.webp 320w, ../assets/images/DSx-GmtDAMG-480w.0492b9a0b0.webp 480w, ../assets/images/DSx-GmtDAMG-640w.60e2fd9e79.webp 640w, ../assets/images/DSx-GmtDAMG-960w.af89e2ecd1.webp 960w, ../assets/images/DSx-GmtDAMG-1080w.75fd502450.webp 1080w" sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw" type="image/webp"/>
+  <img
+    src="../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg"
+    srcset="../assets/images/DSx-GmtDAMG-320w.fecbe2954c.jpg 320w, ../assets/images/DSx-GmtDAMG-480w.57e99cc2ce.jpg 480w, ../assets/images/DSx-GmtDAMG-640w.ca5660c9f8.jpg 640w, ../assets/images/DSx-GmtDAMG-960w.5e46332ef0.jpg 960w, ../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg 1080w"
+    sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw"
+    alt="Festive crochet decorations"
+    width="1080"
+    height="1440"
+    class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </a>
         <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block">
-          <img src="../images/instagram/DSkvLbBjLHd.jpg" alt="Christmas cat amigurumi" class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSkvLbBjLHd-320w.cf9805a641.webp 320w, ../assets/images/DSkvLbBjLHd-480w.400d490c4f.webp 480w, ../assets/images/DSkvLbBjLHd-640w.21138b539a.webp 640w, ../assets/images/DSkvLbBjLHd-960w.aa579a69ac.webp 960w, ../assets/images/DSkvLbBjLHd-1080w.9bf3158f77.webp 1080w" sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw" type="image/webp"/>
+  <img
+    src="../assets/images/DSkvLbBjLHd-1080w.684d550881.jpg"
+    srcset="../assets/images/DSkvLbBjLHd-320w.e602d486aa.jpg 320w, ../assets/images/DSkvLbBjLHd-480w.03d61184ee.jpg 480w, ../assets/images/DSkvLbBjLHd-640w.e3a9645c13.jpg 640w, ../assets/images/DSkvLbBjLHd-960w.3e757b0076.jpg 960w, ../assets/images/DSkvLbBjLHd-1080w.684d550881.jpg 1080w"
+    sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw"
+    alt="Christmas cat amigurumi"
+    width="1080"
+    height="810"
+    class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </a>
         <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block">
-          <img src="../images/instagram/DSdeBZiDB70.jpg" alt="Capybara weekend amigurumi" class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSdeBZiDB70-320w.61620744f7.webp 320w, ../assets/images/DSdeBZiDB70-480w.5090808ef4.webp 480w, ../assets/images/DSdeBZiDB70-640w.874ee8636d.webp 640w, ../assets/images/DSdeBZiDB70-960w.4b0fcc36c2.webp 960w, ../assets/images/DSdeBZiDB70-1080w.d96d6089ad.webp 1080w" sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw" type="image/webp"/>
+  <img
+    src="../assets/images/DSdeBZiDB70-1080w.fc86ad17c9.jpg"
+    srcset="../assets/images/DSdeBZiDB70-320w.4a98976d85.jpg 320w, ../assets/images/DSdeBZiDB70-480w.05c0955bf9.jpg 480w, ../assets/images/DSdeBZiDB70-640w.5a275d5b4f.jpg 640w, ../assets/images/DSdeBZiDB70-960w.e108fe50f8.jpg 960w, ../assets/images/DSdeBZiDB70-1080w.fc86ad17c9.jpg 1080w"
+    sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw"
+    alt="Capybara weekend amigurumi"
+    width="1080"
+    height="810"
+    class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </a>
         <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block">
-          <img src="../images/instagram/DSLXBTqDBBt.jpg" alt="TetiGurumi at Kraków Christmas market" class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSLXBTqDBBt-320w.6db5af3791.webp 320w, ../assets/images/DSLXBTqDBBt-480w.29cf3d55ff.webp 480w, ../assets/images/DSLXBTqDBBt-640w.dbba6cab86.webp 640w, ../assets/images/DSLXBTqDBBt-960w.60b6b01aed.webp 960w, ../assets/images/DSLXBTqDBBt-1080w.de6436728e.webp 1080w" sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw" type="image/webp"/>
+  <img
+    src="../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg"
+    srcset="../assets/images/DSLXBTqDBBt-320w.f7d6e2bce1.jpg 320w, ../assets/images/DSLXBTqDBBt-480w.02863430ec.jpg 480w, ../assets/images/DSLXBTqDBBt-640w.84716ac0c2.jpg 640w, ../assets/images/DSLXBTqDBBt-960w.2c67e98633.jpg 960w, ../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg 1080w"
+    sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw"
+    alt="TetiGurumi at Kraków Christmas market"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </a>
         <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block">
-          <img src="../images/instagram/DQ1jqQIjEvn.jpg" alt="Lion amigurumi" class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/DQ1jqQIjEvn-320w.7c5741c273.webp 320w, ../assets/images/DQ1jqQIjEvn-480w.df809dd6d9.webp 480w, ../assets/images/DQ1jqQIjEvn-640w.1a2b1c99de.webp 640w, ../assets/images/DQ1jqQIjEvn-960w.39c537a5d2.webp 960w, ../assets/images/DQ1jqQIjEvn-1080w.b48915ce9c.webp 1080w" sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw" type="image/webp"/>
+  <img
+    src="../assets/images/DQ1jqQIjEvn-1080w.99cbe42728.jpg"
+    srcset="../assets/images/DQ1jqQIjEvn-320w.f944da61d4.jpg 320w, ../assets/images/DQ1jqQIjEvn-480w.e21abd32d4.jpg 480w, ../assets/images/DQ1jqQIjEvn-640w.08f8b012ce.jpg 640w, ../assets/images/DQ1jqQIjEvn-960w.b15c228a5d.jpg 960w, ../assets/images/DQ1jqQIjEvn-1080w.99cbe42728.jpg 1080w"
+    sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw"
+    alt="Lion amigurumi"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </a>
         <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="aspect-square rounded-xl overflow-hidden block">
-          <img src="../images/instagram/CzvkXDPMwYw.jpg" alt="Tetiana, the maker behind TetiGurumi" class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"/>
+          <picture class="block w-full h-full">
+  <source srcset="../assets/images/CzvkXDPMwYw-320w.94431f60a2.webp 320w, ../assets/images/CzvkXDPMwYw-480w.98d125315c.webp 480w, ../assets/images/CzvkXDPMwYw-640w.180939cd82.webp 640w, ../assets/images/CzvkXDPMwYw-960w.33f9c26d51.webp 960w" sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw" type="image/webp"/>
+  <img
+    src="../assets/images/CzvkXDPMwYw-960w.ad36667bd6.jpg"
+    srcset="../assets/images/CzvkXDPMwYw-320w.e5247cecb3.jpg 320w, ../assets/images/CzvkXDPMwYw-480w.254ff29698.jpg 480w, ../assets/images/CzvkXDPMwYw-640w.bbc414c5da.jpg 640w, ../assets/images/CzvkXDPMwYw-960w.ad36667bd6.jpg 960w"
+    sizes="(min-width: 1024px) 12vw, (min-width: 768px) 24vw, 48vw"
+    alt="Tetiana, the maker behind TetiGurumi"
+    width="960"
+    height="960"
+    class="w-full h-full object-cover hover:opacity-85 transition-opacity duration-200"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
         </a>
       </div>
     </div>

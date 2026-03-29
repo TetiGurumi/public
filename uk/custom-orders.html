@@ -5,55 +5,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Замовлення — TetiGurumi</title>
 <meta name="description" content="Замовте в&#39;язаний виріб ручної роботи: іграшку, декорацію або подарунок. Оберіть персонажа, кольори, розмір. Доставка до ЄС."/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        "surface-container-lowest": "#ffffff",
-        "on-tertiary-fixed-variant": "#673b34",
-        "secondary-fixed-dim": "#b9cdab",
-        "primary-container": "#956c44",
-        "surface-container-high": "#ebe8e3",
-        "tertiary-fixed": "#ffdad4",
-        "surface-container": "#f0ede9",
-        "secondary-container": "#d2e6c3",
-        "outline": "#82756a",
-        "on-primary": "#ffffff",
-        "on-secondary-fixed-variant": "#3b4b32",
-        "surface-container-highest": "#e5e2dd",
-        "on-surface-variant": "#50453b",
-        "secondary": "#526348",
-        "surface": "#fcf9f4",
-        "on-secondary": "#ffffff",
-        "on-surface": "#1c1c19",
-        "secondary-fixed": "#d5e9c6",
-        "on-secondary-fixed": "#101f0a",
-        "outline-variant": "#d4c4b7",
-        "background": "#fcf9f4",
-        "surface-container-low": "#f6f3ee",
-        "tertiary": "#7f5048",
-        "primary": "#79542e",
-        "on-secondary-container": "#56684c",
-      },
-      fontFamily: {
-        "headline": ["Noto Serif", "Georgia", "serif"],
-        "body": ["Manrope", "sans-serif"],
-        "label": ["Manrope", "sans-serif"]
-      },
-      borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-    },
-  },
-}
-</script>
+<link rel="stylesheet" href="../assets/site.e4d7cb5389.css"/>
 <style>
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  body { background-color: #fcf9f4; color: #1c1c19; font-family: 'Manrope', sans-serif; }
-  h1, h2, h3, h4, .font-serif { font-family: 'Noto Serif', serif; }
-  a { color: inherit; }
     input, textarea, select {
     background-color: #fcf9f4;
     border: 1px solid rgba(212, 196, 183, 0.4);
@@ -126,7 +79,7 @@ tailwind.config = {
         Замовити
       </a>
     </div>
-    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><span class="material-symbols-outlined">menu</span></button>
+    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
   </div>
 </nav>
 
@@ -138,7 +91,7 @@ tailwind.config = {
   <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
     <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
       <span class="font-headline text-lg text-on-surface-variant">TetiGurumi</span>
-      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><span class="material-symbols-outlined">close</span></button>
+      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
     </div>
     <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
       <a href="../index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
@@ -216,21 +169,37 @@ tailwind.config = {
         <p class="text-base text-on-surface-variant leading-relaxed max-w-prose mb-10">Кожен виріб починається з ідеї — вашої або моєї. Заповніть форму, і я відповім з ціною та термінами протягом 2 робочих днів.</p>
         <div class="flex flex-wrap gap-x-6 gap-y-3">
           <div class="flex items-center gap-1.5 text-sm text-on-surface-variant">
-            <span class="material-symbols-outlined text-[#526348] text-[18px]" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 20;">check_circle</span>
+            <span class="text-[#526348]"><svg class="icon w-[18px] h-[18px]" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/>
+  <path d="m8.5 12.5 2.5 2.5 4.5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
             Відповідь за 2 робочих дні
           </div>
           <div class="flex items-center gap-1.5 text-sm text-on-surface-variant">
-            <span class="material-symbols-outlined text-[#526348] text-[18px]" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 20;">check_circle</span>
+            <span class="text-[#526348]"><svg class="icon w-[18px] h-[18px]" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/>
+  <path d="m8.5 12.5 2.5 2.5 4.5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
             Безкоштовна консультація
           </div>
           <div class="flex items-center gap-1.5 text-sm text-on-surface-variant">
-            <span class="material-symbols-outlined text-[#526348] text-[18px]" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 20;">check_circle</span>
+            <span class="text-[#526348]"><svg class="icon w-[18px] h-[18px]" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/>
+  <path d="m8.5 12.5 2.5 2.5 4.5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
             Доставка в ЄС
           </div>
         </div>
       </div>
       <div class="aspect-[4/5] rounded-2xl overflow-hidden">
-        <img src="../images/instagram/DUkhM-7jKXl.jpg" alt="Handmade crochet doll being created" class="w-full h-full object-cover" loading="eager"/>
+        <picture class="block w-full h-full">
+  <source srcset="../assets/images/DUkhM-7jKXl-320w.be76f518ae.webp 320w, ../assets/images/DUkhM-7jKXl-480w.17274e3e04.webp 480w, ../assets/images/DUkhM-7jKXl-640w.ef0b81fe5a.webp 640w, ../assets/images/DUkhM-7jKXl-960w.7cdaaa496c.webp 960w, ../assets/images/DUkhM-7jKXl-1080w.7dfed87ad1.webp 1080w" sizes="(min-width: 768px) 40vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DUkhM-7jKXl-1080w.7c287c6d5b.jpg"
+    srcset="../assets/images/DUkhM-7jKXl-320w.2851e5050f.jpg 320w, ../assets/images/DUkhM-7jKXl-480w.75b7677488.jpg 480w, ../assets/images/DUkhM-7jKXl-640w.269f70162d.jpg 640w, ../assets/images/DUkhM-7jKXl-960w.55544db4f8.jpg 960w, ../assets/images/DUkhM-7jKXl-1080w.7c287c6d5b.jpg 1080w"
+    sizes="(min-width: 768px) 40vw, calc(100vw - 3rem)"
+    alt="Handmade crochet doll being created"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover"
+    loading="eager"
+    decoding="async"
+  />
+</picture>
       </div>
     </div>
   </div>
@@ -317,32 +286,32 @@ tailwind.config = {
     <h2 class="font-headline text-3xl md:text-4xl text-on-surface text-center mb-14">Все залежить від вас</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
-        <span class="material-symbols-outlined text-primary text-[28px]">character</span>
+        <span class="text-primary"><svg class="icon w-7 h-7" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 17c0-2.2 1.8-4 4-4s4 1.8 4 4M9 9.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM5 7.5l1.5 1.5M19 7.5 17.5 9M12 3v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
         <h3 class="font-headline text-lg text-on-surface">Персонаж та тема</h3>
         <p class="text-sm text-outline leading-relaxed">Будь-яка тварина, іграшка або персонаж, якого ви уявляєте.</p>
       </div>
       <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
-        <span class="material-symbols-outlined text-primary text-[28px]">palette</span>
+        <span class="text-primary"><svg class="icon w-7 h-7" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4a8 8 0 1 0 0 16h1.2a1.8 1.8 0 0 0 0-3.6H12a1.8 1.8 0 0 1 0-3.6h2.8A4.2 4.2 0 0 0 19 8.6 4.6 4.6 0 0 0 12 4Zm-3 5.5h.01M7.5 12h.01M10 14.5h.01M14.5 8.5h.01" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
         <h3 class="font-headline text-lg text-on-surface">Кольори</h3>
         <p class="text-sm text-outline leading-relaxed">Обирайте з широкого асортименту кольорів пряжі.</p>
       </div>
       <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
-        <span class="material-symbols-outlined text-primary text-[28px]">straighten</span>
+        <span class="text-primary"><svg class="icon w-7 h-7" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10h16M7 7l-3 3 3 3M17 7l3 3-3 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
         <h3 class="font-headline text-lg text-on-surface">Розмір</h3>
         <p class="text-sm text-outline leading-relaxed">Від мініатюри до великої іграшки-сувеніру.</p>
       </div>
       <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
-        <span class="material-symbols-outlined text-primary text-[28px]">sell</span>
+        <span class="text-primary"><svg class="icon w-7 h-7" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6h6l2 2v6l-8 8-8-8V8l2-2h6Zm2 4a1.5 1.5 0 1 0 0 .01Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
         <h3 class="font-headline text-lg text-on-surface">Ярлик з іменем</h3>
         <p class="text-sm text-outline leading-relaxed">Додайте вишивку імені або персоналізований подарунковий ярлик.</p>
       </div>
       <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
-        <span class="material-symbols-outlined text-primary text-[28px]">event</span>
+        <span class="text-primary"><svg class="icon w-7 h-7" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4v3M17 4v3M5 8h14M6 6h12a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Zm3 6h2v2H9v-2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
         <h3 class="font-headline text-lg text-on-surface">Дедлайн</h3>
         <p class="text-sm text-outline leading-relaxed">Скажіть мені дату — я постараюся встигнути.</p>
       </div>
       <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
-        <span class="material-symbols-outlined text-primary text-[28px]">redeem</span>
+        <span class="text-primary"><svg class="icon w-7 h-7" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h14v9H5v-9Zm0 0h14V7a2 2 0 0 0-2-2h-2.2a2.3 2.3 0 0 1-2.3 2.2A2.3 2.3 0 0 1 10.2 5H8a2 2 0 0 0-2 2v3Zm7 0v9M9.8 5a2.2 2.2 0 1 1-4.4 0c0-.7.3-1.4.9-1.8.6-.5 1.4-.6 2.1-.4.7.2 1.2.8 1.4 1.5Zm8.8 0a2.2 2.2 0 1 1-4.4 0c0-.7.3-1.4.9-1.8.6-.5 1.4-.6 2.1-.4.7.2 1.2.8 1.4 1.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
         <h3 class="font-headline text-lg text-on-surface">Пакування</h3>
         <p class="text-sm text-outline leading-relaxed">Від простого обгортання до святкової упаковки.</p>
       </div>
@@ -437,7 +406,7 @@ tailwind.config = {
           <div class="flex flex-col gap-2 mb-6">
             <label for="reference">Стилістичний референс (необов&#39;язково)</label>
             <label for="reference" class="upload-zone flex flex-col items-center justify-center gap-3 px-6 py-10 text-center normal-case tracking-normal text-on-surface-variant cursor-pointer">
-              <span class="material-symbols-outlined text-[36px] text-outline">upload_file</span>
+              <span class="text-outline"><svg class="icon w-9 h-9" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Zm0 0v5h5M12 17v-6m-2.5 2.5L12 11l2.5 2.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
               <span class="text-sm font-medium text-on-surface-variant">Завантажити фото референс</span>
               <span class="text-xs text-outline">JPEG, PNG, WEBP — макс. 10 МБ</span>
               <input type="file" id="reference" name="reference" accept="image/*" class="sr-only" style="display:none; border:none; background:transparent;"/>
@@ -463,7 +432,8 @@ tailwind.config = {
   <div class="max-w-screen-xl mx-auto px-6 md:px-10">
     <div class="max-w-2xl mx-auto text-center">
       <div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mx-auto mb-8">
-        <span class="material-symbols-outlined text-[32px] text-secondary" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 32;">check_circle</span>
+        <span class="text-secondary"><svg class="icon w-8 h-8" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/>
+  <path d="m8.5 12.5 2.5 2.5 4.5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
       </div>
       <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-4">Дякую!</h2>
       <p class="text-lg text-on-surface-variant leading-relaxed mb-10">Я зв&#39;яжуся з вами протягом 2 робочих днів.</p>
@@ -481,18 +451,57 @@ tailwind.config = {
         <h2 class="font-headline text-2xl md:text-3xl text-on-surface">Потрібне натхнення?</h2>
       </div>
       <a href="../gallery.html" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4 whitespace-nowrap">
-        Переглянути галерею <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        Переглянути галерею <svg class="icon w-[18px] h-[18px]" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
       </a>
     </div>
     <div class="grid grid-cols-3 gap-4 md:gap-6">
       <a href="../gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
-        <img src="../images/instagram/DUkhM-7jKXl.jpg" alt="Handmade Doll" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"/>
+        <picture class="block w-full h-full">
+  <source srcset="../assets/images/DUkhM-7jKXl-320w.be76f518ae.webp 320w, ../assets/images/DUkhM-7jKXl-480w.17274e3e04.webp 480w, ../assets/images/DUkhM-7jKXl-640w.ef0b81fe5a.webp 640w, ../assets/images/DUkhM-7jKXl-960w.7cdaaa496c.webp 960w, ../assets/images/DUkhM-7jKXl-1080w.7dfed87ad1.webp 1080w" sizes="(min-width: 768px) 28vw, 31vw" type="image/webp"/>
+  <img
+    src="../assets/images/DUkhM-7jKXl-1080w.7c287c6d5b.jpg"
+    srcset="../assets/images/DUkhM-7jKXl-320w.2851e5050f.jpg 320w, ../assets/images/DUkhM-7jKXl-480w.75b7677488.jpg 480w, ../assets/images/DUkhM-7jKXl-640w.269f70162d.jpg 640w, ../assets/images/DUkhM-7jKXl-960w.55544db4f8.jpg 960w, ../assets/images/DUkhM-7jKXl-1080w.7c287c6d5b.jpg 1080w"
+    sizes="(min-width: 768px) 28vw, 31vw"
+    alt="Handmade Doll"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
       </a>
       <a href="../gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
-        <img src="../images/instagram/DUN66hvjFaA.jpg" alt="Capybaras amigurumi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"/>
+        <picture class="block w-full h-full">
+  <source srcset="../assets/images/DUN66hvjFaA-320w.c404549ec9.webp 320w, ../assets/images/DUN66hvjFaA-480w.10daa793af.webp 480w, ../assets/images/DUN66hvjFaA-640w.9daf151228.webp 640w, ../assets/images/DUN66hvjFaA-960w.3d413a1c19.webp 960w, ../assets/images/DUN66hvjFaA-1080w.fec1a3b132.webp 1080w" sizes="(min-width: 768px) 28vw, 31vw" type="image/webp"/>
+  <img
+    src="../assets/images/DUN66hvjFaA-1080w.8153ee831b.jpg"
+    srcset="../assets/images/DUN66hvjFaA-320w.7c7d092b75.jpg 320w, ../assets/images/DUN66hvjFaA-480w.de2d14617e.jpg 480w, ../assets/images/DUN66hvjFaA-640w.882a7f6d76.jpg 640w, ../assets/images/DUN66hvjFaA-960w.7c4dacb7b9.jpg 960w, ../assets/images/DUN66hvjFaA-1080w.8153ee831b.jpg 1080w"
+    sizes="(min-width: 768px) 28vw, 31vw"
+    alt="Capybaras amigurumi"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
       </a>
       <a href="../gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
-        <img src="../images/instagram/DSx-GmtDAMG.jpg" alt="Festive crochet decorations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"/>
+        <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSx-GmtDAMG-320w.7f5be3d225.webp 320w, ../assets/images/DSx-GmtDAMG-480w.0492b9a0b0.webp 480w, ../assets/images/DSx-GmtDAMG-640w.60e2fd9e79.webp 640w, ../assets/images/DSx-GmtDAMG-960w.af89e2ecd1.webp 960w, ../assets/images/DSx-GmtDAMG-1080w.75fd502450.webp 1080w" sizes="(min-width: 768px) 28vw, 31vw" type="image/webp"/>
+  <img
+    src="../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg"
+    srcset="../assets/images/DSx-GmtDAMG-320w.fecbe2954c.jpg 320w, ../assets/images/DSx-GmtDAMG-480w.57e99cc2ce.jpg 480w, ../assets/images/DSx-GmtDAMG-640w.ca5660c9f8.jpg 640w, ../assets/images/DSx-GmtDAMG-960w.5e46332ef0.jpg 960w, ../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg 1080w"
+    sizes="(min-width: 768px) 28vw, 31vw"
+    alt="Festive crochet decorations"
+    width="1080"
+    height="1440"
+    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
       </a>
     </div>
   </div>
@@ -508,7 +517,7 @@ tailwind.config = {
         <div class="faq-item py-5" role="region">
           <button class="faq-toggle w-full flex items-center justify-between gap-4 text-left" aria-expanded="false">
             <span class="font-headline text-lg text-on-surface">Чи вироби зроблені вручну особисто вами?</span>
-            <span class="material-symbols-outlined faq-chevron text-outline flex-shrink-0">expand_more</span>
+            <span class="faq-chevron text-outline flex-shrink-0"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </button>
           <div class="faq-answer pt-4 pr-8">
             <p class="text-sm text-on-surface-variant leading-relaxed">Так — кожен виріб зроблений мною, Тетяною. Я в&#39;яжу кожен виріб вручну, від першого стібка до останньої деталі. Ніщо не виробляється масово. Замовляючи у TetiGurumi, ви отримуєте щось, вкладене з реальним часом і турботою.</p>
@@ -517,7 +526,7 @@ tailwind.config = {
         <div class="faq-item py-5" role="region">
           <button class="faq-toggle w-full flex items-center justify-between gap-4 text-left" aria-expanded="false">
             <span class="font-headline text-lg text-on-surface">Скільки часу займає виробництво?</span>
-            <span class="material-symbols-outlined faq-chevron text-outline flex-shrink-0">expand_more</span>
+            <span class="faq-chevron text-outline flex-shrink-0"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </button>
           <div class="faq-answer pt-4 pr-8">
             <p class="text-sm text-on-surface-variant leading-relaxed">Для готових виробів я відправляю протягом 1–3 робочих днів. Для виробів під замовлення виробництво зазвичай займає 7–21 день залежно від складності та моєї поточної черги. Я завжди підтверджую терміни перед підтвердженням замовлення. Якщо у вас є конкретний дедлайн (день народження, baby shower, Різдво), напишіть мені — постараюся встигнути.</p>
@@ -526,7 +535,7 @@ tailwind.config = {
         <div class="faq-item py-5" role="region">
           <button class="faq-toggle w-full flex items-center justify-between gap-4 text-left" aria-expanded="false">
             <span class="font-headline text-lg text-on-surface">Ви відправляєте за кордон?</span>
-            <span class="material-symbols-outlined faq-chevron text-outline flex-shrink-0">expand_more</span>
+            <span class="faq-chevron text-outline flex-shrink-0"><svg class="icon w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
           </button>
           <div class="faq-answer pt-4 pr-8">
             <p class="text-sm text-on-surface-variant leading-relaxed">Так, відправляю до Польщі та більшості країн ЄС. Поза ЄС — за запитом.</p>
@@ -535,7 +544,7 @@ tailwind.config = {
       </div>
       <div class="text-center mt-10">
         <a href="../faq.html" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4">
-          Дивитися всі FAQ <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          Дивитися всі FAQ <svg class="icon w-[18px] h-[18px]" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
         </a>
       </div>
     </div>
