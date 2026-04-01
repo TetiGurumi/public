@@ -8,7 +8,7 @@
 <link rel="preload" href="../assets/fonts/manrope-latin.a30ddcd349.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="../assets/fonts/noto-serif-latin.4628145623.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="../assets/fonts/noto-serif-italic-latin.a1a6ebee6d.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="../assets/site.e4d7cb5389.css"/>
+<link rel="stylesheet" href="../assets/site.4edf2c9551.css"/>
 <style>
     .btn-primary {
     background: radial-gradient(ellipse at 60% 40%, #956c44, #79542e);
@@ -50,15 +50,19 @@
 </script></head>
 <body class="flex flex-col min-h-screen">
 
-<nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20">
-  <div class="flex justify-between items-center w-full px-6 md:px-10 py-5 max-w-screen-xl mx-auto">
-    <a href="../index.html" class="text-2xl font-headline tracking-tight text-on-surface-variant">TetiGurumi</a>
+<nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20 overflow-visible">
+  <div class="flex justify-between items-center w-full px-6 md:px-10 py-3 max-w-screen-xl mx-auto overflow-visible">
+    <a href="../index.html" class="inline-flex items-center text-2xl font-headline tracking-tight text-on-surface-variant">
+      <img src="../assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-12 w-auto object-contain mr-3 md:h-20"/>
+      <span>TetiGurumi</span>
+    </a>
     <div class="hidden md:flex items-center gap-8">
       <a href="../index.html" class="text-sm transition-colors duration-200 text-primary font-semibold border-b-2 border-primary pb-0.5">Головна</a>
       <a href="../shop.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Магазин</a>
       <a href="../custom-orders.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Замовлення</a>
       <a href="../gallery.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Галерея</a>
       <a href="../about.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Про мене</a>
+      <a href="../faq.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">FAQ</a>
       <a href="../contact.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Контакт</a>
     </div>
     <div class="hidden md:flex items-center gap-4">
@@ -88,7 +92,10 @@
   <!-- Panel -->
   <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
     <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
-      <span class="font-headline text-lg text-on-surface-variant">TetiGurumi</span>
+      <a href="../index.html" class="inline-flex items-center font-headline text-lg text-on-surface-variant">
+        <img src="../assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-10 w-auto object-contain mr-2"/>
+        <span>TetiGurumi</span>
+      </a>
       <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
     </div>
     <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
@@ -106,6 +113,9 @@
       </a>
       <a href="../about.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Про мене
+      </a>
+      <a href="../faq.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        FAQ
       </a>
       <a href="../contact.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Контакт
@@ -191,7 +201,7 @@
     </div>
     <div class="flex-1 flex items-center justify-center md:justify-end relative">
       <div class="relative w-full max-w-sm md:max-w-md lg:max-w-lg">
-        <div class="rounded-xl overflow-hidden ambient-shadow" style="transform: rotate(1.2deg);">
+        <div class="rounded-xl overflow-hidden ambient-shadow">
           <picture class="block">
   <source srcset="../assets/images/DSLXBTqDBBt-320w.6db5af3791.webp 320w, ../assets/images/DSLXBTqDBBt-480w.29cf3d55ff.webp 480w, ../assets/images/DSLXBTqDBBt-640w.dbba6cab86.webp 640w, ../assets/images/DSLXBTqDBBt-960w.60b6b01aed.webp 960w, ../assets/images/DSLXBTqDBBt-1080w.de6436728e.webp 1080w" sizes="(min-width: 1024px) 34rem, (min-width: 768px) 42vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -328,6 +338,27 @@
           <p class="text-xs text-white/70 font-medium">Переглянути →</p>
         </div>
       </a>
+      <a href="../shop.html#patterns" class="category-card md:col-span-4">
+        <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSx-GmtDAMG-320w.7f5be3d225.webp 320w, ../assets/images/DSx-GmtDAMG-480w.0492b9a0b0.webp 480w, ../assets/images/DSx-GmtDAMG-640w.60e2fd9e79.webp 640w, ../assets/images/DSx-GmtDAMG-960w.af89e2ecd1.webp 960w, ../assets/images/DSx-GmtDAMG-1080w.75fd502450.webp 1080w" sizes="(min-width: 768px) 31vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg"
+    srcset="../assets/images/DSx-GmtDAMG-320w.fecbe2954c.jpg 320w, ../assets/images/DSx-GmtDAMG-480w.57e99cc2ce.jpg 480w, ../assets/images/DSx-GmtDAMG-640w.ca5660c9f8.jpg 640w, ../assets/images/DSx-GmtDAMG-960w.5e46332ef0.jpg 960w, ../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg 1080w"
+    sizes="(min-width: 768px) 31vw, calc(100vw - 3rem)"
+    alt="Crochet patterns placeholder preview"
+    width="1080"
+    height="1440"
+    class="w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
+        <div class="overlay"></div>
+        <div class="card-content">
+          <h3 class="font-headline text-xl text-white mb-1">Схеми в&#39;язання гачком</h3>
+          <p class="text-xs text-white/70 font-medium">Переглянути →</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -455,34 +486,6 @@
           <p class="text-sm font-semibold text-primary mt-1">from XX PLN</p>
         </div>
       </a>
-      <a href="../custom-orders.html" class="group bg-surface-container-low rounded-xl overflow-hidden card-hover block">
-        <div class="aspect-square overflow-hidden rounded-xl">
-          <picture class="block w-full h-full">
-  <source srcset="../assets/images/DSLXBTqDBBt-320w.6db5af3791.webp 320w, ../assets/images/DSLXBTqDBBt-480w.29cf3d55ff.webp 480w, ../assets/images/DSLXBTqDBBt-640w.dbba6cab86.webp 640w, ../assets/images/DSLXBTqDBBt-960w.60b6b01aed.webp 960w, ../assets/images/DSLXBTqDBBt-1080w.de6436728e.webp 1080w" sizes="(min-width: 1024px) 22vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
-  <img
-    src="../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg"
-    srcset="../assets/images/DSLXBTqDBBt-320w.f7d6e2bce1.jpg 320w, ../assets/images/DSLXBTqDBBt-480w.02863430ec.jpg 480w, ../assets/images/DSLXBTqDBBt-640w.84716ac0c2.jpg 640w, ../assets/images/DSLXBTqDBBt-960w.2c67e98633.jpg 960w, ../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg 1080w"
-    sizes="(min-width: 1024px) 22vw, (min-width: 640px) 44vw, calc(100vw - 3rem)"
-    alt="portugal bag with blue squares"
-    width="1080"
-    height="1439"
-    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-    loading="lazy"
-    decoding="async"
-  />
-</picture>
-        </div>
-        <div class="pt-4 px-1 pb-2 relative">
-          <div class="flex items-start justify-between gap-2 mb-2">
-            <span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Під замовлення</span>
-            <button class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:border-outline transition-colors flex-shrink-0" aria-label="Add to enquiry">
-              <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 5h2l1.8 8.2a1 1 0 0 0 1 .8h7.9a1 1 0 0 0 1-.8L18.6 8H7.2M10 18a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 18Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 18ZM12 4v4M10 6h4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
-            </button>
-          </div>
-          <h3 class="font-headline text-base text-on-surface mt-1 leading-snug">Portugal Bag</h3>
-          <p class="text-sm font-semibold text-primary mt-1">1234 PLN</p>
-        </div>
-      </a>
     </div>
   </div>
 </section>
@@ -562,8 +565,8 @@
       </div>
       <a href="../shop.html#seasonal" class="text-sm font-semibold text-[#7b8f70] underline underline-offset-2 hover:text-primary transition-colors whitespace-nowrap">Переглянути всю колекцію →</a>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
-      <div class="bg-surface-container-low p-2 rounded-xl card-hover">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch">
+      <div class="bg-surface-container-low p-2 rounded-xl card-hover h-full flex flex-col">
         <div class="aspect-[4/3] rounded-lg overflow-hidden mb-4">
           <picture class="block w-full h-full">
   <source srcset="../assets/images/DSLXBTqDBBt-320w.6db5af3791.webp 320w, ../assets/images/DSLXBTqDBBt-480w.29cf3d55ff.webp 480w, ../assets/images/DSLXBTqDBBt-640w.dbba6cab86.webp 640w, ../assets/images/DSLXBTqDBBt-960w.60b6b01aed.webp 960w, ../assets/images/DSLXBTqDBBt-1080w.de6436728e.webp 1080w" sizes="(min-width: 640px) 30vw, calc(100vw - 3rem)" type="image/webp"/>
@@ -580,12 +583,12 @@
   />
 </picture>
         </div>
-        <div class="px-2 pb-3">
+        <div class="px-2 pb-3 flex-1">
           <h3 class="font-headline text-base text-on-surface mb-1">Christmas Market Set</h3>
           <p class="text-sm text-outline">Set of 3 ornaments</p>
         </div>
       </div>
-      <div class="bg-surface-container-low p-2 rounded-xl card-hover mt-0 sm:mt-8">
+      <div class="bg-surface-container-low p-2 rounded-xl card-hover h-full flex flex-col">
         <div class="aspect-[4/3] rounded-lg overflow-hidden mb-4">
           <picture class="block w-full h-full">
   <source srcset="../assets/images/DSx-GmtDAMG-320w.7f5be3d225.webp 320w, ../assets/images/DSx-GmtDAMG-480w.0492b9a0b0.webp 480w, ../assets/images/DSx-GmtDAMG-640w.60e2fd9e79.webp 640w, ../assets/images/DSx-GmtDAMG-960w.af89e2ecd1.webp 960w, ../assets/images/DSx-GmtDAMG-1080w.75fd502450.webp 1080w" sizes="(min-width: 640px) 30vw, calc(100vw - 3rem)" type="image/webp"/>
@@ -602,12 +605,12 @@
   />
 </picture>
         </div>
-        <div class="px-2 pb-3">
+        <div class="px-2 pb-3 flex-1">
           <h3 class="font-headline text-base text-on-surface mb-1">Festive Decorations</h3>
           <p class="text-sm text-outline">Set of 4</p>
         </div>
       </div>
-      <div class="bg-surface-container-low p-2 rounded-xl card-hover">
+      <div class="bg-surface-container-low p-2 rounded-xl card-hover h-full flex flex-col">
         <div class="aspect-[4/3] rounded-lg overflow-hidden mb-4">
           <picture class="block w-full h-full">
   <source srcset="../assets/images/DSkvLbBjLHd-320w.cf9805a641.webp 320w, ../assets/images/DSkvLbBjLHd-480w.400d490c4f.webp 480w, ../assets/images/DSkvLbBjLHd-640w.21138b539a.webp 640w, ../assets/images/DSkvLbBjLHd-960w.aa579a69ac.webp 960w, ../assets/images/DSkvLbBjLHd-1080w.9bf3158f77.webp 1080w" sizes="(min-width: 640px) 30vw, calc(100vw - 3rem)" type="image/webp"/>
@@ -624,7 +627,7 @@
   />
 </picture>
         </div>
-        <div class="px-2 pb-3">
+        <div class="px-2 pb-3 flex-1">
           <h3 class="font-headline text-base text-on-surface mb-1">Christmas Cat</h3>
           <p class="text-sm text-outline">Approx. 20 cm</p>
         </div>
@@ -832,6 +835,7 @@
           <li><a href="../shop.html#bags" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сумки та аксесуари</a></li>
           <li><a href="../shop.html#seasonal" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сезонні вироби</a></li>
           <li><a href="../shop.html#decor" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Декор та кошики</a></li>
+          <li><a href="../shop.html#patterns" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Схеми в&#39;язання гачком</a></li>
         </ul>
       </nav>
       <nav>

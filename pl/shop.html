@@ -4,8 +4,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Sklep — TetiGurumi Szydełkowe Zabawki i Prezenty</title>
-<meta name="description" content="Przejrzyj ręcznie robione szydełkowe zabawki, dekoracje sezonowe, torby i prezenty od Tetiany. Prace gotowe i na zamówienie."/>
-<link rel="stylesheet" href="../assets/site.e4d7cb5389.css"/>
+<meta name="description" content="Przejrzyj ręcznie robione szydełkowe zabawki, dekoracje sezonowe, torby, prezenty i wzory cyfrowe od Tetiany. Produkty dostępne od ręki i na zamówienie."/>
+<link rel="stylesheet" href="../assets/site.4edf2c9551.css"/>
 <style>
   
 </style>
@@ -32,15 +32,19 @@
 </script></head>
 <body class="min-h-screen flex flex-col">
 
-<nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20">
-  <div class="flex justify-between items-center w-full px-6 md:px-10 py-5 max-w-screen-xl mx-auto">
-    <a href="../index.html" class="text-2xl font-headline tracking-tight text-on-surface-variant">TetiGurumi</a>
+<nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20 overflow-visible">
+  <div class="flex justify-between items-center w-full px-6 md:px-10 py-3 max-w-screen-xl mx-auto overflow-visible">
+    <a href="../index.html" class="inline-flex items-center text-2xl font-headline tracking-tight text-on-surface-variant">
+      <img src="../assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-12 w-auto object-contain mr-3 md:h-20"/>
+      <span>TetiGurumi</span>
+    </a>
     <div class="hidden md:flex items-center gap-8">
       <a href="../index.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Główna</a>
       <a href="../shop.html" class="text-sm transition-colors duration-200 text-primary font-semibold border-b-2 border-primary pb-0.5">Sklep</a>
       <a href="../custom-orders.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Zamówienia</a>
       <a href="../gallery.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Galeria</a>
       <a href="../about.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">O mnie</a>
+      <a href="../faq.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">FAQ</a>
       <a href="../contact.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Kontakt</a>
     </div>
     <div class="hidden md:flex items-center gap-4">
@@ -70,7 +74,10 @@
   <!-- Panel -->
   <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
     <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
-      <span class="font-headline text-lg text-on-surface-variant">TetiGurumi</span>
+      <a href="../index.html" class="inline-flex items-center font-headline text-lg text-on-surface-variant">
+        <img src="../assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-10 w-auto object-contain mr-2"/>
+        <span>TetiGurumi</span>
+      </a>
       <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
     </div>
     <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
@@ -88,6 +95,9 @@
       </a>
       <a href="../about.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         O mnie
+      </a>
+      <a href="../faq.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        FAQ
       </a>
       <a href="../contact.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Kontakt
@@ -149,36 +159,63 @@
     </nav>
     <div class="max-w-2xl pb-14">
       <h1 class="font-headline text-5xl md:text-6xl text-on-surface leading-tight mb-5">Kolekcja</h1>
-      <p class="text-base text-outline leading-relaxed">Każda praca jest robiona ręcznie. Przejrzyj gotowe prace i prace na zamówienie.</p>
+      <p class="text-base text-outline leading-relaxed">Każdy produkt jest robiony ręcznie. Przejrzyj produkty dostępne, na zamówienie i wzory cyfrowe.</p>
     </div>
   </div>
 </section>
 
 <!-- Filter Bar -->
 <div class="bg-surface/90 backdrop-blur-sm sticky top-[73px] z-40 border-b border-outline-variant/20">
-  <div class="max-w-screen-xl mx-auto px-6 md:px-10 py-4 flex items-center gap-3 overflow-x-auto scrollbar-none">
-    <button data-filter="all" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-primary text-on-primary">Wszystkie</button>
-    <button data-filter="toys" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Zabawki szydełkowe</button>
-    <button data-filter="bags" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Torby i akcesoria</button>
-    <button data-filter="seasonal" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Sezonowe</button>
-    <button data-filter="decor" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Dekoracje</button>
-    <button data-filter="gifts" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Prezenty i zamówienia</button>
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10 py-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+    <div class="flex items-center gap-3 overflow-x-auto scrollbar-none">
+      <a href="../shop.html" data-filter="all" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-primary text-on-primary">Wszystkie</a>
+      <a href="#toys" data-filter="toys" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Zabawki szydełkowe</a>
+      <a href="#bags" data-filter="bags" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Torby i akcesoria</a>
+      <a href="#seasonal" data-filter="seasonal" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Sezonowe</a>
+      <a href="#decor" data-filter="decor" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Dekoracje</a>
+      <a href="#gifts" data-filter="gifts" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Prezenty i zamówienia</a>
+      <a href="#patterns" data-filter="patterns" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Wzory szydełkowe</a>
+    </div>
+    <label class="flex items-center gap-3 text-sm text-on-surface-variant">
+      <span class="font-medium whitespace-nowrap">Dostępność</span>
+      <select id="availability-filter" class="bg-surface-container border border-outline-variant/30 rounded-xl px-4 py-2 text-sm text-on-surface-variant">
+        <option value="all">Pokaż wszystkie</option>
+        <option value="available">Dostępne teraz</option>
+        <option value="made_to_order">Na zamówienie</option>
+      </select>
+    </label>
   </div>
 </div>
 
 <!-- Section anchors -->
-<div id="toys"></div>
-<div id="bags"></div>
-<div id="seasonal"></div>
-<div id="decor"></div>
+<div id="toys" class="scroll-mt-36"></div>
+<div id="bags" class="scroll-mt-36"></div>
+<div id="seasonal" class="scroll-mt-36"></div>
+<div id="decor" class="scroll-mt-36"></div>
+<div id="gifts" class="scroll-mt-36"></div>
+<div id="patterns" class="scroll-mt-36"></div>
 
 <!-- Product Grid -->
 <main class="flex-1">
-  <section class="py-20 md:py-28">
+  <section class="pt-10 pb-20 md:pt-12 md:pb-28">
     <div class="max-w-screen-xl mx-auto px-6 md:px-10">
-      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12">
+      <div class="max-w-3xl mb-12" id="patterns-legal-block">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-outline mb-4">Informacja o zakupie wzoru</p>
+<div class="rounded-2xl border border-[#d7c4b3] bg-[#fff7f0] p-6 md:p-7 text-sm text-on-surface-variant leading-relaxed">
+  <p class="font-semibold text-on-surface mb-4">WAŻNE: To jest tylko wzór szydełkowy (cyfrowy plik PDF), a nie gotowy produkt.</p>
+  <p class="text-xs font-bold uppercase tracking-[0.16em] text-outline mb-2">PRAWA AUTORSKIE</p>
+  <p class="mb-5">Ten wzór jest oryginalnym projektem TetiGurumi. Udostępnianie, kopiowanie, tłumaczenie lub odsprzedaż tego wzoru lub jakiejkolwiek jego części jest surowo zabronione.</p>
+  <p class="text-xs font-bold uppercase tracking-[0.16em] text-outline mb-2">POLITYKA ZWROTÓW I ANULOWANIA</p>
+  <p>Ponieważ jest to produkt cyfrowy, zwroty, anulowania i reklamacje NIE są akceptowane po dokonaniu zakupu. W razie problemów z zamówieniem proszę o kontakt.</p>
+</div>      </div>
 
-        <article data-category="toys" class="group">
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12">
+        <article
+          data-category="toys"
+          data-availability="made_to_order"
+          data-type="physical"
+          class="group"
+        >
           <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/DUkhM-7jKXl-320w.be76f518ae.webp 320w, ../assets/images/DUkhM-7jKXl-480w.17274e3e04.webp 480w, ../assets/images/DUkhM-7jKXl-640w.ef0b81fe5a.webp 640w, ../assets/images/DUkhM-7jKXl-960w.7cdaaa496c.webp 960w, ../assets/images/DUkhM-7jKXl-1080w.7dfed87ad1.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
@@ -198,19 +235,26 @@
             <a
               href="../custom-orders.html"
               class="absolute bottom-3 right-3 w-10 h-10 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-outline-variant/20 hover:bg-primary hover:text-on-primary"
-              aria-label="Inquire about Handmade Doll"
+              aria-label="Zapytaj o Handmade Doll"
             >
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16 16 8M9 8h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </a>
           </div>
           <h3 class="font-headline text-lg text-on-surface mb-1">Handmade Doll</h3>
           <p class="text-xs text-outline mb-3">Approx. 30 cm · Cotton yarn</p>
-          <div class="flex items-center justify-between">
-            <span class="text-primary font-bold text-base">from XX PLN</span>
-            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full">Na zamówienie</span>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-primary font-bold text-base block">from XX PLN</span>
+            </div>
+            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">Na zamówienie</span>
           </div>
         </article>
-        <article data-category="toys" class="group">
+        <article
+          data-category="toys"
+          data-availability="made_to_order"
+          data-type="physical"
+          class="group"
+        >
           <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/DQ1jqQIjEvn-320w.7c5741c273.webp 320w, ../assets/images/DQ1jqQIjEvn-480w.df809dd6d9.webp 480w, ../assets/images/DQ1jqQIjEvn-640w.1a2b1c99de.webp 640w, ../assets/images/DQ1jqQIjEvn-960w.39c537a5d2.webp 960w, ../assets/images/DQ1jqQIjEvn-1080w.b48915ce9c.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
@@ -230,19 +274,26 @@
             <a
               href="../custom-orders.html"
               class="absolute bottom-3 right-3 w-10 h-10 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-outline-variant/20 hover:bg-primary hover:text-on-primary"
-              aria-label="Inquire about Lion Amigurumi"
+              aria-label="Zapytaj o Lion Amigurumi"
             >
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16 16 8M9 8h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </a>
           </div>
           <h3 class="font-headline text-lg text-on-surface mb-1">Lion Amigurumi</h3>
           <p class="text-xs text-outline mb-3">Approx. 28 cm · Cotton yarn</p>
-          <div class="flex items-center justify-between">
-            <span class="text-primary font-bold text-base">from YY PLN</span>
-            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full">Na zamówienie</span>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-primary font-bold text-base block">from YY PLN</span>
+            </div>
+            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">Na zamówienie</span>
           </div>
         </article>
-        <article data-category="toys" class="group">
+        <article
+          data-category="toys"
+          data-availability="made_to_order"
+          data-type="physical"
+          class="group"
+        >
           <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/DUN66hvjFaA-320w.c404549ec9.webp 320w, ../assets/images/DUN66hvjFaA-480w.10daa793af.webp 480w, ../assets/images/DUN66hvjFaA-640w.9daf151228.webp 640w, ../assets/images/DUN66hvjFaA-960w.3d413a1c19.webp 960w, ../assets/images/DUN66hvjFaA-1080w.fec1a3b132.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
@@ -262,19 +313,26 @@
             <a
               href="../custom-orders.html"
               class="absolute bottom-3 right-3 w-10 h-10 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-outline-variant/20 hover:bg-primary hover:text-on-primary"
-              aria-label="Inquire about Capybara Friends"
+              aria-label="Zapytaj o Capybara Friends"
             >
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16 16 8M9 8h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </a>
           </div>
           <h3 class="font-headline text-lg text-on-surface mb-1">Capybara Friends</h3>
           <p class="text-xs text-outline mb-3">Approx. 22 cm · Cotton yarn</p>
-          <div class="flex items-center justify-between">
-            <span class="text-primary font-bold text-base">from ZZ PLN</span>
-            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full">Na zamówienie</span>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-primary font-bold text-base block">from ZZ PLN</span>
+            </div>
+            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">Na zamówienie</span>
           </div>
         </article>
-        <article data-category="toys" class="group">
+        <article
+          data-category="toys"
+          data-availability="made_to_order"
+          data-type="physical"
+          class="group"
+        >
           <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/DUN66hvjFaA-320w.c404549ec9.webp 320w, ../assets/images/DUN66hvjFaA-480w.10daa793af.webp 480w, ../assets/images/DUN66hvjFaA-640w.9daf151228.webp 640w, ../assets/images/DUN66hvjFaA-960w.3d413a1c19.webp 960w, ../assets/images/DUN66hvjFaA-1080w.fec1a3b132.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
@@ -294,19 +352,26 @@
             <a
               href="../custom-orders.html"
               class="absolute bottom-3 right-3 w-10 h-10 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-outline-variant/20 hover:bg-primary hover:text-on-primary"
-              aria-label="Inquire about Amigurumi Collection"
+              aria-label="Zapytaj o Amigurumi Collection"
             >
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16 16 8M9 8h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </a>
           </div>
           <h3 class="font-headline text-lg text-on-surface mb-1">Amigurumi Collection</h3>
           <p class="text-xs text-outline mb-3">Various sizes · Cotton yarn</p>
-          <div class="flex items-center justify-between">
-            <span class="text-primary font-bold text-base">from XX PLN</span>
-            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full">Na zamówienie</span>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-primary font-bold text-base block">from XX PLN</span>
+            </div>
+            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">Na zamówienie</span>
           </div>
         </article>
-        <article data-category="seasonal" class="group hidden" data-extra>
+        <article
+          data-category="seasonal"
+          data-availability="made_to_order"
+          data-type="physical"
+          class="group hidden"
+ data-extra        >
           <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/DSLXBTqDBBt-320w.6db5af3791.webp 320w, ../assets/images/DSLXBTqDBBt-480w.29cf3d55ff.webp 480w, ../assets/images/DSLXBTqDBBt-640w.dbba6cab86.webp 640w, ../assets/images/DSLXBTqDBBt-960w.60b6b01aed.webp 960w, ../assets/images/DSLXBTqDBBt-1080w.de6436728e.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
@@ -326,19 +391,26 @@
             <a
               href="../custom-orders.html"
               class="absolute bottom-3 right-3 w-10 h-10 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-outline-variant/20 hover:bg-primary hover:text-on-primary"
-              aria-label="Inquire about Christmas Market Set"
+              aria-label="Zapytaj o Christmas Market Set"
             >
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16 16 8M9 8h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </a>
           </div>
           <h3 class="font-headline text-lg text-on-surface mb-1">Christmas Market Set</h3>
           <p class="text-xs text-outline mb-3">Set of 3 ornaments</p>
-          <div class="flex items-center justify-between">
-            <span class="text-primary font-bold text-base">from YY PLN</span>
-            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full">Na zamówienie</span>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-primary font-bold text-base block">from YY PLN</span>
+            </div>
+            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">Na zamówienie</span>
           </div>
         </article>
-        <article data-category="seasonal" class="group hidden" data-extra>
+        <article
+          data-category="seasonal"
+          data-availability="available"
+          data-type="physical"
+          class="group hidden"
+ data-extra        >
           <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/DSx-GmtDAMG-320w.7f5be3d225.webp 320w, ../assets/images/DSx-GmtDAMG-480w.0492b9a0b0.webp 480w, ../assets/images/DSx-GmtDAMG-640w.60e2fd9e79.webp 640w, ../assets/images/DSx-GmtDAMG-960w.af89e2ecd1.webp 960w, ../assets/images/DSx-GmtDAMG-1080w.75fd502450.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
@@ -354,23 +426,30 @@
     decoding="async"
   />
 </picture>
-            <span class="absolute top-3 left-3 bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-3 py-1 rounded-full">Gotowe do kupienia</span>
+            <span class="absolute top-3 left-3 bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-3 py-1 rounded-full">✓ Dostępne</span>
             <a
               href="../custom-orders.html"
               class="absolute bottom-3 right-3 w-10 h-10 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-outline-variant/20 hover:bg-primary hover:text-on-primary"
-              aria-label="Inquire about Festive Decorations"
+              aria-label="Zapytaj o Festive Decorations"
             >
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16 16 8M9 8h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </a>
           </div>
           <h3 class="font-headline text-lg text-on-surface mb-1">Festive Decorations</h3>
           <p class="text-xs text-outline mb-3">Set of 4 · Cotton yarn</p>
-          <div class="flex items-center justify-between">
-            <span class="text-primary font-bold text-base">ZZ PLN</span>
-            <span class="bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-2.5 py-1 rounded-full">Gotowe do kupienia</span>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-primary font-bold text-base block">ZZ PLN</span>
+            </div>
+            <span class="bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">✓ Dostępne</span>
           </div>
         </article>
-        <article data-category="seasonal" class="group hidden" data-extra>
+        <article
+          data-category="seasonal"
+          data-availability="made_to_order"
+          data-type="physical"
+          class="group hidden"
+ data-extra        >
           <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/DSkvLbBjLHd-320w.cf9805a641.webp 320w, ../assets/images/DSkvLbBjLHd-480w.400d490c4f.webp 480w, ../assets/images/DSkvLbBjLHd-640w.21138b539a.webp 640w, ../assets/images/DSkvLbBjLHd-960w.aa579a69ac.webp 960w, ../assets/images/DSkvLbBjLHd-1080w.9bf3158f77.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
@@ -390,19 +469,26 @@
             <a
               href="../custom-orders.html"
               class="absolute bottom-3 right-3 w-10 h-10 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-outline-variant/20 hover:bg-primary hover:text-on-primary"
-              aria-label="Inquire about Christmas Cat"
+              aria-label="Zapytaj o Christmas Cat"
             >
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16 16 8M9 8h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </a>
           </div>
           <h3 class="font-headline text-lg text-on-surface mb-1">Christmas Cat</h3>
           <p class="text-xs text-outline mb-3">Approx. 20 cm · Cotton yarn</p>
-          <div class="flex items-center justify-between">
-            <span class="text-primary font-bold text-base">from XX PLN</span>
-            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full">Na zamówienie</span>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-primary font-bold text-base block">from XX PLN</span>
+            </div>
+            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">Na zamówienie</span>
           </div>
         </article>
-        <article data-category="toys" class="group hidden" data-extra>
+        <article
+          data-category="toys"
+          data-availability="made_to_order"
+          data-type="physical"
+          class="group hidden"
+ data-extra        >
           <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/DSdeBZiDB70-320w.61620744f7.webp 320w, ../assets/images/DSdeBZiDB70-480w.5090808ef4.webp 480w, ../assets/images/DSdeBZiDB70-640w.874ee8636d.webp 640w, ../assets/images/DSdeBZiDB70-960w.4b0fcc36c2.webp 960w, ../assets/images/DSdeBZiDB70-1080w.d96d6089ad.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
@@ -422,29 +508,36 @@
             <a
               href="../custom-orders.html"
               class="absolute bottom-3 right-3 w-10 h-10 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-outline-variant/20 hover:bg-primary hover:text-on-primary"
-              aria-label="Inquire about Weekend Capybaras"
+              aria-label="Zapytaj o Weekend Capybaras"
             >
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16 16 8M9 8h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </a>
           </div>
           <h3 class="font-headline text-lg text-on-surface mb-1">Weekend Capybaras</h3>
           <p class="text-xs text-outline mb-3">Approx. 25 cm · Cotton yarn</p>
-          <div class="flex items-center justify-between">
-            <span class="text-primary font-bold text-base">from YY PLN</span>
-            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full">Na zamówienie</span>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-primary font-bold text-base block">from YY PLN</span>
+            </div>
+            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">Na zamówienie</span>
           </div>
         </article>
-        <article data-category="bags" class="group">
+        <article
+          data-category="bags"
+          data-availability="made_to_order"
+          data-type="physical"
+          class="group hidden"
+ data-extra        >
           <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
             <picture class="block w-full h-full">
-  <source srcset="../assets/images/DSLXBTqDBBt-320w.6db5af3791.webp 320w, ../assets/images/DSLXBTqDBBt-480w.29cf3d55ff.webp 480w, ../assets/images/DSLXBTqDBBt-640w.dbba6cab86.webp 640w, ../assets/images/DSLXBTqDBBt-960w.60b6b01aed.webp 960w, ../assets/images/DSLXBTqDBBt-1080w.de6436728e.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
+  <source srcset="../assets/images/portugal_bag-320w.add4af470a.webp 320w, ../assets/images/portugal_bag-480w.207d0dee84.webp 480w, ../assets/images/portugal_bag-640w.4fce6cd16e.webp 640w, ../assets/images/portugal_bag-960w.474f2e5473.webp 960w, ../assets/images/portugal_bag-1280w.2b746d881e.webp 1280w, ../assets/images/portugal_bag-1440w.0eb141a700.webp 1440w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
-    src="../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg"
-    srcset="../assets/images/DSLXBTqDBBt-320w.f7d6e2bce1.jpg 320w, ../assets/images/DSLXBTqDBBt-480w.02863430ec.jpg 480w, ../assets/images/DSLXBTqDBBt-640w.84716ac0c2.jpg 640w, ../assets/images/DSLXBTqDBBt-960w.2c67e98633.jpg 960w, ../assets/images/DSLXBTqDBBt-1080w.4e3c676f77.jpg 1080w"
+    src="../assets/images/portugal_bag-1440w.46eb61dd9e.jpg"
+    srcset="../assets/images/portugal_bag-320w.d91373a854.jpg 320w, ../assets/images/portugal_bag-480w.2a11078166.jpg 480w, ../assets/images/portugal_bag-640w.9ba8cf5f1a.jpg 640w, ../assets/images/portugal_bag-960w.0f5490fab9.jpg 960w, ../assets/images/portugal_bag-1280w.966250065c.jpg 1280w, ../assets/images/portugal_bag-1440w.46eb61dd9e.jpg 1440w"
     sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)"
-    alt="portugal bag with blue squares"
-    width="1080"
-    height="1439"
+    alt="Portugal bag with blue squares"
+    width="1440"
+    height="1918"
     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
     loading="lazy"
     decoding="async"
@@ -454,19 +547,110 @@
             <a
               href="../custom-orders.html"
               class="absolute bottom-3 right-3 w-10 h-10 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-outline-variant/20 hover:bg-primary hover:text-on-primary"
-              aria-label="Inquire about Portugal Bag"
+              aria-label="Zapytaj o Portugal Bag"
             >
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16 16 8M9 8h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </a>
           </div>
           <h3 class="font-headline text-lg text-on-surface mb-1">Portugal Bag</h3>
           <p class="text-xs text-outline mb-3"></p>
-          <div class="flex items-center justify-between">
-            <span class="text-primary font-bold text-base">1234 PLN</span>
-            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full">Na zamówienie</span>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-primary font-bold text-base block">650 PLN</span>
+            </div>
+            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">Na zamówienie</span>
           </div>
         </article>
-
+        <article
+          data-category="patterns"
+          data-availability="available"
+          data-type="digital"
+          class="group"
+        >
+          <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
+            <picture class="block w-full h-full">
+  <source srcset="../assets/images/DQ1jqQIjEvn-320w.7c5741c273.webp 320w, ../assets/images/DQ1jqQIjEvn-480w.df809dd6d9.webp 480w, ../assets/images/DQ1jqQIjEvn-640w.1a2b1c99de.webp 640w, ../assets/images/DQ1jqQIjEvn-960w.39c537a5d2.webp 960w, ../assets/images/DQ1jqQIjEvn-1080w.b48915ce9c.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DQ1jqQIjEvn-1080w.99cbe42728.jpg"
+    srcset="../assets/images/DQ1jqQIjEvn-320w.f944da61d4.jpg 320w, ../assets/images/DQ1jqQIjEvn-480w.e21abd32d4.jpg 480w, ../assets/images/DQ1jqQIjEvn-640w.08f8b012ce.jpg 640w, ../assets/images/DQ1jqQIjEvn-960w.b15c228a5d.jpg 960w, ../assets/images/DQ1jqQIjEvn-1080w.99cbe42728.jpg 1080w"
+    sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)"
+    alt="Crochet pattern for a lion amigurumi PDF"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
+            <span class="absolute top-3 left-3 bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-3 py-1 rounded-full">✓ Dostępne</span>
+            <span class="absolute top-3 right-3 bg-surface/90 text-on-surface text-[11px] font-semibold px-3 py-1 rounded-full border border-outline-variant/20">Produkt cyfrowy (PDF)</span>
+            <a
+              href="../custom-orders.html"
+              class="absolute bottom-3 right-3 w-10 h-10 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-outline-variant/20 hover:bg-primary hover:text-on-primary"
+              aria-label="Zapytaj o Lion Amigurumi Pattern"
+            >
+              <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16 16 8M9 8h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
+            </a>
+          </div>
+          <h3 class="font-headline text-lg text-on-surface mb-1">Lion Amigurumi Pattern</h3>
+          <p class="text-xs text-outline mb-3">Digital PDF pattern</p>
+          <div class="mb-4 rounded-xl border border-[#d7c4b3] bg-[#fff7f0] px-4 py-3">
+            <p class="text-xs font-semibold text-on-surface mb-1">⚠️ To jest cyfrowy wzór szydełkowy (PDF), a nie gotowy produkt.</p>
+            <p class="text-xs text-outline">Link do pobrania otrzymasz po zakupie.</p>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-primary font-bold text-base block">XX PLN</span>
+              <span class="text-xs text-outline">Produkt cyfrowy (PDF)</span>
+            </div>
+            <span class="bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">✓ Dostępne</span>
+          </div>
+        </article>
+        <article
+          data-category="patterns"
+          data-availability="available"
+          data-type="digital"
+          class="group"
+        >
+          <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
+            <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSx-GmtDAMG-320w.7f5be3d225.webp 320w, ../assets/images/DSx-GmtDAMG-480w.0492b9a0b0.webp 480w, ../assets/images/DSx-GmtDAMG-640w.60e2fd9e79.webp 640w, ../assets/images/DSx-GmtDAMG-960w.af89e2ecd1.webp 960w, ../assets/images/DSx-GmtDAMG-1080w.75fd502450.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg"
+    srcset="../assets/images/DSx-GmtDAMG-320w.fecbe2954c.jpg 320w, ../assets/images/DSx-GmtDAMG-480w.57e99cc2ce.jpg 480w, ../assets/images/DSx-GmtDAMG-640w.ca5660c9f8.jpg 640w, ../assets/images/DSx-GmtDAMG-960w.5e46332ef0.jpg 960w, ../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg 1080w"
+    sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)"
+    alt="Crochet pattern for festive decorations PDF"
+    width="1080"
+    height="1440"
+    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
+            <span class="absolute top-3 left-3 bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-3 py-1 rounded-full">✓ Dostępne</span>
+            <span class="absolute top-3 right-3 bg-surface/90 text-on-surface text-[11px] font-semibold px-3 py-1 rounded-full border border-outline-variant/20">Produkt cyfrowy (PDF)</span>
+            <a
+              href="../custom-orders.html"
+              class="absolute bottom-3 right-3 w-10 h-10 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-outline-variant/20 hover:bg-primary hover:text-on-primary"
+              aria-label="Zapytaj o Festive Decorations Pattern"
+            >
+              <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16 16 8M9 8h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
+            </a>
+          </div>
+          <h3 class="font-headline text-lg text-on-surface mb-1">Festive Decorations Pattern</h3>
+          <p class="text-xs text-outline mb-3">Digital PDF pattern</p>
+          <div class="mb-4 rounded-xl border border-[#d7c4b3] bg-[#fff7f0] px-4 py-3">
+            <p class="text-xs font-semibold text-on-surface mb-1">⚠️ To jest cyfrowy wzór szydełkowy (PDF), a nie gotowy produkt.</p>
+            <p class="text-xs text-outline">Link do pobrania otrzymasz po zakupie.</p>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-primary font-bold text-base block">YY PLN</span>
+              <span class="text-xs text-outline">Produkt cyfrowy (PDF)</span>
+            </div>
+            <span class="bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">✓ Dostępne</span>
+          </div>
+        </article>
       </div>
 
       <div class="mt-16 flex justify-center" id="load-more-container">
@@ -515,6 +699,7 @@
           <li><a href="../shop.html#bags" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Torby i akcesoria</a></li>
           <li><a href="../shop.html#seasonal" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Sezonowe</a></li>
           <li><a href="../shop.html#decor" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Dekoracje i koszyki</a></li>
+          <li><a href="../shop.html#patterns" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Wzory szydełkowe</a></li>
         </ul>
       </nav>
       <nav>
@@ -540,50 +725,89 @@
   </div>
 </footer>
 <script>
-document.querySelectorAll('[data-filter]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const filter = btn.dataset.filter;
-    document.querySelectorAll('[data-filter]').forEach(b => {
-      b.classList.remove('bg-primary', 'text-on-primary');
-      b.classList.add('bg-surface-container', 'text-on-surface-variant');
-    });
-    btn.classList.add('bg-primary', 'text-on-primary');
-    btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+const filterButtons = document.querySelectorAll('[data-filter]');
+const cards = document.querySelectorAll('[data-category]');
+const availabilitySelect = document.getElementById('availability-filter');
+const loadMoreContainer = document.getElementById('load-more-container');
+const patternNotice = document.getElementById('patterns-legal-block');
+const validCategories = new Set(['toys', 'bags', 'seasonal', 'decor', 'gifts', 'patterns']);
+let activeCategory = 'all';
 
-    let visibleCount = 0;
-    document.querySelectorAll('[data-category]').forEach(card => {
-      if (filter === 'all' || card.dataset.category === filter) {
-        card.style.display = '';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
-      }
-    });
-
-    const loadMoreContainer = document.getElementById('load-more-container');
-    if (filter !== 'all') {
-      loadMoreContainer.style.display = 'none';
-    } else {
-      resetToInitial();
-    }
-  });
-});
-
-function resetToInitial() {
-  document.querySelectorAll('[data-extra]').forEach(card => {
-    card.classList.add('hidden');
-    card.style.display = '';
-  });
-  document.getElementById('load-more-container').style.display = '';
+function getCategoryFromHash() {
+  const hashCategory = window.location.hash.replace(/^#/, '');
+  return validCategories.has(hashCategory) ? hashCategory : 'all';
 }
 
-document.getElementById('load-more-btn').addEventListener('click', () => {
-  document.querySelectorAll('[data-extra]').forEach(card => {
+function syncActiveFilter() {
+  filterButtons.forEach(button => {
+    const isActive = button.dataset.filter === activeCategory;
+    button.classList.toggle('bg-primary', isActive);
+    button.classList.toggle('text-on-primary', isActive);
+    button.classList.toggle('bg-surface-container', !isActive);
+    button.classList.toggle('text-on-surface-variant', !isActive);
+  });
+}
+
+function applyFilters() {
+  const activeAvailability = availabilitySelect.value;
+  const defaultView = activeCategory === 'all' && activeAvailability === 'all';
+
+  cards.forEach(card => {
+    const categoryMatch = activeCategory === 'all' || card.dataset.category === activeCategory;
+    const availabilityMatch = activeAvailability === 'all' || card.dataset.availability === activeAvailability;
+    const shouldShow = categoryMatch && availabilityMatch;
+    const isExtra = card.hasAttribute('data-extra');
+
+    if (!shouldShow) {
+      card.style.display = 'none';
+      return;
+    }
+
+    if (defaultView && isExtra) {
+      card.classList.add('hidden');
+      card.style.display = '';
+      return;
+    }
+
     card.classList.remove('hidden');
     card.style.display = '';
   });
-  document.getElementById('load-more-container').style.display = 'none';
+
+  loadMoreContainer.style.display = defaultView ? '' : 'none';
+  patternNotice.style.display = activeCategory === 'all' || activeCategory === 'patterns' ? '' : 'none';
+  syncActiveFilter();
+}
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', event => {
+    if (btn.dataset.filter !== 'all') {
+      return;
+    }
+
+    event.preventDefault();
+    activeCategory = 'all';
+    history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    applyFilters();
+  });
 });
+
+availabilitySelect.addEventListener('change', applyFilters);
+window.addEventListener('hashchange', () => {
+  activeCategory = getCategoryFromHash();
+  applyFilters();
+});
+
+document.getElementById('load-more-btn').addEventListener('click', () => {
+  cards.forEach(card => {
+    if (card.hasAttribute('data-extra')) {
+      card.classList.remove('hidden');
+    }
+  });
+  loadMoreContainer.style.display = 'none';
+});
+
+activeCategory = getCategoryFromHash();
+applyFilters();
 </script>
 
 </body>

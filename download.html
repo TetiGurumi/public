@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Download Confirmation — TetiGurumi</title>
+<meta name="description" content="Confirmation page for digital crochet pattern purchases from TetiGurumi."/>
+<link rel="stylesheet" href="assets/site.4edf2c9551.css"/>
+<style>
+  
+</style>
+<script>
+/* Locale detection & language routing */
+(function () {
+  var path = window.location.pathname;
+  /* If already in a language subdir, remember it and stop */
+  if (/^\/pl\//.test(path)) { localStorage.setItem('tg_lang', 'pl'); return; }
+  if (/^\/uk\//.test(path)) { localStorage.setItem('tg_lang', 'uk'); return; }
+  /* On root (English) pages */
+  var stored = localStorage.getItem('tg_lang');
+  var page = path.replace(/^\//, '') || 'index.html';
+  if (stored === 'pl') { window.location.replace('/pl/' + page); return; }
+  if (stored === 'uk') { window.location.replace('/uk/' + page); return; }
+  /* Auto-detect if no preference stored */
+  if (stored === null) {
+    var bl = (navigator.language || '').slice(0, 2).toLowerCase();
+    if (bl === 'pl') { localStorage.setItem('tg_lang', 'pl'); window.location.replace('/pl/' + page); return; }
+    if (bl === 'uk') { localStorage.setItem('tg_lang', 'uk'); window.location.replace('/uk/' + page); return; }
+    localStorage.setItem('tg_lang', 'en');
+  }
+})();
+</script></head>
+<body class="min-h-screen flex flex-col">
+
+<nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20 overflow-visible">
+  <div class="flex justify-between items-center w-full px-6 md:px-10 py-3 max-w-screen-xl mx-auto overflow-visible">
+    <a href="index.html" class="inline-flex items-center text-2xl font-headline tracking-tight text-on-surface-variant">
+      <img src="assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-12 w-auto object-contain mr-3 md:h-20"/>
+      <span>TetiGurumi</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Home</a>
+      <a href="shop.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Shop</a>
+      <a href="custom-orders.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Custom Orders</a>
+      <a href="gallery.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Gallery</a>
+      <a href="about.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">About</a>
+      <a href="faq.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">FAQ</a>
+      <a href="contact.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Contact</a>
+    </div>
+    <div class="hidden md:flex items-center gap-4">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-1 text-xs font-semibold">
+        <a href="/" onclick="localStorage.setItem('tg_lang','en');return true;"
+           class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">EN</a>
+        <span class="text-outline-variant/60">|</span>
+        <a href="/pl/" onclick="localStorage.setItem('tg_lang','pl');return true;"
+           class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
+        <span class="text-outline-variant/60">|</span>
+        <a href="/uk/" onclick="localStorage.setItem('tg_lang','uk');return true;"
+           class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">UA</a>
+      </div>
+      <a href="custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
+        Order custom
+      </a>
+    </div>
+    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
+  </div>
+</nav>
+
+<!-- Mobile menu drawer -->
+<div id="nav-drawer" class="fixed inset-0 z-[100] pointer-events-none">
+  <!-- Backdrop -->
+  <div id="nav-backdrop" class="absolute inset-0 bg-on-surface/20 opacity-0 transition-opacity duration-300"></div>
+  <!-- Panel -->
+  <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
+    <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
+      <a href="index.html" class="inline-flex items-center font-headline text-lg text-on-surface-variant">
+        <img src="assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-10 w-auto object-contain mr-2"/>
+        <span>TetiGurumi</span>
+      </a>
+      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
+    </div>
+    <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
+      <a href="index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Home
+      </a>
+      <a href="shop.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Shop
+      </a>
+      <a href="custom-orders.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Custom Orders
+      </a>
+      <a href="gallery.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Gallery
+      </a>
+      <a href="about.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        About
+      </a>
+      <a href="faq.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        FAQ
+      </a>
+      <a href="contact.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Contact
+      </a>
+    </nav>
+    <div class="px-4 pb-4 border-t border-outline-variant/20 pt-4 flex flex-col gap-4">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-2 px-3">
+        <div class="flex items-center gap-1 text-xs font-semibold">
+          <a href="/" onclick="localStorage.setItem('tg_lang','en');return true;"
+             class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">EN</a>
+          <span class="text-outline-variant/60">|</span>
+          <a href="/pl/" onclick="localStorage.setItem('tg_lang','pl');return true;"
+             class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
+          <span class="text-outline-variant/60">|</span>
+          <a href="/uk/" onclick="localStorage.setItem('tg_lang','uk');return true;"
+             class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">UA</a>
+        </div>
+      </div>
+      <a href="custom-orders.html" class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity">
+        Order custom
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var drawer   = document.getElementById('nav-drawer');
+  var panel    = document.getElementById('nav-panel');
+  var backdrop = document.getElementById('nav-backdrop');
+
+  function openMenu() {
+    drawer.classList.remove('pointer-events-none');
+    backdrop.classList.remove('opacity-0');
+    panel.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    backdrop.classList.add('opacity-0');
+    panel.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+    setTimeout(function () { drawer.classList.add('pointer-events-none'); }, 300);
+  }
+
+  document.getElementById('nav-open').addEventListener('click', openMenu);
+  document.getElementById('nav-close').addEventListener('click', closeMenu);
+  backdrop.addEventListener('click', closeMenu);
+})();
+</script>
+<main class="flex-1 bg-surface-container-low py-20 md:py-28">
+  <div class="max-w-screen-md mx-auto px-6 md:px-10">
+    <div class="bg-surface rounded-3xl p-10 md:p-14 shadow-[0_24px_56px_rgba(47,41,37,0.08)]">
+      <div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-8">
+        <span class="text-secondary"><svg class="icon w-8 h-8" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/>
+  <path d="m8.5 12.5 2.5 2.5 4.5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
+      </div>
+      <p class="text-xs font-bold uppercase tracking-[0.18em] text-outline mb-4">Digital download</p>
+      <h1 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight mb-5">Download confirmation</h1>
+      <p class="text-lg text-on-surface-variant leading-relaxed mb-4">Thank you for your purchase! Your download link has been sent to your email.</p>
+      <p class="text-sm text-outline leading-relaxed mb-10">If you do not see it in a few minutes, please check your spam folder or contact me for help.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="shop.html#patterns" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-6 py-3.5 rounded-xl hover:opacity-90 transition-opacity">
+          Back to shop
+          <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
+        </a>
+        <a href="contact.html" class="inline-flex items-center gap-2 border border-outline-variant/60 text-on-surface-variant text-sm font-semibold px-6 py-3.5 rounded-xl hover:border-primary hover:text-primary transition-colors">
+          Contact me
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-surface-container-low mt-auto">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <p class="font-headline text-2xl text-on-surface-variant mb-3">TetiGurumi</p>
+        <p class="text-sm text-outline leading-relaxed max-w-[26ch] mb-6">Handmade crochet toys, decor and gifts. Made by Tetiana.</p>
+        <div class="flex gap-5">
+          <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="text-sm font-semibold text-[#7b8f70] hover:underline underline-offset-2">Instagram</a>
+          <a href="https://www.facebook.com/hashtag/tetigurumi" class="text-sm font-semibold text-[#7b8f70] hover:underline underline-offset-2">Facebook</a>
+        </div>
+      </div>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Shop</p>
+        <ul class="space-y-3">
+          <li><a href="shop.html#toys" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Crochet Toys</a></li>
+          <li><a href="shop.html#bags" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Bags &amp; Accessories</a></li>
+          <li><a href="shop.html#seasonal" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Seasonal</a></li>
+          <li><a href="shop.html#decor" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Decor &amp; Baskets</a></li>
+          <li><a href="shop.html#patterns" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Crochet Patterns</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Orders</p>
+        <ul class="space-y-3">
+          <li><a href="custom-orders.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Custom Orders</a></li>
+          <li><a href="faq.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">FAQ</a></li>
+          <li><a href="gallery.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Gallery</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Info</p>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">About Tetiana</a></li>
+          <li><a href="contact.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pt-6 border-t border-outline-variant/30 flex justify-between items-center flex-wrap gap-4">
+      <p class="text-xs text-outline">© TetiGurumi. All rights reserved.</p>
+      <p class="text-xs text-outline">Handmade in Poland 🇵🇱</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
