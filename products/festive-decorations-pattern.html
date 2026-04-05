@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Festive Decorations Pattern — TetiGurumi</title>
+<meta name="description" content="Browse handmade crochet toys, seasonal decorations, bags, gifts, and digital patterns by Tetiana. Available and custom-order pieces."/>
+<link rel="stylesheet" href="../assets/site.a709891fe2.css"/>
+<style>
+  
+</style>
+<script>
+/* Locale detection & language routing */
+(function () {
+  var path = window.location.pathname;
+  /* If already in a language subdir, remember it and stop */
+  if (/^\/pl\//.test(path)) { localStorage.setItem('tg_lang', 'pl'); return; }
+  if (/^\/uk\//.test(path)) { localStorage.setItem('tg_lang', 'uk'); return; }
+  /* On root (English) pages */
+  var stored = localStorage.getItem('tg_lang');
+  var page = path.replace(/^\//, '') || 'index.html';
+  if (stored === 'pl') { window.location.replace('/pl/' + page); return; }
+  if (stored === 'uk') { window.location.replace('/uk/' + page); return; }
+  /* Auto-detect if no preference stored */
+  if (stored === null) {
+    var bl = (navigator.language || '').slice(0, 2).toLowerCase();
+    if (bl === 'pl') { localStorage.setItem('tg_lang', 'pl'); window.location.replace('/pl/' + page); return; }
+    if (bl === 'uk') { localStorage.setItem('tg_lang', 'uk'); window.location.replace('/uk/' + page); return; }
+    localStorage.setItem('tg_lang', 'en');
+  }
+})();
+</script></head>
+<body class="min-h-screen flex flex-col">
+
+<nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20 overflow-visible">
+  <div class="flex justify-between items-center w-full px-6 md:px-10 py-3 max-w-screen-xl mx-auto overflow-visible">
+    <a href="../index.html" class="inline-flex items-center text-2xl font-headline tracking-tight text-on-surface-variant">
+      <img src="../assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-12 w-auto object-contain mr-3 md:h-20"/>
+      <span>TetiGurumi</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="../index.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Home</a>
+      <a href="../shop.html" class="text-sm transition-colors duration-200 text-primary font-semibold border-b-2 border-primary pb-0.5">Shop</a>
+      <a href="../custom-orders.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Custom Orders</a>
+      <a href="../gallery.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Gallery</a>
+      <a href="../about.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">About</a>
+      <a href="../faq.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">FAQ</a>
+      <a href="../contact.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Contact</a>
+    </div>
+    <div class="hidden md:flex items-center gap-4">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-1 text-xs font-semibold">
+        <a href="/shop.html" onclick="localStorage.setItem('tg_lang','en');return true;"
+           class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">EN</a>
+        <span class="text-outline-variant/60">|</span>
+        <a href="/pl/shop.html" onclick="localStorage.setItem('tg_lang','pl');return true;"
+           class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
+        <span class="text-outline-variant/60">|</span>
+        <a href="/uk/shop.html" onclick="localStorage.setItem('tg_lang','uk');return true;"
+           class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">UA</a>
+      </div>
+      <a href="../custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
+        Order custom
+      </a>
+    </div>
+    <button id="nav-open" class="md:hidden text-on-surface-variant p-1" aria-label="Open menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
+  </div>
+</nav>
+
+<!-- Mobile menu drawer -->
+<div id="nav-drawer" class="fixed inset-0 z-[100] pointer-events-none">
+  <!-- Backdrop -->
+  <div id="nav-backdrop" class="absolute inset-0 bg-on-surface/20 opacity-0 transition-opacity duration-300"></div>
+  <!-- Panel -->
+  <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
+    <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
+      <a href="../index.html" class="inline-flex items-center font-headline text-lg text-on-surface-variant">
+        <img src="../assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-10 w-auto object-contain mr-2"/>
+        <span>TetiGurumi</span>
+      </a>
+      <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
+    </div>
+    <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
+      <a href="../index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Home
+      </a>
+      <a href="../shop.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors bg-surface-container text-primary font-semibold">
+        Shop
+      </a>
+      <a href="../custom-orders.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Custom Orders
+      </a>
+      <a href="../gallery.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Gallery
+      </a>
+      <a href="../about.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        About
+      </a>
+      <a href="../faq.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        FAQ
+      </a>
+      <a href="../contact.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+        Contact
+      </a>
+    </nav>
+    <div class="px-4 pb-4 border-t border-outline-variant/20 pt-4 flex flex-col gap-4">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-2 px-3">
+        <div class="flex items-center gap-1 text-xs font-semibold">
+          <a href="/shop.html" onclick="localStorage.setItem('tg_lang','en');return true;"
+             class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">EN</a>
+          <span class="text-outline-variant/60">|</span>
+          <a href="/pl/shop.html" onclick="localStorage.setItem('tg_lang','pl');return true;"
+             class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
+          <span class="text-outline-variant/60">|</span>
+          <a href="/uk/shop.html" onclick="localStorage.setItem('tg_lang','uk');return true;"
+             class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">UA</a>
+        </div>
+      </div>
+      <a href="../custom-orders.html" class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity">
+        Order custom
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var drawer   = document.getElementById('nav-drawer');
+  var panel    = document.getElementById('nav-panel');
+  var backdrop = document.getElementById('nav-backdrop');
+
+  function openMenu() {
+    drawer.classList.remove('pointer-events-none');
+    backdrop.classList.remove('opacity-0');
+    panel.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    backdrop.classList.add('opacity-0');
+    panel.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+    setTimeout(function () { drawer.classList.add('pointer-events-none'); }, 300);
+  }
+
+  document.getElementById('nav-open').addEventListener('click', openMenu);
+  document.getElementById('nav-close').addEventListener('click', closeMenu);
+  backdrop.addEventListener('click', closeMenu);
+})();
+</script>
+<!-- Breadcrumb -->
+<div class="bg-surface-container-low">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10 py-6">
+    <nav class="flex items-center gap-2 text-xs text-outline">
+      <a href="../index.html" class="hover:text-primary transition-colors">Home</a>
+      <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
+      <a href="../shop.html" class="hover:text-primary transition-colors">Shop</a>
+      <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
+      <span class="text-on-surface-variant font-medium">Festive Decorations Pattern</span>
+    </nav>
+  </div>
+</div>
+
+<!-- Product Detail -->
+<main class="flex-1 bg-surface">
+  <section class="py-12 md:py-20">
+    <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-start">
+
+        <!-- Image column -->
+        <div class="lg:sticky lg:top-[100px]" id="product-gallery">
+
+          <!-- Main stage -->
+          <div class="aspect-square bg-surface-container-low rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(47,41,37,0.06)] mb-3 relative" id="gallery-stage">
+
+            <div
+              class="gallery-slide absolute inset-0 transition-opacity duration-400"
+              data-index="0"
+              aria-hidden="false"
+            >
+              <picture class="block w-full h-full">
+  <source srcset="../assets/images/DSx-GmtDAMG-320w.7f5be3d225.webp 320w, ../assets/images/DSx-GmtDAMG-480w.0492b9a0b0.webp 480w, ../assets/images/DSx-GmtDAMG-640w.60e2fd9e79.webp 640w, ../assets/images/DSx-GmtDAMG-960w.af89e2ecd1.webp 960w, ../assets/images/DSx-GmtDAMG-1080w.75fd502450.webp 1080w" sizes="(min-width: 1024px) 45vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg"
+    srcset="../assets/images/DSx-GmtDAMG-320w.fecbe2954c.jpg 320w, ../assets/images/DSx-GmtDAMG-480w.57e99cc2ce.jpg 480w, ../assets/images/DSx-GmtDAMG-640w.ca5660c9f8.jpg 640w, ../assets/images/DSx-GmtDAMG-960w.5e46332ef0.jpg 960w, ../assets/images/DSx-GmtDAMG-1080w.2c1c0e7be3.jpg 1080w"
+    sizes="(min-width: 1024px) 45vw, calc(100vw - 3rem)"
+    alt="Crochet pattern for festive decorations PDF"
+    width="1080"
+    height="1440"
+    class="w-full h-full object-cover"
+    loading="eager"
+    decoding="async"
+  />
+</picture>
+            </div>
+
+            <!-- Availability badge -->
+            <span class="absolute top-4 left-4 bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-3 py-1.5 rounded-full z-10">✓ Available</span>
+
+            <!-- Digital badge -->
+            <span class="absolute top-4 right-4 bg-surface/90 text-on-surface text-[11px] font-semibold px-3 py-1.5 rounded-full border border-outline-variant/20 z-10">Digital download</span>
+
+            <!-- Prev / Next arrows (only rendered when there are multiple images) -->
+          </div>
+
+          <!-- Thumbnail strip (only when multiple images) -->
+
+          <!-- Handmade assurance strip -->
+          <div class="flex items-center gap-6 px-1">
+            <div class="flex items-center gap-2 text-xs text-outline">
+              <svg class="icon w-4 h-4 text-[#7b8f70] shrink-0" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/>
+  <path d="m8.5 12.5 2.5 2.5 4.5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
+              <span>Made by hand</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-outline">
+              <svg class="icon w-4 h-4 text-[#7b8f70] shrink-0" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/>
+  <path d="m8.5 12.5 2.5 2.5 4.5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
+              <span>Ships to EU</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info column -->
+        <div>
+          <!-- Category label -->
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-outline mb-4">Crochet Patterns</p>
+
+          <!-- Product name -->
+          <h1 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight mb-4">Festive Decorations Pattern</h1>
+
+          <!-- Meta: size / material -->
+          <p class="text-sm text-outline mb-6">
+Digital PDF pattern          </p>
+
+          <!-- Price -->
+          <div class="mb-8">
+            <span class="font-headline text-3xl text-primary font-bold">YY PLN</span>
+            <span class="ml-3 text-sm text-outline">Digital download</span>
+          </div>
+
+          <!-- Digital pattern notice -->
+          <div class="mb-8 rounded-2xl border border-[#d7c4b3] bg-[#fff7f0] p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-outline mb-2">Pattern purchase notice</p>
+            <p class="text-sm font-semibold text-on-surface mb-3">IMPORTANT: This is a crochet pattern only (digital PDF file), not a finished product.</p>
+            <p class="text-xs text-outline">You will receive a download link after purchase.</p>
+          </div>
+
+          <!-- Description -->
+
+          <!-- Details list (shown when product has structured details) -->
+
+          <!-- === CTA block — wire Snipcart/FoxyCart here === -->
+          <div class="flex flex-col sm:flex-row gap-3 mb-10">
+            <!-- Digital: placeholder buy button (replace with Snipcart/FoxyCart data-item attrs) -->
+            <button
+              type="button"
+              class="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-sm font-semibold text-on-primary transition-opacity hover:opacity-90"
+              style="background: radial-gradient(circle at 60% 40%, #956c44 0%, #79542e 100%);"
+              data-product-id="festive-decorations-pattern"
+              data-product-name="Festive Decorations Pattern"
+              data-product-price="YY PLN"
+            >
+              <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 5h2l1.8 8.2a1 1 0 0 0 1 .8h7.9a1 1 0 0 0 1-.8L18.6 8H7.2M10 18a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 10 18Zm8 0a1.2 1.2 0 1 1-2.4 0A1.2 1.2 0 0 1 18 18ZM12 4v4M10 6h4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
+              Buy pattern
+            </button>
+
+            <!-- Secondary: back to shop -->
+            <a
+              href="../shop.html"
+              class="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-4 text-sm font-semibold text-on-surface-variant border border-outline-variant/30 hover:bg-surface-container transition-colors"
+            >
+              Back to shop
+            </a>
+          </div>
+          <!-- === end CTA block === -->
+
+          <!-- Made-to-order note -->
+
+          <!-- Pattern copyright (full legal block for digital products) -->
+          <div class="mt-6 pt-6 border-t border-outline-variant/20">
+<div class="rounded-2xl border border-[#d7c4b3] bg-[#fff7f0] p-6 md:p-7 text-sm text-on-surface-variant leading-relaxed">
+  <p class="font-semibold text-on-surface mb-4">IMPORTANT: This is a crochet pattern only (digital PDF file), not a finished product.</p>
+  <p class="text-xs font-bold uppercase tracking-[0.16em] text-outline mb-2">COPYRIGHT NOTICE</p>
+  <p class="mb-5">This pattern is an original design by TetiGurumi. Sharing, copying, translating, or reselling this pattern or any part of it is strictly prohibited.</p>
+  <p class="text-xs font-bold uppercase tracking-[0.16em] text-outline mb-2">REFUND &amp; CANCELLATION POLICY</p>
+  <p>Since this is a digital product, returns, cancellations, and refunds are NOT accepted after purchase. Please contact me about any problems with your order.</p>
+</div>          </div>
+
+          <!-- Material callout for physical products -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related / More from collection -->
+  <section class="bg-surface-container-low py-16 md:py-24">
+    <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+      <p class="text-xs font-bold uppercase tracking-[0.18em] text-outline mb-4">You may also like</p>
+      <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-10">More from the collection</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+        <article class="group">
+          <a href="../products/lion-amigurumi-pattern.html" class="block">
+            <div class="aspect-square bg-surface rounded-xl overflow-hidden mb-4 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]">
+              <picture class="block w-full h-full">
+  <source srcset="../assets/images/DQ1jqQIjEvn-320w.7c5741c273.webp 320w, ../assets/images/DQ1jqQIjEvn-480w.df809dd6d9.webp 480w, ../assets/images/DQ1jqQIjEvn-640w.1a2b1c99de.webp 640w, ../assets/images/DQ1jqQIjEvn-960w.39c537a5d2.webp 960w, ../assets/images/DQ1jqQIjEvn-1080w.b48915ce9c.webp 1080w" sizes="(min-width: 1024px) 20vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
+  <img
+    src="../assets/images/DQ1jqQIjEvn-1080w.99cbe42728.jpg"
+    srcset="../assets/images/DQ1jqQIjEvn-320w.f944da61d4.jpg 320w, ../assets/images/DQ1jqQIjEvn-480w.e21abd32d4.jpg 480w, ../assets/images/DQ1jqQIjEvn-640w.08f8b012ce.jpg 640w, ../assets/images/DQ1jqQIjEvn-960w.b15c228a5d.jpg 960w, ../assets/images/DQ1jqQIjEvn-1080w.99cbe42728.jpg 1080w"
+    sizes="(min-width: 1024px) 20vw, (min-width: 640px) 44vw, calc(100vw - 3rem)"
+    alt="Crochet pattern for a lion amigurumi PDF"
+    width="1080"
+    height="1439"
+    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    loading="lazy"
+    decoding="async"
+  />
+</picture>
+              <span class="absolute top-3 left-3 bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-3 py-1 rounded-full">✓ Available</span>
+            </div>
+            <h3 class="font-headline text-base text-on-surface mb-1 group-hover:text-primary transition-colors">Lion Amigurumi Pattern</h3>
+            <p class="text-xs text-outline mb-2">Digital PDF pattern</p>
+            <span class="text-primary font-bold text-sm">XX PLN</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom order nudge -->
+  <section class="bg-surface py-16 md:py-24">
+    <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+      <div class="max-w-xl">
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Custom Work</p>
+        <h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight mb-5">Looking for something specific?</h2>
+        <p class="text-base text-outline leading-relaxed mb-10">Every piece can be made just for you — the right colours, the right size, the right character.</p>
+        <a href="../custom-orders.html" class="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold text-on-primary transition-opacity hover:opacity-90" style="background: radial-gradient(circle at 60% 40%, #956c44 0%, #79542e 100%);">
+          Start a custom order
+          <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-surface-container-low mt-auto">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-10 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <p class="font-headline text-2xl text-on-surface-variant mb-3">TetiGurumi</p>
+        <p class="text-sm text-outline leading-relaxed max-w-[26ch] mb-6">Handmade crochet toys, decor and gifts. Made by Tetiana.</p>
+        <div class="flex gap-5">
+          <a href="https://instagram.com/tetigurumi" target="_blank" rel="noopener" class="text-sm font-semibold text-[#7b8f70] hover:underline underline-offset-2">Instagram</a>
+          <a href="https://www.facebook.com/hashtag/tetigurumi" class="text-sm font-semibold text-[#7b8f70] hover:underline underline-offset-2">Facebook</a>
+        </div>
+      </div>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Shop</p>
+        <ul class="space-y-3">
+          <li><a href="../shop.html#toys" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Crochet Toys</a></li>
+          <li><a href="../shop.html#bags" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Bags &amp; Accessories</a></li>
+          <li><a href="../shop.html#seasonal" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Seasonal</a></li>
+          <li><a href="../shop.html#decor" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Decor &amp; Baskets</a></li>
+          <li><a href="../shop.html#patterns" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Crochet Patterns</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Orders</p>
+        <ul class="space-y-3">
+          <li><a href="../custom-orders.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Custom Orders</a></li>
+          <li><a href="../faq.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">FAQ</a></li>
+          <li><a href="../gallery.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Gallery</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Info</p>
+        <ul class="space-y-3">
+          <li><a href="../about.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">About Tetiana</a></li>
+          <li><a href="../contact.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pt-6 border-t border-outline-variant/30 flex justify-between items-center flex-wrap gap-4">
+      <p class="text-xs text-outline">© TetiGurumi. All rights reserved.</p>
+      <p class="text-xs text-outline">Handmade in Poland 🇵🇱</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var slides = document.querySelectorAll('.gallery-slide');
+  var thumbs = document.querySelectorAll('.gallery-thumb');
+  var dots   = document.querySelectorAll('.gallery-dot');
+  var prev   = document.getElementById('gallery-prev');
+  var next   = document.getElementById('gallery-next');
+
+  if (!slides.length || slides.length < 2) return;
+
+  var current = 0;
+
+  function goTo(index) {
+    slides[current].classList.add('opacity-0', 'pointer-events-none');
+    slides[current].setAttribute('aria-hidden', 'true');
+    dots[current].classList.remove('bg-on-surface', 'scale-125');
+    dots[current].classList.add('bg-on-surface/30');
+    thumbs[current].classList.remove('ring-primary');
+    thumbs[current].classList.add('ring-transparent');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.remove('opacity-0', 'pointer-events-none');
+    slides[current].setAttribute('aria-hidden', 'false');
+    dots[current].classList.add('bg-on-surface', 'scale-125');
+    dots[current].classList.remove('bg-on-surface/30');
+    thumbs[current].classList.add('ring-primary');
+    thumbs[current].classList.remove('ring-transparent');
+
+    // Scroll active thumb into view
+    thumbs[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+  }
+
+  if (prev) prev.addEventListener('click', function () { goTo(current - 1); });
+  if (next) next.addEventListener('click', function () { goTo(current + 1); });
+
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () { goTo(parseInt(dot.dataset.index, 10)); });
+  });
+
+  thumbs.forEach(function (thumb) {
+    thumb.addEventListener('click', function () { goTo(parseInt(thumb.dataset.index, 10)); });
+  });
+
+  // Keyboard arrow navigation when gallery is focused
+  document.getElementById('product-gallery').addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+  });
+
+  // Touch swipe support
+  var touchStartX = null;
+  var stage = document.getElementById('gallery-stage');
+  stage.addEventListener('touchstart', function (e) { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (touchStartX === null) return;
+    var delta = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(delta) > 40) goTo(delta < 0 ? current + 1 : current - 1);
+    touchStartX = null;
+  }, { passive: true });
+}());
+</script>
+
+</body>
+</html>
