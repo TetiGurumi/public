@@ -234,7 +234,7 @@
       <!-- Right: Contact form -->
       <div class="bg-surface-container-low rounded-2xl p-8">
         <h2 class="font-headline text-2xl text-on-surface mb-6">Надіслати повідомлення</h2>
-        <form id="contact-form" action="https://formspree.io/f/mkopoplg" method="POST" novalidate>
+        <form id="contact-form" action="https://formspree.io/f/mkopoplg" method="POST">
           <div class="space-y-5">
             <div>
               <label for="name">Ваше ім&#39;я *</label>
@@ -269,7 +269,7 @@
             </button>
           </div>
         </form>
-        <div id="contact-success" class="hidden text-center py-10">
+        <div id="contact-success" tabindex="-1" role="status" class="hidden text-center py-10">
           <div class="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mx-auto mb-5">
             <span class="text-secondary"><svg class="icon w-8 h-8" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/>
   <path d="m8.5 12.5 2.5 2.5 4.5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
@@ -277,7 +277,7 @@
           <h3 class="font-headline text-xl text-on-surface mb-3">Повідомлення надіслано!</h3>
           <p class="text-sm text-outline leading-relaxed max-w-xs mx-auto">Дякую за звернення. Я відповім протягом 2 робочих днів.</p>
         </div>
-        <p id="contact-error" class="hidden mt-4 text-sm text-[#b3261e] text-center"></p>
+        <p id="contact-error" role="alert" class="hidden mt-4 text-sm text-[#b3261e] text-center"></p>
       </div>
 
     </div>
@@ -456,11 +456,29 @@
 </footer>
 
 <script>
-  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  const contactForm = document.getElementById('contact-form');
+  let submitting = false;
+  const textFields = ['name', 'message'].map(id => document.getElementById(id));
+  function validateText(field) {
+    field.setCustomValidity(field.value.trim() ? '' : "\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u0442\u0435\u043a\u0441\u0442, \u0430 \u043d\u0435 \u043b\u0438\u0448\u0435 \u043f\u0440\u043e\u0431\u0456\u043b\u0438.");
+  }
+  textFields.forEach(field => field.addEventListener('input', () => validateText(field)));
+
+  contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
 
     const form = e.currentTarget;
     const error = document.getElementById('contact-error');
+    if (submitting) return;
+    textFields.forEach(validateText);
+    if (!form.reportValidity()) return;
+
+    submitting = true;
+    const submitButton = form.querySelector('[type="submit"]');
+    const submitLabel = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = "\u041d\u0430\u0434\u0441\u0438\u043b\u0430\u043d\u043d\u044f\u2026";
+    form.setAttribute('aria-busy', 'true');
 
     error.classList.add('hidden');
     error.textContent = '';
@@ -480,13 +498,20 @@
 
       document.getElementById('contact-form').classList.add('hidden');
       document.getElementById('contact-success').classList.remove('hidden');
+      document.getElementById('contact-success').focus({ preventScroll: true });
       form.reset();
     } catch (err) {
-      error.textContent = 'There was a problem sending your message. Please try again.';
+      error.textContent = "\u041d\u0435 \u0432\u0434\u0430\u043b\u043e\u0441\u044f \u043d\u0430\u0434\u0456\u0441\u043b\u0430\u0442\u0438 \u043f\u043e\u0432\u0456\u0434\u043e\u043c\u043b\u0435\u043d\u043d\u044f. \u0421\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0449\u0435 \u0440\u0430\u0437.";
       error.classList.remove('hidden');
+    } finally {
+      submitting = false;
+      submitButton.disabled = false;
+      submitButton.textContent = submitLabel;
+      form.removeAttribute('aria-busy');
     }
   });
 </script>
 
 </body>
 </html>
+
