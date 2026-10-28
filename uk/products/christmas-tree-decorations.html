@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Christmas Tree Ornaments — TetiGurumi</title>
 <meta name="description" content="I&#39;m so excited to show you these Christmas tree decorations — especially because it&#39;s my own original design! They were crafted for the Christmas market. Let me know what your favorite Christmas tree decorations are."/>
-<link rel="stylesheet" href="../../assets/site.33cf88c238.css"/>
+<link rel="stylesheet" href="../../assets/site.2d8d6230f0.css"/>
 <style>
   
 </style>
@@ -18,7 +18,7 @@
   if (/^\/uk\//.test(path)) { localStorage.setItem('tg_lang', 'uk'); return; }
   /* On root (English) pages */
   var stored = localStorage.getItem('tg_lang');
-  var page = path.replace(/^\//, '') || 'index.html';
+  var page = (path.replace(/^\//, '') || 'index.html') + window.location.search + window.location.hash;
   if (stored === 'pl') { window.location.replace('/pl/' + page); return; }
   if (stored === 'uk') { window.location.replace('/uk/' + page); return; }
   /* Auto-detect if no preference stored */
@@ -29,7 +29,8 @@
     localStorage.setItem('tg_lang', 'en');
   }
 })();
-</script></head>
+</script>
+</head>
 <body class="min-h-screen flex flex-col">
 
 <nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20 overflow-visible">
@@ -50,13 +51,13 @@
     <div class="hidden md:flex items-center gap-4">
       <!-- Language switcher -->
       <div class="flex items-center gap-1 text-xs font-semibold">
-        <a href="/shop.html" onclick="localStorage.setItem('tg_lang','en');return true;"
+        <a href="/products/christmas-tree-decorations.html" onclick="localStorage.setItem('tg_lang','en');this.href=this.pathname+window.location.search+window.location.hash;return true;"
            class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
         <span class="text-outline-variant/60">|</span>
-        <a href="/pl/shop.html" onclick="localStorage.setItem('tg_lang','pl');return true;"
+        <a href="/pl/products/christmas-tree-decorations.html" onclick="localStorage.setItem('tg_lang','pl');this.href=this.pathname+window.location.search+window.location.hash;return true;"
            class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
         <span class="text-outline-variant/60">|</span>
-        <a href="/uk/shop.html" onclick="localStorage.setItem('tg_lang','uk');return true;"
+        <a href="/uk/products/christmas-tree-decorations.html" onclick="localStorage.setItem('tg_lang','uk');this.href=this.pathname+window.location.search+window.location.hash;return true;"
            class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">UA</a>
       </div>
       <a href="../../custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
@@ -107,13 +108,13 @@
       <!-- Language switcher -->
       <div class="flex items-center gap-2 px-3">
         <div class="flex items-center gap-1 text-xs font-semibold">
-          <a href="/shop.html" onclick="localStorage.setItem('tg_lang','en');return true;"
+          <a href="/products/christmas-tree-decorations.html" onclick="localStorage.setItem('tg_lang','en');this.href=this.pathname+window.location.search+window.location.hash;return true;"
              class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
           <span class="text-outline-variant/60">|</span>
-          <a href="/pl/shop.html" onclick="localStorage.setItem('tg_lang','pl');return true;"
+          <a href="/pl/products/christmas-tree-decorations.html" onclick="localStorage.setItem('tg_lang','pl');this.href=this.pathname+window.location.search+window.location.hash;return true;"
              class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
           <span class="text-outline-variant/60">|</span>
-          <a href="/uk/shop.html" onclick="localStorage.setItem('tg_lang','uk');return true;"
+          <a href="/uk/products/christmas-tree-decorations.html" onclick="localStorage.setItem('tg_lang','uk');this.href=this.pathname+window.location.search+window.location.hash;return true;"
              class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">UA</a>
         </div>
       </div>
@@ -149,6 +150,7 @@
   backdrop.addEventListener('click', closeMenu);
 })();
 </script>
+
 <!-- Breadcrumb -->
 <div class="bg-surface-container-low">
   <div class="max-w-screen-xl mx-auto px-6 md:px-10 py-6">
@@ -251,16 +253,15 @@ Set of 3 · Cotton yarn          </p>
 
           <!-- Details list (shown when product has structured details) -->
 
-          <!-- === CTA block — wire Snipcart/FoxyCart here === -->
+          <!-- Product inquiries retain catalog context in the customer's language. -->
           <div class="flex flex-col sm:flex-row gap-3 mb-10">
-            <!-- Made to order: inquiry CTA -->
             <a
-              href="../../custom-orders.html"
+              href="/uk/custom-orders.html?product_id=christmas-tree-decorations&amp;product_name=Christmas%20Tree%20Ornaments#form-section"
               class="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-sm font-semibold text-on-primary transition-opacity hover:opacity-90"
               style="background: radial-gradient(circle at 60% 40%, #956c44 0%, #79542e 100%);"
             >
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20h4l10-10-4-4L4 16v4Zm8-12 4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
-              Замовити цей виріб
+              Запитати про замовлення
             </a>
 
             <!-- Secondary: back to shop -->
@@ -412,7 +413,7 @@ Set of 3 · Cotton yarn          </p>
         <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Індивідуальна робота</p>
         <h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight mb-5">Шукаєте щось конкретне?</h2>
         <p class="text-base text-outline leading-relaxed mb-10">Кожен виріб можна зробити спеціально для вас — потрібний колір, розмір, персонаж.</p>
-        <a href="../../custom-orders.html" class="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold text-on-primary transition-opacity hover:opacity-90" style="background: radial-gradient(circle at 60% 40%, #956c44 0%, #79542e 100%);">
+        <a href="/uk/custom-orders.html?product_id=christmas-tree-decorations&amp;product_name=Christmas%20Tree%20Ornaments#form-section" class="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold text-on-primary transition-opacity hover:opacity-90" style="background: radial-gradient(circle at 60% 40%, #956c44 0%, #79542e 100%);">
           Оформити замовлення
           <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
         </a>

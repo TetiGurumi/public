@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>FAQ — TetiGurumi В&#39;язані вироби ручної роботи</title>
 <meta name="description" content="Відповіді на часті запитання про вироби TetiGurumi: замовлення, терміни, матеріали, доставка та догляд."/>
-<link rel="stylesheet" href="../assets/site.33cf88c238.css"/>
+<link rel="stylesheet" href="../assets/site.2d8d6230f0.css"/>
 <style>
     /* Accordion */
   details summary { list-style: none; }
@@ -24,7 +24,7 @@
   if (/^\/uk\//.test(path)) { localStorage.setItem('tg_lang', 'uk'); return; }
   /* On root (English) pages */
   var stored = localStorage.getItem('tg_lang');
-  var page = path.replace(/^\//, '') || 'index.html';
+  var page = (path.replace(/^\//, '') || 'index.html') + window.location.search + window.location.hash;
   if (stored === 'pl') { window.location.replace('/pl/' + page); return; }
   if (stored === 'uk') { window.location.replace('/uk/' + page); return; }
   /* Auto-detect if no preference stored */
@@ -35,7 +35,8 @@
     localStorage.setItem('tg_lang', 'en');
   }
 })();
-</script></head>
+</script>
+</head>
 <body class="flex flex-col min-h-screen">
 
 <nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20 overflow-visible">
@@ -56,13 +57,13 @@
     <div class="hidden md:flex items-center gap-4">
       <!-- Language switcher -->
       <div class="flex items-center gap-1 text-xs font-semibold">
-        <a href="/faq.html" onclick="localStorage.setItem('tg_lang','en');return true;"
+        <a href="/faq.html" onclick="localStorage.setItem('tg_lang','en');this.href=this.pathname+window.location.search+window.location.hash;return true;"
            class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
         <span class="text-outline-variant/60">|</span>
-        <a href="/pl/faq.html" onclick="localStorage.setItem('tg_lang','pl');return true;"
+        <a href="/pl/faq.html" onclick="localStorage.setItem('tg_lang','pl');this.href=this.pathname+window.location.search+window.location.hash;return true;"
            class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
         <span class="text-outline-variant/60">|</span>
-        <a href="/uk/faq.html" onclick="localStorage.setItem('tg_lang','uk');return true;"
+        <a href="/uk/faq.html" onclick="localStorage.setItem('tg_lang','uk');this.href=this.pathname+window.location.search+window.location.hash;return true;"
            class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">UA</a>
       </div>
       <a href="../custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
@@ -113,13 +114,13 @@
       <!-- Language switcher -->
       <div class="flex items-center gap-2 px-3">
         <div class="flex items-center gap-1 text-xs font-semibold">
-          <a href="/faq.html" onclick="localStorage.setItem('tg_lang','en');return true;"
+          <a href="/faq.html" onclick="localStorage.setItem('tg_lang','en');this.href=this.pathname+window.location.search+window.location.hash;return true;"
              class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
           <span class="text-outline-variant/60">|</span>
-          <a href="/pl/faq.html" onclick="localStorage.setItem('tg_lang','pl');return true;"
+          <a href="/pl/faq.html" onclick="localStorage.setItem('tg_lang','pl');this.href=this.pathname+window.location.search+window.location.hash;return true;"
              class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
           <span class="text-outline-variant/60">|</span>
-          <a href="/uk/faq.html" onclick="localStorage.setItem('tg_lang','uk');return true;"
+          <a href="/uk/faq.html" onclick="localStorage.setItem('tg_lang','uk');this.href=this.pathname+window.location.search+window.location.hash;return true;"
              class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">UA</a>
         </div>
       </div>
@@ -155,6 +156,7 @@
   backdrop.addEventListener('click', closeMenu);
 })();
 </script>
+
 <!-- HERO -->
 <section class="bg-surface-container-low py-20 md:py-28">
   <div class="max-w-screen-xl mx-auto px-6 md:px-10">
