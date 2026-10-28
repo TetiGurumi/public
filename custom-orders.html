@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Custom Crochet Orders — TetiGurumi</title>
 <meta name="description" content="Order a custom handmade crochet toy, decoration or gift. Choose character, colors, size and personalization. Ships to EU."/>
-<link rel="stylesheet" href="assets/site.a709891fe2.css"/>
+<link rel="stylesheet" href="assets/site.33cf88c238.css"/>
 <style>
     input, textarea, select {
     background-color: #fcf9f4;
@@ -21,8 +21,6 @@
   }
   label { color: #6e625a; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
   .step-connector { flex: 1; border-top: 2px dashed rgba(212, 196, 183, 0.6); margin-top: 1.25rem; }
-  .upload-zone { border: 1.5px dashed rgba(212, 196, 183, 0.6); border-radius: 0.75rem; transition: border-color 0.2s, background-color 0.2s; cursor: pointer; }
-  .upload-zone:hover { border-color: #79542e; background-color: rgba(121, 84, 46, 0.04); }
   .faq-answer { display: none; }
   .faq-item.open .faq-answer { display: block; }
   .faq-item.open .faq-chevron { transform: rotate(180deg); }
@@ -336,7 +334,7 @@
       <div class="bg-surface rounded-2xl p-8 md:p-12 shadow-sm" style="box-shadow: 0 1px 4px rgba(50,30,10,0.06);">
         <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-3">Tell me about your idea</h2>
         <p class="text-base text-on-surface-variant leading-relaxed mb-10">Not sure what to ask for? Just describe a feeling — I&#39;ll suggest something.</p>
-        <form id="order-form" action="https://formspree.io/f/xbdpdpvy" method="POST" enctype="multipart/form-data" novalidate>
+        <form id="order-form" action="https://formspree.io/f/xbdpdpvy" method="POST">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
             <div class="flex flex-col gap-2">
               <label for="name">Your name <span class="text-tertiary normal-case tracking-normal font-semibold text-xs">*</span></label>
@@ -414,14 +412,10 @@
             <textarea id="extra" name="extra" rows="3" placeholder="Gift for a special occasion? Prefer eco packaging? Any material sensitivities?" class="w-full px-4 py-3 text-sm resize-y"></textarea>
           </div>
           <div class="flex flex-col gap-2 mb-6">
-            <label for="reference">Style reference (optional)</label>
-            <label for="reference" class="upload-zone flex flex-col items-center justify-center gap-3 px-6 py-10 text-center normal-case tracking-normal text-on-surface-variant cursor-pointer">
-              <span class="text-outline"><svg class="icon w-9 h-9" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Zm0 0v5h5M12 17v-6m-2.5 2.5L12 11l2.5 2.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg></span>
-              <span class="text-sm font-medium text-on-surface-variant">Upload a photo reference</span>
-              <span class="text-xs text-outline">JPEG, PNG, WEBP — max 10 MB</span>
-              <input type="file" id="reference" name="reference" accept="image/*" class="sr-only" style="display:none; border:none; background:transparent;"/>
-            </label>
-            <p id="file-name" class="text-xs text-outline mt-1 hidden"></p>
+            <label for="reference_url">Photo reference link (optional)</label>
+            <input type="url" id="reference_url" name="reference_url" inputmode="url" autocomplete="url"
+                   placeholder="https://example.com/photo" class="w-full px-4 py-3 text-sm"/>
+            <p class="text-xs text-outline mt-1">Paste a link to a photo I can open. Make sure anyone with the link can view it.</p>
           </div>
           <div class="flex items-start gap-3 mb-8">
             <input type="checkbox" id="consent" name="consent" required class="mt-0.5 w-4 h-4 flex-shrink-0 accent-primary" style="border-radius: 0.25rem;"/>
@@ -610,7 +604,6 @@ document.getElementById('order-form').addEventListener('submit', async function(
 
   const form = e.currentTarget;
   const error = document.getElementById('order-error');
-  const fileName = document.getElementById('file-name');
 
   error.classList.add('hidden');
   error.textContent = '';
@@ -631,20 +624,10 @@ document.getElementById('order-form').addEventListener('submit', async function(
     document.getElementById('form-section').classList.add('hidden');
     document.getElementById('success-msg').classList.remove('hidden');
     form.reset();
-    fileName.classList.add('hidden');
-    fileName.textContent = '';
     window.scrollTo({ top: document.getElementById('success-msg').offsetTop - 100, behavior: 'smooth' });
   } catch (err) {
     error.textContent = 'There was a problem sending your request. Please try again.';
     error.classList.remove('hidden');
-  }
-});
-
-document.getElementById('reference').addEventListener('change', function() {
-  const el = document.getElementById('file-name');
-  if (this.files && this.files[0]) {
-    el.textContent = '✓ ' + this.files[0].name;
-    el.classList.remove('hidden');
   }
 });
 
