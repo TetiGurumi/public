@@ -616,29 +616,29 @@
 // Use catalog values rather than trusting a name supplied in the URL.
 const inquiryProducts = {
   "lion-amigurumi": { name: "Lew amigurumi", category: "toys" },
-  "handmade-doll": { name: "Lalka r\u0119cznie robiona", category: "toys" },
+  "handmade-doll": { name: "R\u0119cznie wykonana lalka", category: "toys" },
   "capybara-backpack": { name: "Kapibara z plecakiem", category: "toys" },
   "capybara-weekend": { name: "Weekendowe kapibary", category: "toys" },
-  "hedwig-owl": { name: "Sowa \u015bnie\u017cna Hedwiga", category: "toys" },
+  "hedwig-owl": { name: "Hedwiga \u2014 sowa \u015bnie\u017cna", category: "toys" },
   "white-rabbit": { name: "Bia\u0142y Kr\u00f3lik", category: "toys" },
   "kirby": { name: "Kirby", category: "toys" },
   "tiger": { name: "Tygrys amigurumi", category: "toys" },
   "fluffy-sheep": { name: "Puszysta owieczka", category: "toys" },
-  "hedgehog": { name: "Je\u017cyk z sercem", category: "toys" },
+  "hedgehog": { name: "Je\u017c z sercem", category: "toys" },
   "galina-doll": { name: "Lalka z kolekcji Galina", category: "toys" },
   "easter-bunny": { name: "Zaj\u0105czek wielkanocny", category: "seasonal" },
   "christmas-cat": { name: "\u015awi\u0105teczny kot", category: "seasonal" },
-  "christmas-market-set": { name: "Kolekcja jarmarku bo\u017conarodzeniowego", category: "seasonal" },
-  "festive-decorations": { name: "Zestaw dekoracji \u015bwi\u0105tecznych", category: "seasonal" },
+  "christmas-market-set": { name: "Kolekcja z jarmarku bo\u017conarodzeniowego", category: "seasonal" },
+  "festive-decorations": { name: "Zestaw \u015bwi\u0105tecznych dekoracji", category: "seasonal" },
   "christmas-tree-decorations": { name: "Ozdoby choinkowe", category: "seasonal" },
-  "christmas-angel": { name: "Anio\u0142ek bo\u017conarodzeniowy", category: "seasonal" },
+  "christmas-angel": { name: "\u015awi\u0105teczny anio\u0142ek", category: "seasonal" },
   "christmas-angels": { name: "Para \u015bwi\u0105tecznych anio\u0142k\u00f3w", category: "seasonal" },
   "angel-ornament": { name: "Bia\u0142y anio\u0142ek na choink\u0119", category: "seasonal" },
   "reindeer": { name: "Renifer", category: "seasonal" },
   "snowman": { name: "Ba\u0142wanek", category: "seasonal" },
-  "gingerbread-collection": { name: "Kolekcja piernikowa", category: "seasonal" },
-  "granny-bag-blue": { name: "Torba granny square \u2014 niebieska", category: "bags" },
-  "granny-bag": { name: "Torba granny square", category: "bags" }
+  "gingerbread-collection": { name: "Piernikowa kolekcja", category: "seasonal" },
+  "granny-bag-blue": { name: "Torba z kwadrat\u00f3w granny \u2014 niebieska", category: "bags" },
+  "granny-bag": { name: "Torba z kwadrat\u00f3w granny", category: "bags" }
 };
 const productId = new URLSearchParams(window.location.search).get('product_id');
 const selectedProduct = Object.prototype.hasOwnProperty.call(inquiryProducts, productId) ? inquiryProducts[productId] : null;

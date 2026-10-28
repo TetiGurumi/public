@@ -615,20 +615,20 @@
 <script>
 // Use catalog values rather than trusting a name supplied in the URL.
 const inquiryProducts = {
-  "lion-amigurumi": { name: "\u041b\u0435\u0432 \u0430\u043c\u0456\u0433\u0443\u0440\u0443\u043c\u0456", category: "toys" },
+  "lion-amigurumi": { name: "\u041b\u0435\u0432 \u0430\u043c\u0456\u0491\u0443\u0440\u0443\u043c\u0456", category: "toys" },
   "handmade-doll": { name: "\u041b\u044f\u043b\u044c\u043a\u0430 \u0440\u0443\u0447\u043d\u043e\u0457 \u0440\u043e\u0431\u043e\u0442\u0438", category: "toys" },
   "capybara-backpack": { name: "\u041a\u0430\u043f\u0456\u0431\u0430\u0440\u0430 \u0437 \u0440\u044e\u043a\u0437\u0430\u043a\u043e\u043c", category: "toys" },
   "capybara-weekend": { name: "\u041a\u0430\u043f\u0456\u0431\u0430\u0440\u0438 \u0432\u0438\u0445\u0456\u0434\u043d\u043e\u0433\u043e \u0434\u043d\u044f", category: "toys" },
-  "hedwig-owl": { name: "\u041f\u043e\u043b\u044f\u0440\u043d\u0430 \u0441\u043e\u0432\u0430 \u0413\u0435\u0434\u0432\u0456\u0491\u0430", category: "toys" },
+  "hedwig-owl": { name: "\u0413\u0435\u0434\u0432\u0456\u0491\u0430 \u2014 \u0431\u0456\u043b\u0430 \u0441\u043e\u0432\u0430", category: "toys" },
   "white-rabbit": { name: "\u0411\u0456\u043b\u0438\u0439 \u041a\u0440\u043e\u043b\u0438\u043a", category: "toys" },
   "kirby": { name: "\u041a\u0456\u0440\u0431\u0456", category: "toys" },
-  "tiger": { name: "\u0422\u0438\u0433\u0440 \u0430\u043c\u0456\u0433\u0443\u0440\u0443\u043c\u0456", category: "toys" },
+  "tiger": { name: "\u0422\u0438\u0433\u0440 \u0430\u043c\u0456\u0491\u0443\u0440\u0443\u043c\u0456", category: "toys" },
   "fluffy-sheep": { name: "\u041f\u0443\u0445\u043d\u0430\u0441\u0442\u0430 \u043e\u0432\u0435\u0447\u043a\u0430", category: "toys" },
   "hedgehog": { name: "\u0407\u0436\u0430\u0447\u043e\u043a \u0456\u0437 \u0441\u0435\u0440\u0446\u0435\u043c", category: "toys" },
   "galina-doll": { name: "\u041b\u044f\u043b\u044c\u043a\u0430 \u0437 \u043a\u043e\u043b\u0435\u043a\u0446\u0456\u0457 Galina", category: "toys" },
   "easter-bunny": { name: "\u0412\u0435\u043b\u0438\u043a\u043e\u0434\u043d\u0456\u0439 \u0437\u0430\u0439\u0447\u0438\u043a", category: "seasonal" },
   "christmas-cat": { name: "\u0420\u0456\u0437\u0434\u0432\u044f\u043d\u0438\u0439 \u043a\u043e\u0442\u0438\u043a", category: "seasonal" },
-  "christmas-market-set": { name: "\u041a\u043e\u043b\u0435\u043a\u0446\u0456\u044f \u0440\u0456\u0437\u0434\u0432\u044f\u043d\u043e\u0433\u043e \u044f\u0440\u043c\u0430\u0440\u043a\u0443", category: "seasonal" },
+  "christmas-market-set": { name: "\u041a\u043e\u043b\u0435\u043a\u0446\u0456\u044f \u0437 \u0440\u0456\u0437\u0434\u0432\u044f\u043d\u043e\u0433\u043e \u044f\u0440\u043c\u0430\u0440\u043a\u0443", category: "seasonal" },
   "festive-decorations": { name: "\u041d\u0430\u0431\u0456\u0440 \u0441\u0432\u044f\u0442\u043a\u043e\u0432\u0438\u0445 \u043f\u0440\u0438\u043a\u0440\u0430\u0441", category: "seasonal" },
   "christmas-tree-decorations": { name: "\u042f\u043b\u0438\u043d\u043a\u043e\u0432\u0456 \u043f\u0440\u0438\u043a\u0440\u0430\u0441\u0438", category: "seasonal" },
   "christmas-angel": { name: "\u0420\u0456\u0437\u0434\u0432\u044f\u043d\u0438\u0439 \u044f\u043d\u0433\u043e\u043b", category: "seasonal" },
@@ -637,8 +637,8 @@ const inquiryProducts = {
   "reindeer": { name: "\u041f\u0456\u0432\u043d\u0456\u0447\u043d\u0438\u0439 \u043e\u043b\u0435\u043d\u044c", category: "seasonal" },
   "snowman": { name: "\u0421\u043d\u0456\u0433\u043e\u0432\u0438\u043a", category: "seasonal" },
   "gingerbread-collection": { name: "\u041f\u0440\u044f\u043d\u0438\u043a\u043e\u0432\u0430 \u043a\u043e\u043b\u0435\u043a\u0446\u0456\u044f", category: "seasonal" },
-  "granny-bag-blue": { name: "\u0421\u0443\u043c\u043a\u0430 granny square \u2014 \u0431\u043b\u0430\u043a\u0438\u0442\u043d\u0430", category: "bags" },
-  "granny-bag": { name: "\u0421\u0443\u043c\u043a\u0430 granny square", category: "bags" }
+  "granny-bag-blue": { name: "\u0421\u0443\u043c\u043a\u0430 \u0437 \u0431\u0430\u0431\u0443\u0441\u0438\u043d\u0438\u0445 \u043a\u0432\u0430\u0434\u0440\u0430\u0442\u0456\u0432 \u2014 \u0441\u0438\u043d\u044f", category: "bags" },
+  "granny-bag": { name: "\u0421\u0443\u043c\u043a\u0430 \u0437 \u0431\u0430\u0431\u0443\u0441\u0438\u043d\u0438\u0445 \u043a\u0432\u0430\u0434\u0440\u0430\u0442\u0456\u0432", category: "bags" }
 };
 const productId = new URLSearchParams(window.location.search).get('product_id');
 const selectedProduct = Object.prototype.hasOwnProperty.call(inquiryProducts, productId) ? inquiryProducts[productId] : null;
