@@ -31,59 +31,38 @@
 <style>
   
 </style>
-<script>
-/* Locale detection & language routing */
-(function () {
-  var path = window.location.pathname;
-  /* If already in a language subdir, remember it and stop */
-  if (/^\/pl\//.test(path)) { localStorage.setItem('tg_lang', 'pl'); return; }
-  if (/^\/uk\//.test(path)) { localStorage.setItem('tg_lang', 'uk'); return; }
-  /* On root (English) pages */
-  var stored = localStorage.getItem('tg_lang');
-  var page = (path.replace(/^\//, '') || 'index.html') + window.location.search + window.location.hash;
-  if (stored === 'pl') { window.location.replace('/pl/' + page); return; }
-  if (stored === 'uk') { window.location.replace('/uk/' + page); return; }
-  /* Auto-detect if no preference stored */
-  if (stored === null) {
-    var bl = (navigator.language || '').slice(0, 2).toLowerCase();
-    if (bl === 'pl') { localStorage.setItem('tg_lang', 'pl'); window.location.replace('/pl/' + page); return; }
-    if (bl === 'uk') { localStorage.setItem('tg_lang', 'uk'); window.location.replace('/uk/' + page); return; }
-    localStorage.setItem('tg_lang', 'en');
-  }
-})();
-</script>
 
 </head>
 <body class="min-h-screen flex flex-col">
 
 <nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20 overflow-visible">
   <div class="flex justify-between items-center w-full px-6 md:px-10 py-3 max-w-screen-xl mx-auto overflow-visible">
-    <a href="../index.html" class="inline-flex items-center text-2xl font-headline tracking-tight text-on-surface-variant">
+    <a href="index.html" class="inline-flex items-center text-2xl font-headline tracking-tight text-on-surface-variant">
       <img src="../assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-12 w-auto object-contain mr-3 md:h-20"/>
       <span>TetiGurumi</span>
     </a>
     <div class="hidden md:flex items-center gap-8">
-      <a href="../index.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Головна</a>
-      <a href="../shop.html" class="text-sm transition-colors duration-200 text-primary font-semibold border-b-2 border-primary pb-0.5">Магазин</a>
-      <a href="../custom-orders.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Замовлення</a>
-      <a href="../gallery.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Галерея</a>
-      <a href="../about.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Про мене</a>
-      <a href="../faq.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">FAQ</a>
-      <a href="../contact.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Контакт</a>
+      <a href="index.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Головна</a>
+      <a href="shop.html" class="text-sm transition-colors duration-200 text-primary font-semibold border-b-2 border-primary pb-0.5">Магазин</a>
+      <a href="custom-orders.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Замовлення</a>
+      <a href="gallery.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Галерея</a>
+      <a href="about.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Про мене</a>
+      <a href="faq.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">FAQ</a>
+      <a href="contact.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Контакт</a>
     </div>
     <div class="hidden md:flex items-center gap-4">
       <!-- Language switcher -->
       <div class="flex items-center gap-1 text-xs font-semibold">
-        <a href="/shop.html" onclick="localStorage.setItem('tg_lang','en');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+        <a href="/shop.html" hreflang="en"
            class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
         <span class="text-outline-variant/60">|</span>
-        <a href="/pl/shop.html" onclick="localStorage.setItem('tg_lang','pl');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+        <a href="/pl/shop.html" hreflang="pl"
            class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
         <span class="text-outline-variant/60">|</span>
-        <a href="/uk/shop.html" onclick="localStorage.setItem('tg_lang','uk');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+        <a href="/uk/shop.html" hreflang="uk"
            class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">UA</a>
       </div>
-      <a href="../custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
+      <a href="custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
         Замовити
       </a>
     </div>
@@ -98,32 +77,32 @@
   <!-- Panel -->
   <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
     <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
-      <a href="../index.html" class="inline-flex items-center font-headline text-lg text-on-surface-variant">
+      <a href="index.html" class="inline-flex items-center font-headline text-lg text-on-surface-variant">
         <img src="../assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-10 w-auto object-contain mr-2"/>
         <span>TetiGurumi</span>
       </a>
       <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
     </div>
     <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
-      <a href="../index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Головна
       </a>
-      <a href="../shop.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors bg-surface-container text-primary font-semibold">
+      <a href="shop.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors bg-surface-container text-primary font-semibold">
         Магазин
       </a>
-      <a href="../custom-orders.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="custom-orders.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Замовлення
       </a>
-      <a href="../gallery.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="gallery.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Галерея
       </a>
-      <a href="../about.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="about.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Про мене
       </a>
-      <a href="../faq.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="faq.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         FAQ
       </a>
-      <a href="../contact.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="contact.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Контакт
       </a>
     </nav>
@@ -131,17 +110,17 @@
       <!-- Language switcher -->
       <div class="flex items-center gap-2 px-3">
         <div class="flex items-center gap-1 text-xs font-semibold">
-          <a href="/shop.html" onclick="localStorage.setItem('tg_lang','en');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+          <a href="/shop.html" hreflang="en"
              class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
           <span class="text-outline-variant/60">|</span>
-          <a href="/pl/shop.html" onclick="localStorage.setItem('tg_lang','pl');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+          <a href="/pl/shop.html" hreflang="pl"
              class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
           <span class="text-outline-variant/60">|</span>
-          <a href="/uk/shop.html" onclick="localStorage.setItem('tg_lang','uk');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+          <a href="/uk/shop.html" hreflang="uk"
              class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">UA</a>
         </div>
       </div>
-      <a href="../custom-orders.html" class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity">
+      <a href="custom-orders.html" class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity">
         Замовити
       </a>
     </div>
@@ -179,7 +158,7 @@
 <section class="bg-surface-container-low">
   <div class="max-w-screen-xl mx-auto px-6 md:px-10 pt-8 pb-2">
     <nav class="flex items-center gap-2 text-xs text-outline mb-10">
-      <a href="../index.html" class="hover:text-primary transition-colors">Головна</a>
+      <a href="index.html" class="hover:text-primary transition-colors">Головна</a>
       <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
       <span class="text-on-surface-variant font-medium">Магазин</span>
     </nav>
@@ -194,7 +173,7 @@
 <div class="bg-surface/90 backdrop-blur-sm sticky top-[73px] z-40 border-b border-outline-variant/20">
   <div class="max-w-screen-xl mx-auto px-6 md:px-10 py-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
     <div class="flex items-center gap-3 overflow-x-auto scrollbar-none">
-      <a href="../shop.html" data-filter="all" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-primary text-on-primary">Всі</a>
+      <a href="shop.html" data-filter="all" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-primary text-on-primary">Всі</a>
       <a href="#toys" data-filter="toys" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Іграшки гачком</a>
       <a href="#bags" data-filter="bags" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Сумки та аксесуари</a>
       <a href="#seasonal" data-filter="seasonal" class="px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Сезонні</a>
@@ -232,7 +211,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/lion-amigurumi.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/lion-amigurumi.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/lion-amigurumi-320w.7c5741c273.webp 320w, ../assets/images/lion-amigurumi-480w.df809dd6d9.webp 480w, ../assets/images/lion-amigurumi-640w.1a2b1c99de.webp 640w, ../assets/images/lion-amigurumi-960w.39c537a5d2.webp 960w, ../assets/images/lion-amigurumi-1080w.b48915ce9c.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -256,7 +235,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/lion-amigurumi.html" class="block">
+          <a href="products/lion-amigurumi.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Лев амігурумі</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 28 cm · Cotton yarn</p>
@@ -273,7 +252,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/handmade-doll.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/handmade-doll.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/handmade-doll-320w.be76f518ae.webp 320w, ../assets/images/handmade-doll-480w.17274e3e04.webp 480w, ../assets/images/handmade-doll-640w.ef0b81fe5a.webp 640w, ../assets/images/handmade-doll-960w.7cdaaa496c.webp 960w, ../assets/images/handmade-doll-1080w.7dfed87ad1.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -297,7 +276,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/handmade-doll.html" class="block">
+          <a href="products/handmade-doll.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Лялька ручної роботи</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 30 cm · Cotton yarn</p>
@@ -314,7 +293,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/capybara-backpack.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/capybara-backpack.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/capybara-backpack-320w.c404549ec9.webp 320w, ../assets/images/capybara-backpack-480w.10daa793af.webp 480w, ../assets/images/capybara-backpack-640w.9daf151228.webp 640w, ../assets/images/capybara-backpack-960w.3d413a1c19.webp 960w, ../assets/images/capybara-backpack-1080w.fec1a3b132.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -338,7 +317,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/capybara-backpack.html" class="block">
+          <a href="products/capybara-backpack.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Капібара з рюкзаком</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 20 cm · Cotton yarn</p>
@@ -355,7 +334,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/capybara-weekend.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/capybara-weekend.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/capybara-weekend-320w.61620744f7.webp 320w, ../assets/images/capybara-weekend-480w.5090808ef4.webp 480w, ../assets/images/capybara-weekend-640w.874ee8636d.webp 640w, ../assets/images/capybara-weekend-960w.4b0fcc36c2.webp 960w, ../assets/images/capybara-weekend-1080w.d96d6089ad.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -379,7 +358,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/capybara-weekend.html" class="block">
+          <a href="products/capybara-weekend.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Капібари вихідного дня</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 18 cm each · Cotton yarn</p>
@@ -396,7 +375,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/hedwig-owl.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/hedwig-owl.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/hedwig-owl-320w.72cd0663d4.webp 320w, ../assets/images/hedwig-owl-480w.dc834afe0b.webp 480w, ../assets/images/hedwig-owl-640w.657f7b41d3.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -420,7 +399,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/hedwig-owl.html" class="block">
+          <a href="products/hedwig-owl.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Полярна сова Гедвіґа</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 25 cm · Cotton yarn</p>
@@ -437,7 +416,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/white-rabbit.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/white-rabbit.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/white-rabbit-320w.abd7dc86a5.webp 320w, ../assets/images/white-rabbit-480w.ba9fae79bf.webp 480w, ../assets/images/white-rabbit-640w.c1e023d5d4.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -461,7 +440,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/white-rabbit.html" class="block">
+          <a href="products/white-rabbit.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Білий Кролик</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 25 cm · Cotton yarn</p>
@@ -478,7 +457,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/kirby.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/kirby.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/kirby-320w.8f326c6beb.webp 320w, ../assets/images/kirby-480w.745a63482b.webp 480w, ../assets/images/kirby-640w.63639b9e04.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -502,7 +481,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/kirby.html" class="block">
+          <a href="products/kirby.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Кірбі</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 15 cm · Cotton yarn</p>
@@ -519,7 +498,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/tiger.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/tiger.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/tiger-320w.9a03e2f96a.webp 320w, ../assets/images/tiger-480w.de5fb67406.webp 480w, ../assets/images/tiger-640w.2665527303.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -543,7 +522,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/tiger.html" class="block">
+          <a href="products/tiger.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Тигр амігурумі</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 30 cm · Cotton yarn</p>
@@ -560,7 +539,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/fluffy-sheep.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/fluffy-sheep.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/fluffy-sheep-320w.ee6abcbc3c.webp 320w, ../assets/images/fluffy-sheep-480w.be38b024b1.webp 480w, ../assets/images/fluffy-sheep-640w.fea2221890.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -584,7 +563,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/fluffy-sheep.html" class="block">
+          <a href="products/fluffy-sheep.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Пухнаста овечка</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 22 cm · Cotton yarn</p>
@@ -601,7 +580,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/hedgehog.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/hedgehog.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/hedgehog-320w.8b96e62991.webp 320w, ../assets/images/hedgehog-480w.b437b7ef36.webp 480w, ../assets/images/hedgehog-640w.d7e05a6e0b.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -625,7 +604,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/hedgehog.html" class="block">
+          <a href="products/hedgehog.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Їжачок із серцем</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 18 cm · Cotton yarn</p>
@@ -642,7 +621,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/galina-doll.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/galina-doll.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/galina-doll-320w.4c3b0f03f6.webp 320w, ../assets/images/galina-doll-480w.e77351bf78.webp 480w, ../assets/images/galina-doll-640w.101c62d8c1.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -666,7 +645,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/galina-doll.html" class="block">
+          <a href="products/galina-doll.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Лялька з колекції Galina</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 35 cm · Cotton yarn</p>
@@ -683,7 +662,7 @@
           data-type="physical"
           class="group hidden"
  data-extra        >
-          <a href="../products/easter-bunny.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/easter-bunny.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/easter-bunny-320w.454edcc6cd.webp 320w, ../assets/images/easter-bunny-480w.bdb6ade3d1.webp 480w, ../assets/images/easter-bunny-640w.2ede90ed3b.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -707,7 +686,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/easter-bunny.html" class="block">
+          <a href="products/easter-bunny.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Великодній зайчик</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 25 cm · Cotton yarn</p>
@@ -724,7 +703,7 @@
           data-type="physical"
           class="group hidden"
  data-extra        >
-          <a href="../products/christmas-cat.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/christmas-cat.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/christmas-cat-320w.cf9805a641.webp 320w, ../assets/images/christmas-cat-480w.400d490c4f.webp 480w, ../assets/images/christmas-cat-640w.21138b539a.webp 640w, ../assets/images/christmas-cat-960w.aa579a69ac.webp 960w, ../assets/images/christmas-cat-1080w.9bf3158f77.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -748,7 +727,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/christmas-cat.html" class="block">
+          <a href="products/christmas-cat.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Різдвяний котик</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 20 cm · Cotton yarn</p>
@@ -765,7 +744,7 @@
           data-type="physical"
           class="group hidden"
  data-extra        >
-          <a href="../products/christmas-market-set.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/christmas-market-set.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/christmas-market-set-320w.6db5af3791.webp 320w, ../assets/images/christmas-market-set-480w.29cf3d55ff.webp 480w, ../assets/images/christmas-market-set-640w.dbba6cab86.webp 640w, ../assets/images/christmas-market-set-960w.60b6b01aed.webp 960w, ../assets/images/christmas-market-set-1080w.de6436728e.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -789,7 +768,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/christmas-market-set.html" class="block">
+          <a href="products/christmas-market-set.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Колекція різдвяного ярмарку</h3>
           </a>
           <p class="text-xs text-outline mb-3">Various · Cotton yarn</p>
@@ -806,7 +785,7 @@
           data-type="physical"
           class="group hidden"
  data-extra        >
-          <a href="../products/festive-decorations.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/festive-decorations.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/festive-decorations-320w.7f5be3d225.webp 320w, ../assets/images/festive-decorations-480w.0492b9a0b0.webp 480w, ../assets/images/festive-decorations-640w.60e2fd9e79.webp 640w, ../assets/images/festive-decorations-960w.af89e2ecd1.webp 960w, ../assets/images/festive-decorations-1080w.75fd502450.webp 1080w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -830,7 +809,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/festive-decorations.html" class="block">
+          <a href="products/festive-decorations.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Набір святкових прикрас</h3>
           </a>
           <p class="text-xs text-outline mb-3">Set of 4 · Cotton yarn</p>
@@ -847,7 +826,7 @@
           data-type="physical"
           class="group hidden"
  data-extra        >
-          <a href="../products/christmas-tree-decorations.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/christmas-tree-decorations.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/christmas-tree-decorations-320w.84ef3b7d43.webp 320w, ../assets/images/christmas-tree-decorations-480w.d5b351f7df.webp 480w, ../assets/images/christmas-tree-decorations-640w.49ca2dc911.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -871,7 +850,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/christmas-tree-decorations.html" class="block">
+          <a href="products/christmas-tree-decorations.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Ялинкові прикраси</h3>
           </a>
           <p class="text-xs text-outline mb-3">Set of 3 · Cotton yarn</p>
@@ -888,7 +867,7 @@
           data-type="physical"
           class="group hidden"
  data-extra        >
-          <a href="../products/christmas-angel.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/christmas-angel.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/christmas-angel-320w.bfb0396bdb.webp 320w, ../assets/images/christmas-angel-480w.e24b470169.webp 480w, ../assets/images/christmas-angel-640w.968112c9c4.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -912,7 +891,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/christmas-angel.html" class="block">
+          <a href="products/christmas-angel.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Різдвяний янгол</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 18 cm · Cotton yarn</p>
@@ -929,7 +908,7 @@
           data-type="physical"
           class="group hidden"
  data-extra        >
-          <a href="../products/christmas-angels.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/christmas-angels.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/christmas-angels-320w.c3eccc58ea.webp 320w, ../assets/images/christmas-angels-480w.a46be33af9.webp 480w, ../assets/images/christmas-angels-640w.73fc235b5d.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -953,7 +932,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/christmas-angels.html" class="block">
+          <a href="products/christmas-angels.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Пара різдвяних янголів</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 18 cm each · Cotton yarn</p>
@@ -970,7 +949,7 @@
           data-type="physical"
           class="group hidden"
  data-extra        >
-          <a href="../products/angel-ornament.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/angel-ornament.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/angel-ornament-320w.c3eaeda5c7.webp 320w, ../assets/images/angel-ornament-480w.365c64f578.webp 480w, ../assets/images/angel-ornament-640w.92c81133b4.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -994,7 +973,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/angel-ornament.html" class="block">
+          <a href="products/angel-ornament.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Білий янгол на ялинку</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 15 cm · Cotton yarn</p>
@@ -1011,7 +990,7 @@
           data-type="physical"
           class="group hidden"
  data-extra        >
-          <a href="../products/reindeer.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/reindeer.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/reindeer-320w.46ce5aa640.webp 320w, ../assets/images/reindeer-480w.e504c75be8.webp 480w, ../assets/images/reindeer-640w.b0f5d1687d.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -1035,7 +1014,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/reindeer.html" class="block">
+          <a href="products/reindeer.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Північний олень</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 22 cm · Cotton yarn</p>
@@ -1052,7 +1031,7 @@
           data-type="physical"
           class="group hidden"
  data-extra        >
-          <a href="../products/snowman.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/snowman.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/snowman-320w.2bd901d302.webp 320w, ../assets/images/snowman-480w.b6873d9002.webp 480w, ../assets/images/snowman-640w.fb3441e452.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -1076,7 +1055,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/snowman.html" class="block">
+          <a href="products/snowman.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Сніговик</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 20 cm · Cotton yarn</p>
@@ -1093,7 +1072,7 @@
           data-type="physical"
           class="group hidden"
  data-extra        >
-          <a href="../products/gingerbread-collection.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/gingerbread-collection.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/gingerbread-collection-320w.93c50e7d67.webp 320w, ../assets/images/gingerbread-collection-480w.4a7c69c147.webp 480w, ../assets/images/gingerbread-collection-640w.eaa8181cd0.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -1117,7 +1096,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/gingerbread-collection.html" class="block">
+          <a href="products/gingerbread-collection.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Пряникова колекція</h3>
           </a>
           <p class="text-xs text-outline mb-3">Set of 3 · Cotton yarn</p>
@@ -1134,7 +1113,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/granny-bag-blue.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/granny-bag-blue.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/granny-bag-blue-320w.8d510f0914.webp 320w, ../assets/images/granny-bag-blue-480w.ab416dccb9.webp 480w, ../assets/images/granny-bag-blue-640w.60600ee2e0.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -1158,7 +1137,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/granny-bag-blue.html" class="block">
+          <a href="products/granny-bag-blue.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Сумка granny square — блакитна</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 30×35 cm · Cotton yarn</p>
@@ -1175,7 +1154,7 @@
           data-type="physical"
           class="group"
         >
-          <a href="../products/granny-bag.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
+          <a href="products/granny-bag.html" class="block aspect-square bg-surface rounded-xl overflow-hidden mb-5 relative shadow-[0_20px_40px_rgba(47,41,37,0.06)]" tabindex="-1" aria-hidden="true">
             <picture class="block w-full h-full">
   <source srcset="../assets/images/granny-bag-320w.6475b2601f.webp 320w, ../assets/images/granny-bag-480w.fda4cc3e5a.webp 480w, ../assets/images/granny-bag-640w.ebdce9b7c1.webp 640w" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 44vw, calc(100vw - 3rem)" type="image/webp"/>
   <img
@@ -1199,7 +1178,7 @@
               <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
             </span>
           </a>
-          <a href="../products/granny-bag.html" class="block">
+          <a href="products/granny-bag.html" class="block">
             <h3 class="font-headline text-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Сумка granny square</h3>
           </a>
           <p class="text-xs text-outline mb-3">Approx. 30×35 cm · Cotton yarn</p>
@@ -1242,7 +1221,7 @@
       <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Індивідуальна робота</p>
       <h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight mb-5">Шукаєте щось конкретне?</h2>
       <p class="text-base text-outline leading-relaxed mb-10">Кожен виріб можна зробити спеціально для вас — потрібний колір, розмір, персонаж.</p>
-      <a href="../custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity">
+      <a href="custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity">
         Оформити замовлення
         <svg class="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
       </a>
@@ -1264,26 +1243,26 @@
       <nav>
         <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Магазин</p>
         <ul class="space-y-3">
-          <li><a href="../shop.html#toys" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Іграшки гачком</a></li>
-          <li><a href="../shop.html#bags" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сумки та аксесуари</a></li>
-          <li><a href="../shop.html#seasonal" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сезонні вироби</a></li>
-          <li><a href="../shop.html#decor" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Декор та кошики</a></li>
-          <li><a href="../shop.html#patterns" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Схеми в&#39;язання гачком</a></li>
+          <li><a href="shop.html#toys" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Іграшки гачком</a></li>
+          <li><a href="shop.html#bags" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сумки та аксесуари</a></li>
+          <li><a href="shop.html#seasonal" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сезонні вироби</a></li>
+          <li><a href="shop.html#decor" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Декор та кошики</a></li>
+          <li><a href="shop.html#patterns" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Схеми в&#39;язання гачком</a></li>
         </ul>
       </nav>
       <nav>
         <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Замовлення</p>
         <ul class="space-y-3">
-          <li><a href="../custom-orders.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Індивідуальні замовлення</a></li>
-          <li><a href="../faq.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">FAQ</a></li>
-          <li><a href="../gallery.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Галерея</a></li>
+          <li><a href="custom-orders.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Індивідуальні замовлення</a></li>
+          <li><a href="faq.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">FAQ</a></li>
+          <li><a href="gallery.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Галерея</a></li>
         </ul>
       </nav>
       <nav>
         <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Інформація</p>
         <ul class="space-y-3">
-          <li><a href="../about.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Про Тетяну</a></li>
-          <li><a href="../contact.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Контакт</a></li>
+          <li><a href="about.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Про Тетяну</a></li>
+          <li><a href="contact.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Контакт</a></li>
         </ul>
       </nav>
     </div>
@@ -1293,6 +1272,7 @@
     </div>
   </div>
 </footer>
+
 <script>
 const filterButtons = document.querySelectorAll('[data-filter]');
 const cards = document.querySelectorAll('[data-category]');

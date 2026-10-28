@@ -31,27 +31,6 @@
 <style>
   
 </style>
-<script>
-/* Locale detection & language routing */
-(function () {
-  var path = window.location.pathname;
-  /* If already in a language subdir, remember it and stop */
-  if (/^\/pl\//.test(path)) { localStorage.setItem('tg_lang', 'pl'); return; }
-  if (/^\/uk\//.test(path)) { localStorage.setItem('tg_lang', 'uk'); return; }
-  /* On root (English) pages */
-  var stored = localStorage.getItem('tg_lang');
-  var page = (path.replace(/^\//, '') || 'index.html') + window.location.search + window.location.hash;
-  if (stored === 'pl') { window.location.replace('/pl/' + page); return; }
-  if (stored === 'uk') { window.location.replace('/uk/' + page); return; }
-  /* Auto-detect if no preference stored */
-  if (stored === null) {
-    var bl = (navigator.language || '').slice(0, 2).toLowerCase();
-    if (bl === 'pl') { localStorage.setItem('tg_lang', 'pl'); window.location.replace('/pl/' + page); return; }
-    if (bl === 'uk') { localStorage.setItem('tg_lang', 'uk'); window.location.replace('/uk/' + page); return; }
-    localStorage.setItem('tg_lang', 'en');
-  }
-})();
-</script>
 
 </head>
 <body class="min-h-screen flex flex-col">
@@ -74,13 +53,13 @@
     <div class="hidden md:flex items-center gap-4">
       <!-- Language switcher -->
       <div class="flex items-center gap-1 text-xs font-semibold">
-        <a href="/products/fluffy-sheep.html" onclick="localStorage.setItem('tg_lang','en');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+        <a href="/products/fluffy-sheep.html" hreflang="en"
            class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">EN</a>
         <span class="text-outline-variant/60">|</span>
-        <a href="/pl/products/fluffy-sheep.html" onclick="localStorage.setItem('tg_lang','pl');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+        <a href="/pl/products/fluffy-sheep.html" hreflang="pl"
            class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
         <span class="text-outline-variant/60">|</span>
-        <a href="/uk/products/fluffy-sheep.html" onclick="localStorage.setItem('tg_lang','uk');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+        <a href="/uk/products/fluffy-sheep.html" hreflang="uk"
            class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">UA</a>
       </div>
       <a href="../custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
@@ -131,13 +110,13 @@
       <!-- Language switcher -->
       <div class="flex items-center gap-2 px-3">
         <div class="flex items-center gap-1 text-xs font-semibold">
-          <a href="/products/fluffy-sheep.html" onclick="localStorage.setItem('tg_lang','en');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+          <a href="/products/fluffy-sheep.html" hreflang="en"
              class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">EN</a>
           <span class="text-outline-variant/60">|</span>
-          <a href="/pl/products/fluffy-sheep.html" onclick="localStorage.setItem('tg_lang','pl');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+          <a href="/pl/products/fluffy-sheep.html" hreflang="pl"
              class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
           <span class="text-outline-variant/60">|</span>
-          <a href="/uk/products/fluffy-sheep.html" onclick="localStorage.setItem('tg_lang','uk');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+          <a href="/uk/products/fluffy-sheep.html" hreflang="uk"
              class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">UA</a>
         </div>
       </div>
@@ -488,6 +467,7 @@ Approx. 22 cm · Cotton yarn          </p>
     </div>
   </div>
 </footer>
+
 <script>
 (function () {
   var slides = document.querySelectorAll('.gallery-slide');
@@ -553,3 +533,4 @@ Approx. 22 cm · Cotton yarn          </p>
 
 </body>
 </html>
+

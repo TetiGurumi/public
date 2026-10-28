@@ -49,59 +49,38 @@
   .faq-chevron { transition: transform 0.2s ease; }
 
 </style>
-<script>
-/* Locale detection & language routing */
-(function () {
-  var path = window.location.pathname;
-  /* If already in a language subdir, remember it and stop */
-  if (/^\/pl\//.test(path)) { localStorage.setItem('tg_lang', 'pl'); return; }
-  if (/^\/uk\//.test(path)) { localStorage.setItem('tg_lang', 'uk'); return; }
-  /* On root (English) pages */
-  var stored = localStorage.getItem('tg_lang');
-  var page = (path.replace(/^\//, '') || 'index.html') + window.location.search + window.location.hash;
-  if (stored === 'pl') { window.location.replace('/pl/' + page); return; }
-  if (stored === 'uk') { window.location.replace('/uk/' + page); return; }
-  /* Auto-detect if no preference stored */
-  if (stored === null) {
-    var bl = (navigator.language || '').slice(0, 2).toLowerCase();
-    if (bl === 'pl') { localStorage.setItem('tg_lang', 'pl'); window.location.replace('/pl/' + page); return; }
-    if (bl === 'uk') { localStorage.setItem('tg_lang', 'uk'); window.location.replace('/uk/' + page); return; }
-    localStorage.setItem('tg_lang', 'en');
-  }
-})();
-</script>
 
 </head>
 <body class="min-h-screen flex flex-col">
 
 <nav class="bg-[#fcf9f4]/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/20 overflow-visible">
   <div class="flex justify-between items-center w-full px-6 md:px-10 py-3 max-w-screen-xl mx-auto overflow-visible">
-    <a href="../index.html" class="inline-flex items-center text-2xl font-headline tracking-tight text-on-surface-variant">
+    <a href="index.html" class="inline-flex items-center text-2xl font-headline tracking-tight text-on-surface-variant">
       <img src="../assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-12 w-auto object-contain mr-3 md:h-20"/>
       <span>TetiGurumi</span>
     </a>
     <div class="hidden md:flex items-center gap-8">
-      <a href="../index.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Головна</a>
-      <a href="../shop.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Магазин</a>
-      <a href="../custom-orders.html" class="text-sm transition-colors duration-200 text-primary font-semibold border-b-2 border-primary pb-0.5">Замовлення</a>
-      <a href="../gallery.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Галерея</a>
-      <a href="../about.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Про мене</a>
-      <a href="../faq.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">FAQ</a>
-      <a href="../contact.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Контакт</a>
+      <a href="index.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Головна</a>
+      <a href="shop.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Магазин</a>
+      <a href="custom-orders.html" class="text-sm transition-colors duration-200 text-primary font-semibold border-b-2 border-primary pb-0.5">Замовлення</a>
+      <a href="gallery.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Галерея</a>
+      <a href="about.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Про мене</a>
+      <a href="faq.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">FAQ</a>
+      <a href="contact.html" class="text-sm transition-colors duration-200 text-on-surface-variant hover:text-primary font-medium">Контакт</a>
     </div>
     <div class="hidden md:flex items-center gap-4">
       <!-- Language switcher -->
       <div class="flex items-center gap-1 text-xs font-semibold">
-        <a href="/custom-orders.html" onclick="localStorage.setItem('tg_lang','en');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+        <a href="/custom-orders.html" hreflang="en"
            class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
         <span class="text-outline-variant/60">|</span>
-        <a href="/pl/custom-orders.html" onclick="localStorage.setItem('tg_lang','pl');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+        <a href="/pl/custom-orders.html" hreflang="pl"
            class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
         <span class="text-outline-variant/60">|</span>
-        <a href="/uk/custom-orders.html" onclick="localStorage.setItem('tg_lang','uk');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+        <a href="/uk/custom-orders.html" hreflang="uk"
            class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">UA</a>
       </div>
-      <a href="../custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
+      <a href="custom-orders.html" class="inline-flex items-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
         Замовити
       </a>
     </div>
@@ -116,32 +95,32 @@
   <!-- Panel -->
   <div id="nav-panel" class="absolute top-0 right-0 h-full w-72 bg-surface flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
     <div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
-      <a href="../index.html" class="inline-flex items-center font-headline text-lg text-on-surface-variant">
+      <a href="index.html" class="inline-flex items-center font-headline text-lg text-on-surface-variant">
         <img src="../assets/images/logo.svg" alt="TetiGurumi logo" class="logo-image h-10 w-auto object-contain mr-2"/>
         <span>TetiGurumi</span>
       </a>
       <button id="nav-close" class="text-on-surface-variant p-1" aria-label="Close menu"><svg class="icon w-6 h-6" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg></button>
     </div>
     <nav class="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
-      <a href="../index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="index.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Головна
       </a>
-      <a href="../shop.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="shop.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Магазин
       </a>
-      <a href="../custom-orders.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors bg-surface-container text-primary font-semibold">
+      <a href="custom-orders.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors bg-surface-container text-primary font-semibold">
         Замовлення
       </a>
-      <a href="../gallery.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="gallery.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Галерея
       </a>
-      <a href="../about.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="about.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Про мене
       </a>
-      <a href="../faq.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="faq.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         FAQ
       </a>
-      <a href="../contact.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
+      <a href="contact.html" class="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary">
         Контакт
       </a>
     </nav>
@@ -149,17 +128,17 @@
       <!-- Language switcher -->
       <div class="flex items-center gap-2 px-3">
         <div class="flex items-center gap-1 text-xs font-semibold">
-          <a href="/custom-orders.html" onclick="localStorage.setItem('tg_lang','en');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+          <a href="/custom-orders.html" hreflang="en"
              class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">EN</a>
           <span class="text-outline-variant/60">|</span>
-          <a href="/pl/custom-orders.html" onclick="localStorage.setItem('tg_lang','pl');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+          <a href="/pl/custom-orders.html" hreflang="pl"
              class="px-2 py-1 rounded transition-colors text-outline hover:text-on-surface">PL</a>
           <span class="text-outline-variant/60">|</span>
-          <a href="/uk/custom-orders.html" onclick="localStorage.setItem('tg_lang','uk');this.href=this.pathname+window.location.search+window.location.hash;return true;"
+          <a href="/uk/custom-orders.html" hreflang="uk"
              class="px-2 py-1 rounded transition-colors text-primary border-b border-primary">UA</a>
         </div>
       </div>
-      <a href="../custom-orders.html" class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity">
+      <a href="custom-orders.html" class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity">
         Замовити
       </a>
     </div>
@@ -488,12 +467,12 @@
         <p class="text-xs font-bold uppercase tracking-widest text-outline mb-2">Не впевнені?</p>
         <h2 class="font-headline text-2xl md:text-3xl text-on-surface">Потрібне натхнення?</h2>
       </div>
-      <a href="../gallery.html" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4 whitespace-nowrap">
+      <a href="gallery.html" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4 whitespace-nowrap">
         Переглянути галерею <svg class="icon w-[18px] h-[18px]" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
       </a>
     </div>
     <div class="grid grid-cols-3 gap-4 md:gap-6">
-      <a href="../gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
+      <a href="gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
         <picture class="block w-full h-full">
   <source srcset="../assets/images/handmade-doll-320w.be76f518ae.webp 320w, ../assets/images/handmade-doll-480w.17274e3e04.webp 480w, ../assets/images/handmade-doll-640w.ef0b81fe5a.webp 640w, ../assets/images/handmade-doll-960w.7cdaaa496c.webp 960w, ../assets/images/handmade-doll-1080w.7dfed87ad1.webp 1080w" sizes="(min-width: 768px) 28vw, 31vw" type="image/webp"/>
   <img
@@ -509,7 +488,7 @@
   />
 </picture>
       </a>
-      <a href="../gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
+      <a href="gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
         <picture class="block w-full h-full">
   <source srcset="../assets/images/capybara-backpack-320w.c404549ec9.webp 320w, ../assets/images/capybara-backpack-480w.10daa793af.webp 480w, ../assets/images/capybara-backpack-640w.9daf151228.webp 640w, ../assets/images/capybara-backpack-960w.3d413a1c19.webp 960w, ../assets/images/capybara-backpack-1080w.fec1a3b132.webp 1080w" sizes="(min-width: 768px) 28vw, 31vw" type="image/webp"/>
   <img
@@ -525,7 +504,7 @@
   />
 </picture>
       </a>
-      <a href="../gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
+      <a href="gallery.html" class="block aspect-square rounded-xl overflow-hidden group">
         <picture class="block w-full h-full">
   <source srcset="../assets/images/festive-decorations-320w.7f5be3d225.webp 320w, ../assets/images/festive-decorations-480w.0492b9a0b0.webp 480w, ../assets/images/festive-decorations-640w.60e2fd9e79.webp 640w, ../assets/images/festive-decorations-960w.af89e2ecd1.webp 960w, ../assets/images/festive-decorations-1080w.75fd502450.webp 1080w" sizes="(min-width: 768px) 28vw, 31vw" type="image/webp"/>
   <img
@@ -581,7 +560,7 @@
         </div>
       </div>
       <div class="text-center mt-10">
-        <a href="../faq.html" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4">
+        <a href="faq.html" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4">
           Дивитися всі FAQ <svg class="icon w-[18px] h-[18px]" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/></svg>
         </a>
       </div>
@@ -603,26 +582,26 @@
       <nav>
         <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Магазин</p>
         <ul class="space-y-3">
-          <li><a href="../shop.html#toys" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Іграшки гачком</a></li>
-          <li><a href="../shop.html#bags" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сумки та аксесуари</a></li>
-          <li><a href="../shop.html#seasonal" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сезонні вироби</a></li>
-          <li><a href="../shop.html#decor" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Декор та кошики</a></li>
-          <li><a href="../shop.html#patterns" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Схеми в&#39;язання гачком</a></li>
+          <li><a href="shop.html#toys" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Іграшки гачком</a></li>
+          <li><a href="shop.html#bags" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сумки та аксесуари</a></li>
+          <li><a href="shop.html#seasonal" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Сезонні вироби</a></li>
+          <li><a href="shop.html#decor" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Декор та кошики</a></li>
+          <li><a href="shop.html#patterns" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Схеми в&#39;язання гачком</a></li>
         </ul>
       </nav>
       <nav>
         <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Замовлення</p>
         <ul class="space-y-3">
-          <li><a href="../custom-orders.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Індивідуальні замовлення</a></li>
-          <li><a href="../faq.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">FAQ</a></li>
-          <li><a href="../gallery.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Галерея</a></li>
+          <li><a href="custom-orders.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Індивідуальні замовлення</a></li>
+          <li><a href="faq.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">FAQ</a></li>
+          <li><a href="gallery.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Галерея</a></li>
         </ul>
       </nav>
       <nav>
         <p class="text-xs font-bold uppercase tracking-widest text-outline mb-5">Інформація</p>
         <ul class="space-y-3">
-          <li><a href="../about.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Про Тетяну</a></li>
-          <li><a href="../contact.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Контакт</a></li>
+          <li><a href="about.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Про Тетяну</a></li>
+          <li><a href="contact.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Контакт</a></li>
         </ul>
       </nav>
     </div>
@@ -632,6 +611,7 @@
     </div>
   </div>
 </footer>
+
 <script>
 // Use catalog values rather than trusting a name supplied in the URL.
 const inquiryProducts = {
@@ -737,3 +717,4 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
 
 </body>
 </html>
+
