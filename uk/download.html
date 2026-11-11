@@ -129,6 +129,19 @@
 
 <script>
 (function () {
+  // Keep inquiry product IDs and section anchors when changing language.
+  // The server-rendered paths still identify the equivalent localized page.
+  document.querySelectorAll('a[hreflang]').forEach(function (link) {
+    function preserveContext() {
+      var target = new URL(link.getAttribute('href'), window.location.href);
+      target.search = window.location.search;
+      target.hash = window.location.hash;
+      link.href = target.pathname + target.search + target.hash;
+    }
+    preserveContext();
+    link.addEventListener('click', preserveContext);
+  });
+
   var drawer   = document.getElementById('nav-drawer');
   var panel    = document.getElementById('nav-panel');
   var backdrop = document.getElementById('nav-backdrop');
@@ -152,8 +165,6 @@
   backdrop.addEventListener('click', closeMenu);
 })();
 </script>
-
-
 <main class="flex-1 bg-surface-container-low py-20 md:py-28">
   <div class="max-w-screen-md mx-auto px-6 md:px-10">
     <div class="bg-surface rounded-3xl p-10 md:p-14 shadow-[0_24px_56px_rgba(47,41,37,0.08)]">
