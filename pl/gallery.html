@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="Przeglądaj pełne portfolio szydełkowych prac Tetiany: zabawki, prace sezonowe, torby, dekoracje i zamówienia indywidualne."/>
 <meta name="twitter:image" content="https://tetigurumi.com/assets/images/lion-amigurumi-1080w.99cbe42728.jpg"/>
 <meta name="twitter:image:alt" content="Galeria — TetiGurumi Portfolio Szydełkowe"/>
-<link rel="stylesheet" href="../assets/site.e931e4f3e0.css"/>
+<link rel="stylesheet" href="../assets/site.a6fbba8bab.css"/>
 <style>
   
 </style>
@@ -794,10 +794,11 @@ document.querySelectorAll('[data-filter]').forEach(btn => {
     const filter = btn.dataset.filter;
     document.querySelectorAll('[data-filter]').forEach(b => {
       b.classList.remove('bg-primary', 'text-on-primary');
-      b.classList.add('bg-surface-container', 'text-on-surface-variant');
+      b.classList.add('bg-surface-container', 'text-on-surface-variant', 'hover:bg-surface-container-high');
     });
     btn.classList.add('bg-primary', 'text-on-primary');
-    btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+    // On touch screens :hover sticks after a tap; keep the hover background off the active chip.
+    btn.classList.remove('bg-surface-container', 'text-on-surface-variant', 'hover:bg-surface-container-high');
 
     let visibleCount = 0;
     document.querySelectorAll('[data-category]').forEach(item => {

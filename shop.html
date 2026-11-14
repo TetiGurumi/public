@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="Browse handmade crochet toys, seasonal decorations, bags and gifts by Tetiana. Available and custom-order pieces."/>
 <meta name="twitter:image" content="https://tetigurumi.com/assets/images/lion-amigurumi-1080w.99cbe42728.jpg"/>
 <meta name="twitter:image:alt" content="Shop — TetiGurumi Handmade Crochet Toys &amp; Gifts"/>
-<link rel="stylesheet" href="assets/site.e931e4f3e0.css"/>
+<link rel="stylesheet" href="assets/site.a6fbba8bab.css"/>
 <style>
   
 </style>
@@ -201,12 +201,12 @@
 </div>
 
 <!-- Section anchors -->
-<div id="toys" class="scroll-mt-36"></div>
-<div id="bags" class="scroll-mt-36"></div>
-<div id="seasonal" class="scroll-mt-36"></div>
-<div id="decor" class="scroll-mt-36"></div>
-<div id="gifts" class="scroll-mt-36"></div>
-<div id="patterns" class="scroll-mt-36"></div>
+<div id="toys" class="scroll-mt-16"></div>
+<div id="bags" class="scroll-mt-16"></div>
+<div id="seasonal" class="scroll-mt-16"></div>
+<div id="decor" class="scroll-mt-16"></div>
+<div id="gifts" class="scroll-mt-16"></div>
+<div id="patterns" class="scroll-mt-16"></div>
 
 <!-- Product Grid -->
 <main class="flex-1">
@@ -1291,6 +1291,8 @@ function syncActiveFilter() {
     button.classList.toggle('text-on-primary', isActive);
     button.classList.toggle('bg-surface-container', !isActive);
     button.classList.toggle('text-on-surface-variant', !isActive);
+    // On touch screens :hover sticks after a tap; keep the hover background off the active chip.
+    button.classList.toggle('hover:bg-surface-container-high', !isActive);
   });
 }
 

@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="Замовте в&#39;язаний виріб ручної роботи: іграшку, декорацію або подарунок. Оберіть персонажа, кольори, розмір. Доставка до ЄС."/>
 <meta name="twitter:image" content="https://tetigurumi.com/assets/images/lion-amigurumi-1080w.99cbe42728.jpg"/>
 <meta name="twitter:image:alt" content="Замовлення — TetiGurumi"/>
-<link rel="stylesheet" href="../assets/site.e931e4f3e0.css"/>
+<link rel="stylesheet" href="../assets/site.a6fbba8bab.css"/>
 <style>
     input, textarea, select {
     background-color: #fcf9f4;
@@ -362,21 +362,21 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
             <div class="flex flex-col gap-2">
               <label for="name">Ваше ім&#39;я <span class="text-tertiary normal-case tracking-normal font-semibold text-xs">*</span></label>
-              <input type="text" id="name" name="name" required autocomplete="name" placeholder="e.g. Anna" class="w-full px-4 py-3 text-sm"/>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="e.g. Anna" class="w-full px-4 py-3 text-base sm:text-sm"/>
             </div>
             <div class="flex flex-col gap-2">
               <label for="email">Ваша ел. пошта <span class="text-tertiary normal-case tracking-normal font-semibold text-xs">*</span></label>
-              <input type="email" id="email" name="email" required autocomplete="email" placeholder="e.g. anna@example.com" class="w-full px-4 py-3 text-sm"/>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="e.g. anna@example.com" class="w-full px-4 py-3 text-base sm:text-sm"/>
             </div>
           </div>
           <div class="flex flex-col gap-2 mb-6">
             <label id="description-label" for="description">Що б ви хотіли замовити? <span class="text-tertiary normal-case tracking-normal font-semibold text-xs">*</span></label>
-            <textarea id="description" name="description" required rows="4" placeholder="напр. Маленький зайчик у пудровому рожевому для подарунка на baby shower, бл. 20 см, з м&#39;яким бантиком." class="w-full px-4 py-3 text-sm resize-y"></textarea>
+            <textarea id="description" name="description" required rows="4" placeholder="напр. Маленький зайчик у пудровому рожевому для подарунка на baby shower, бл. 20 см, з м&#39;яким бантиком." class="w-full px-4 py-3 text-base sm:text-sm resize-y"></textarea>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
             <div class="flex flex-col gap-2">
               <label for="type">Тип <span class="text-tertiary normal-case tracking-normal font-semibold text-xs">*</span></label>
-              <select id="type" name="type" required class="w-full px-4 py-3 text-sm">
+              <select id="type" name="type" required class="w-full px-4 py-3 text-base sm:text-sm">
                 <option value="" disabled selected>Оберіть тип…</option>
                 <option value="toy">Іграшка / амігурумі</option>
                 <option value="decoration">Декорація</option>
@@ -387,23 +387,23 @@
             </div>
             <div class="flex flex-col gap-2">
               <label for="colors">Кольори</label>
-              <input type="text" id="colors" name="colors" placeholder="напр. пудровий рожевий, крем, шавлія" class="w-full px-4 py-3 text-sm"/>
+              <input type="text" id="colors" name="colors" placeholder="напр. пудровий рожевий, крем, шавлія" class="w-full px-4 py-3 text-base sm:text-sm"/>
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
             <div class="flex flex-col gap-2">
               <label for="size">Приблизний розмір</label>
-              <input type="text" id="size" name="size" placeholder="напр. з долоню, бл. 25 см" class="w-full px-4 py-3 text-sm"/>
+              <input type="text" id="size" name="size" placeholder="напр. з долоню, бл. 25 см" class="w-full px-4 py-3 text-base sm:text-sm"/>
             </div>
             <div class="flex flex-col gap-2">
               <label for="deadline">Дедлайн</label>
-              <input type="date" id="deadline" name="deadline" class="w-full px-4 py-3 text-sm"/>
+              <input type="date" id="deadline" name="deadline" class="w-full px-4 py-3 text-base sm:text-sm"/>
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
             <div class="flex flex-col gap-2">
               <label for="budget">Бюджет</label>
-              <select id="budget" name="budget" class="w-full px-4 py-3 text-sm">
+              <select id="budget" name="budget" class="w-full px-4 py-3 text-base sm:text-sm">
                 <option value="" disabled selected>Оберіть діапазон…</option>
                 <option value="under100">До 100 PLN</option>
                 <option value="100-200">100–200 PLN</option>
@@ -414,7 +414,7 @@
             </div>
             <div class="flex flex-col gap-2">
               <label for="country">Країна доставки</label>
-              <select id="country" name="country" class="w-full px-4 py-3 text-sm">
+              <select id="country" name="country" class="w-full px-4 py-3 text-base sm:text-sm">
                 <option value="" disabled selected>Оберіть країну…</option>
                 <option value="PL">Польща</option>
                 <option value="DE">Німеччина</option>
@@ -429,16 +429,16 @@
           </div>
           <div class="flex flex-col gap-2 mb-6">
             <label for="personalization">Деталі персоналізації</label>
-            <textarea id="personalization" name="personalization" rows="2" placeholder="напр. вишивка імені &#39;Соня&#39;, додайте маленьке серце, ярлик з присвятою" class="w-full px-4 py-3 text-sm resize-y"></textarea>
+            <textarea id="personalization" name="personalization" rows="2" placeholder="напр. вишивка імені &#39;Соня&#39;, додайте маленьке серце, ярлик з присвятою" class="w-full px-4 py-3 text-base sm:text-sm resize-y"></textarea>
           </div>
           <div class="flex flex-col gap-2 mb-6">
             <label for="extra">Щось ще?</label>
-            <textarea id="extra" name="extra" rows="3" placeholder="Подарунок на особливий випадок? Екологічне пакування? Алергія на матеріали?" class="w-full px-4 py-3 text-sm resize-y"></textarea>
+            <textarea id="extra" name="extra" rows="3" placeholder="Подарунок на особливий випадок? Екологічне пакування? Алергія на матеріали?" class="w-full px-4 py-3 text-base sm:text-sm resize-y"></textarea>
           </div>
           <div class="flex flex-col gap-2 mb-6">
             <label for="reference_url">Посилання на фото-референс (необов&#39;язково)</label>
             <input type="url" id="reference_url" name="reference_url" inputmode="url" autocomplete="url"
-                   placeholder="https://example.com/photo" class="w-full px-4 py-3 text-sm"/>
+                   placeholder="https://example.com/photo" class="w-full px-4 py-3 text-base sm:text-sm"/>
             <p class="text-xs text-outline mt-1">Вставте посилання на фото, яке я зможу відкрити. Увімкніть доступ для всіх, хто має посилання.</p>
           </div>
           <div class="flex items-start gap-3 mb-8">
